@@ -1,0 +1,71 @@
+body {
+	background-color: #F6F6F6;
+	font-family: 'Roboto', sans-serif;
+}
+#loginNav {
+	background-color: #FEFEFE;
+}
+#loginNav .navbar-nav .nav-item .nav-link {
+	font-size: .9rem;
+}
+.counter {
+	font-family: 'Roboto', sans-serif;
+	font-size: 50px;
+	color: #F4623A;
+	margin: 0;
+}
+.dashboard {
+	background-color: #F6F6F6;
+}
+
+.rounded-100 {
+	border-radius: 100px !important;
+}
+
+
+.btn-custom-orange {
+	background-color: #F3732B; 
+	border: none;
+}
+
+.bg-custom-orange {
+	background-color: #F3732B;
+}
+.bg-custom-gray , .bg-custom-lightgray.active {
+	background-color: #BFBFBF !important;
+}
+.bg-custom-lightgray {
+	background-color: #EBE8E8;
+}
+.bg-custom-play {
+	background-color: #969494;
+} 
+.bg-custom-verylightgray {
+	background-color: #F6F6F6;
+} 
+
+.text-custom-orange {
+	color: #F3732B;
+}
+.text-custom-gray {
+	color: #969494;
+}
+.text-custom-gray:hover {
+	color: #969494;
+}
+
+
+
+.badge-custom-orange {
+	color: #fff;
+	background-color: #F3732B;
+}
+
+
+.fs-50 {
+	font-size: 50px;
+}
+.fs-70 {
+	font-size: 70px;
+}
+

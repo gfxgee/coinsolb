@@ -1,0 +1,11 @@
+#userAnswer {
+    font-family: 'Roboto Slab', serif;
+    margin: 0 auto;
+    width: 100%;
+    height: 100px;
+    border: none;
+    border-radius: 7px;
+    font-size: 40px;
+    text-align: center;
+    outline: none;
+}
