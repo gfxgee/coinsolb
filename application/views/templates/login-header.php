@@ -13,14 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <title>CoinSolb</title>
 
-  <!-- Font Awesome Icons -->
-  <link href="<?php echo base_url(); ?>assets/theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-  <!-- Plugin CSS -->
-  <link href="<?php echo base_url(); ?>assets/theme/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
   
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.css" rel="stylesheet">
