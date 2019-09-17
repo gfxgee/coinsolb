@@ -16,7 +16,7 @@
 			</div>
 
 			<div class="col-lg-6 p-0 m-0 text-right ">
-				<p class="counter text-custom-orange">$<span><?php echo $total_score/10000; ?></span></p>
+				<p class="counter text-custom-orange">$<span><?php echo $current_earnings_left; ?></span></p>
 				<small>Current earnings. <a href="#" class="badge badge-custom-orange">Withdraw Now</a></small>
 			</div>
 
@@ -58,7 +58,7 @@
 									<div class="card" style="width: 18rem;">
 										<div class="card-body">
 											<h6 class="card-subtitle mb-2 text-muted">Current Earnings</h6>
-											<p class="counter text-custom-orange">$<span><?php echo $total_score/10000; ?></span></p>
+											<p class="counter text-custom-orange">$<span><?php echo $current_earnings_left; ?></span></p>
 											<a href="<?php echo base_url('/withdraw'); ?>" class="badge badge-secondary badge-custom-orange">Withdraw Now</a>
 										</div>
 									</div>
@@ -80,11 +80,11 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo molestias ad, optio, voluptas explicabo itaque! Voluptates in eum asperiores at, architecto alias a dolorum nulla earum laudantium id aut, quisquam.</p>
 							<div class="row p-3"> 
 								<div class="col-lg-3 p-0 pt-2">
-									<p>Total Points Earned</p>
-									<h2 class="pt-2"><?php echo $total_score; ?></h2>
+									<p>Current Points</p>
+									<h2 class="pt-2"><?php echo $current_earnings_left*10000; ?></h2>
 								</div>
 								<div class="col-lg-3 p-0 pt-2">
-									<p>Current Points</p>
+									<p>Total Points Earned</p>
 									<h2 class="pt-2"><?php echo $total_score; ?></h2>
 								</div>
 							</div>
@@ -131,12 +131,13 @@
 
 								<div class="col-lg-3 p-0 pt-2">
 									<p>Current Balance</p>
-									<h2 class="pt-2">$<span><?php echo $total_score/10000; ?></span></h2>
+									<h2 class="pt-2">$<span><?php echo $current_earnings_left; ?></span></h2>
+									<a href="<?php echo base_url('/withdraw'); ?>" class="badge badge-secondary badge-custom-orange">Withdraw Now</a>
 								</div>
 	
 								<div class="col-lg-3 p-0 pt-2">
 									<p>Total Withdrawals</p>
-									<h2 class="pt-2">$<span><?php echo $total_score/10000; ?></span></h2>
+									<h2 class="pt-2">$<span><?php echo $total_user_withdrawal_amount; ?></span></h2>
 								</div>
 
 							</div>
@@ -145,7 +146,7 @@
 							<h5 class="m-0 mt-2">Referral History</h5>
 							<small class="">List of all the referrals you gathered.</small>
 							<div class=" my-4"></div>
-							<table id="referrals-table" class="table table-striped table-bordered" style="width:100%"></table>
+							<table id="withdrawals-table" class="table table-striped table-bordered" style="width:100%"></table>
 
 						</div>
 					</div>

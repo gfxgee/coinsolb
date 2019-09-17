@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </li>
           <li class="nav-item">
             <button href="<?php echo base_url('play'); ?>" class="btn bg-custom-orange text-white rounded-100">
-              <small class="font-weight-bold">My Current Earnings:</small> <span class="badge badge-light"><?php if(isset($total_score)) echo '$'.$total_score/10000; ?></span>
+              <small class="font-weight-bold">My Current Earnings:</small> <span class="badge badge-light"><?php if(isset($current_earnings_left)) echo '$'.$current_earnings_left; ?></span>
             </button>
           </li>
           <?php } ?>

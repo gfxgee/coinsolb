@@ -30,11 +30,15 @@ class Coin_Solve extends CI_Controller {
 	{
 		if (  $this->ion_auth->logged_in() ) {
 
-			$total_points_earned = $this->coin_solve_model->get_user_total_score($this->ion_auth->get_user_id());
-			
-			$total_points_from_referral = $this->coin_solve_model->get_user_total_score_from_referral($this->ion_auth->get_user_id());
+			$user_id = $this->ion_auth->get_user_id();
 
-			$user_referral_code = $this->coin_solve_model->get_user_referral_code($this->ion_auth->get_user_id());
+			$total_user_withdrawal_amount = $this->coin_solve_model->get_user_total_withdrawals( $user_id );
+
+			$total_points_earned = $this->coin_solve_model->get_user_total_score($user_id);
+			
+			$total_points_from_referral = $this->coin_solve_model->get_user_total_score_from_referral($user_id);
+
+			$user_referral_code = $this->coin_solve_model->get_user_referral_code($user_id);
 
 			$total_referrals = $this->coin_solve_model->count_user_referrals( $user_referral_code->code );
 
@@ -43,7 +47,10 @@ class Coin_Solve extends CI_Controller {
 				'total_referral_score' 	=> $total_points_from_referral,
 				'page_title'			=> $page_title,
 				'user_referral_code'	=> $user_referral_code->code,
-				'total_referrals'		=> $total_referrals
+				'total_referrals'		=> $total_referrals,
+				'total_user_withdrawal_amount'	=> $total_user_withdrawal_amount/10000,
+				'current_earnings_left'			=> ($total_points_earned-$total_user_withdrawal_amount)/10000,
+				'minimun_withdrawal'	=> 2,
 			);
 
 			$this->load->view('templates/login-header', $data);
@@ -188,6 +195,7 @@ class Coin_Solve extends CI_Controller {
 
 			foreach($referrals->result() as $res) {
 
+				// get user info
 				$user = $this->ion_auth->user($res->from_user_id)->row();
 
 				if ( $res->referral_status == 'pending' ) $status = '<span class="text-danger">' . $res->referral_status . '</span>';
@@ -216,6 +224,60 @@ class Coin_Solve extends CI_Controller {
 
 	}
 
+	public function get_user_withdrawals_history () {
+
+		if ( $this->ion_auth->logged_in()) {
+
+			// Datatables Variables
+			$draw = intval($this->input->get("draw"));
+			$start = intval($this->input->get("start"));
+			$length = intval($this->input->get("length"));
+
+			$withdrawals = $this->coin_solve_model->get_user_withdrawals( $this->ion_auth->get_user_id() );
+
+			$total_withdrawal_count = $this->coin_solve_model->count_user_withdrawals( $this->ion_auth->get_user_id() );
+
+			$data = array();
+
+			foreach($withdrawals->result() as $res) {
+
+				if ( $res->withdrawal_status == 'Pending' ) $status = '<span class="text-danger">' . $res->withdrawal_status . '</span>';
+
+				else if ($res->withdrawal_status == 'Activated' ) $status = '<span class="text-success">' . $res->withdrawal_status . '</span>';
+
+				$withdrawal_details = json_decode($res->withdrawal_details);
+
+				foreach ($withdrawal_details as $key => $value) {
+					
+					if ($key == 'select-payment' ) $type_of_payment = $value;
+
+				}
+
+				$date = date("d M. Y  h:i a", strtotime($res->timestamp));
+
+			   	$data[] = array(
+			        $date,
+			        $type_of_payment,
+			        '$'.$res->points_withdrawed / 10000,
+			        $status,
+			   	);
+			}
+
+			$output = array(
+				"draw"				=> $draw,
+				"recordsTotal"		=> $total_withdrawal_count,
+				"recordsFiltered"	=> $total_withdrawal_count,
+				"data" 				=> $data
+			);
+
+			echo json_encode($output);
+
+			exit();
+
+		}
+
+	}
+
 	public function save_points_details ( $score = 0, $points_origin = '', $user_id = 0) {
 
 		if ( $this->ion_auth->logged_in() ) {
@@ -233,5 +295,21 @@ class Coin_Solve extends CI_Controller {
 		} 
 
 		return false;
+	}
+
+	public function withdraw () {
+
+		if ( $this->ion_auth->logged_in() ) {
+			
+			if ( $this->input->post('select-payment')) {
+
+				$result = $this->coin_solve_model->add_withdrawal($this->ion_auth->get_user_id() ,  $this->input->post());
+
+			}
+
+			else $this->render_page('withdraw' , 'page_withdraw');
+
+		}
+
 	}
 }

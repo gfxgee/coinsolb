@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] 		= FALSE;
 $route['play'] 						= 'coin_solve/play';
 $route['dashboard'] 				= 'coin_solve/dashboard';
 $route['account'] 					= 'coin_solve/account';
+$route['withdraw'] 					= 'coin_solve/withdraw';
 $route['login']						= 'auth/login';
 $route['register']					= 'auth/create_user';
 $route['register/(:any)']			= 'auth/create_user/$1';

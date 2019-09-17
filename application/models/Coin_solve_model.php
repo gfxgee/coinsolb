@@ -95,7 +95,7 @@ class Coin_solve_model extends CI_Model {
 
 	public function record_game_details ( $score , $points_origin , $user_id) {
 
-		$query= "insert into game_details values('','$user_id', '$score' , CURRENT_TIMESTAMP , '$points_origin')";
+		$query = "insert into game_details values('','$user_id', '$score' , CURRENT_TIMESTAMP , '$points_origin')";
 		
 		$result = $this->db->query($query);
 
@@ -173,6 +173,39 @@ class Coin_solve_model extends CI_Model {
 		return $this->db->get_where('referrals' , array('code' => $referral_code))->row();
 
 	} 
+
+	public function add_withdrawal ( $user_id , $data ) {
+
+		$amount = $data['withdrawal-amount']*10000;
+
+		$data = json_encode($data);
+
+		$query = "insert into withdrawals values('', '$amount' , CURRENT_TIMESTAMP , '$user_id' , '$data' , 'Pending')";
+		
+		$result = $this->db->query($query);
+
+		if ( $result ) return true;
+
+		return false;
+
+	}
+
+	public function get_user_total_withdrawals( $user_id ){
+
+		return $this->db->select_sum('points_withdrawed')->where('user_id' , $user_id)->get('withdrawals')->row()->points_withdrawed;
+	}
+
+	public function get_user_withdrawals( $user_id ) {
+
+		return $this->db->get_where('withdrawals' , array('user_id' => $user_id));
+
+	}
+
+	public function count_user_withdrawals ( $user_id ) {
+
+		return $this->db->select("COUNT(*) as num")->get_where('withdrawals' , array ( 'user_id' => $user_id ))->row()->num;
+
+	}
 }
 
 

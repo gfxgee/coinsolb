@@ -17,7 +17,7 @@
 
 
 			<div class="col-lg-7 p-0 m-0 text-right ">
-				<p class="counter text-custom-orange">$<span><?php echo $total_score/10000; ?></span></p>
+				<p class="counter text-custom-orange">$<span><?php echo $current_earnings_left; ?></span></p>
 				<small>Current earnings</small>
 			</div>
 

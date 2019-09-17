@@ -174,6 +174,8 @@ function gameStart() {
 
 $( document ).ready(function(){
 
+	'use strict';
+
 	// generates initial random equation
 	var systemGeneratedAnswer;
 

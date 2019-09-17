@@ -8,12 +8,8 @@
   
 
   <!-- Bootstrap core JavaScript -->
-  <script src="<?php echo base_url(); ?>assets/theme/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="<?php echo base_url(); ?>assets/theme/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/theme/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/bootstrap/js/jquery-3.4.1.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script> 
   
