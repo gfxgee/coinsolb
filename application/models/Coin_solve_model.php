@@ -54,8 +54,11 @@ class Coin_solve_model extends CI_Model {
 
 	public function get_user_referral_code ( $user_id ){
 
-		return $this->db->get_where('referrals' , array('user_id' => $user_id))->row();
+		$query = $this->db->get_where('referrals' , array('user_id' => $user_id))->row();
 
+		if ( isset($query->code) ) return $query->code;
+
+		return false;
 	}
 
 	public function count_user_referrals ( $referral_code ){

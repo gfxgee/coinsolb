@@ -40,13 +40,15 @@ class Coin_Solve extends CI_Controller {
 
 			$user_referral_code = $this->coin_solve_model->get_user_referral_code($user_id);
 
-			$total_referrals = $this->coin_solve_model->count_user_referrals( $user_referral_code->code );
+			if( $user_referral_code ) $total_referrals = $this->coin_solve_model->count_user_referrals( $user_referral_code);
+
+			else $total_referrals = 0;
 
 			$data = array(
 				'total_score' 			=> $total_points_earned,
 				'total_referral_score' 	=> $total_points_from_referral,
 				'page_title'			=> $page_title,
-				'user_referral_code'	=> $user_referral_code->code,
+				'user_referral_code'	=> $user_referral_code,
 				'total_referrals'		=> $total_referrals,
 				'total_user_withdrawal_amount'	=> $total_user_withdrawal_amount/10000,
 				'current_earnings_left'			=> ($total_points_earned-$total_user_withdrawal_amount)/10000,
@@ -187,7 +189,7 @@ class Coin_Solve extends CI_Controller {
 
 			$user_referral_code = $this->coin_solve_model->get_user_referral_code($this->ion_auth->get_user_id());
 
-			$referrals = $this->coin_solve_model->get_user_referrals( '' , $user_referral_code->code );
+			$referrals = $this->coin_solve_model->get_user_referrals( '' , $user_referral_code );
 
 			$total_referral_count = $this->coin_solve_model->count_user_referrals( $this->ion_auth->get_user_id() );
 
