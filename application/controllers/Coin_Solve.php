@@ -20,9 +20,7 @@ class Coin_Solve extends CI_Controller {
 	 */
 	public function index()
 	{	
-		$this->load->view('templates/header');
-		$this->load->view('landing');
-		$this->load->view('templates/footer');
+		$this->render_page('landing' , 'CoinSolb - Earn while improving your Math Skills');
 	}
 
 
@@ -45,6 +43,7 @@ class Coin_Solve extends CI_Controller {
 			else $total_referrals = 0;
 
 			$data = array(
+				'page'					=> $page,
 				'total_score' 			=> $total_points_earned,
 				'total_referral_score' 	=> $total_points_from_referral,
 				'page_title'			=> $page_title,
@@ -52,15 +51,29 @@ class Coin_Solve extends CI_Controller {
 				'total_referrals'		=> $total_referrals,
 				'total_user_withdrawal_amount'	=> $total_user_withdrawal_amount/10000,
 				'current_earnings_left'			=> ($total_points_earned-$total_user_withdrawal_amount)/10000,
-				'minimun_withdrawal'	=> 2,
+				'minimun_withdrawal'			=> 2,
 			);
 
-			$this->load->view('templates/login-header', $data);
+			$this->load->view('templates/header', $data);
 			$this->load->view( $page , $data);
 			$this->load->view('templates/footer');
 		}
 
-		else redirect ( '' , 'refresh');
+		else {
+
+			$total_users = $this->coin_solve_model->get_total_user_count();
+
+			$data = array(
+				'page'					=> $page,
+				'page_title'			=> $page_title,
+				'user_count'			=> $total_users,
+			);
+
+			$this->load->view('templates/header', $data);
+			$this->load->view( $page , $data);
+			$this->load->view('templates/footer');
+
+		}
 	}
 
 	public function play () 

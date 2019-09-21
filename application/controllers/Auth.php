@@ -116,7 +116,7 @@ class Auth extends CI_Controller
 				'type' => 'password',
 			];
 
-			$this->load->view('templates/login-header');
+			$this->load->view('templates/header');
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'login', $this->data);
 			$this->load->view('templates/footer');
 		}
@@ -581,7 +581,7 @@ class Auth extends CI_Controller
 			$this->data['referral_code_from_link'] = $referral_code;
 
 
-			$this->load->view('templates/login-header');
+			$this->load->view('templates/header');
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
 			$this->load->view('templates/footer');
 		}

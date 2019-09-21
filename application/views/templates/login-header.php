@@ -26,6 +26,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Game theme -->
   <link href="<?php echo base_url(); ?>assets/game_library/style.css" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/61cd694d48.js" crossorigin="anonymous"></script>
+  
+
 </head>
 
 <body id="<?php if(isset($page_title)) echo $page_title; ?>">

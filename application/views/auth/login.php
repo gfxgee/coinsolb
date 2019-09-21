@@ -1,5 +1,5 @@
   <!-- About Section -->
-  <section class="page-section bg-primary h-100" id="login-section">
+  <section class="page-section bg-primary" id="login-section">
     <div class="container">
       <div class="row justify-content-left">
         <div class="col-lg-6 text-left">

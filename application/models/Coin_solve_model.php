@@ -209,6 +209,13 @@ class Coin_solve_model extends CI_Model {
 		return $this->db->select("COUNT(*) as num")->get_where('withdrawals' , array ( 'user_id' => $user_id ))->row()->num;
 
 	}
+
+	public function get_total_user_count ( ) {
+
+		return $this->db->count_all_results('users');
+
+	}
+
 }
 
 

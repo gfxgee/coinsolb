@@ -1,3 +1,17 @@
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      document.getElementById("main-nav").style.padding = "10px 10px";
+      document.getElementById("navbar-logo").style.width = "15%";
+      document.getElementById("main-nav").style.backgroundColor = "#061a28f2";
+    } else {
+      document.getElementById("main-nav").style.padding = "20px 10px";
+      document.getElementById("main-nav").style.backgroundColor = "#061A28";
+      document.getElementById("navbar-logo").style.width = "20%";
+    }
+  }
+
 $(document).ready(function() {
     $('#score-table').DataTable({
     	"pageLength" : 25,
@@ -50,4 +64,24 @@ $(document).ready(function() {
         } , 400);
 
     });
+
+    let scroll_link = $('.scroll');
+
+    //smooth scrolling -----------------------
+    scroll_link.click(function(e){
+        e.preventDefault();
+
+        let url = $('body').find($(this).attr('href')).offset().top-50;
+
+        $('html, body').animate({
+            scrollTop : url
+        },700);
+
+        $(this).parent().addClass('active');
+        $(this).parent().siblings().removeClass('active');
+
+        return false; 
+    });
+
+
 });

@@ -1,7 +1,20 @@
 body {
 	background-color: #F6F6F6;
-	font-family: 'Roboto', sans-serif;
+  	font-family: Larsseit;
 }
+h1 , h2 , h3 , h4 , h5 , h6 {
+  	font-family: Larsseit ExtraBold;
+}
+h2 {
+	font-size: 40px;
+}
+p {
+	font-size: 16px;
+}
+a {
+	font-size: 14px;
+}
+
 #loginNav {
 	background-color: #FEFEFE;
 }
@@ -9,7 +22,6 @@ body {
 	font-size: .9rem;
 }
 .counter {
-	font-family: 'Roboto', sans-serif;
 	font-size: 50px;
 	color: #F4623A;
 	margin: 0;
@@ -18,16 +30,62 @@ body {
 	background-color: #F6F6F6;
 }
 
-.rounded-100 {
-	border-radius: 100px !important;
+/* Custom Nav */
+#main-nav {
+	padding-top: 20px;
+	padding-bottom: 20px;
+  	transition: 0.4s;
+  	-webkit-transition:0.4s;
+  	-moz-transition:0.4s;
+  	-o-transition: 0.4s;
+}
+#navbar-logo {
+  	transition: 0.4s;
+  	-webkit-transition:0.4s;
+  	-moz-transition:0.4s;
+  	-o-transition: 0.4s;
+}
+#main-nav a {
+	font-size: 16px;
+	color: white;
+  	transition: 0.4s;
+  	-webkit-transition:0.4s;
+  	-moz-transition:0.4s;
+  	-o-transition: 0.4s;
+}
+#main-nav .active a {
+	color: #f7b32d;
 }
 
 
+/* Custom Border */
+.no-border {
+	border: none !important;
+}
+
+
+/* Rounded corners custom */
+.rounded-100 {
+	border-radius: 100px !important;
+}
+.rounded-20 {
+	border-radius: 20px !important;
+}
+.rounded-top-20 {
+	border-top-right-radius: 20px !important; 
+	border-top-left-radius: 20px !important; 
+}
+
+
+
+/* Custom Button */
 .btn-custom-orange {
 	background-color: #F3732B; 
 	border: none;
 }
 
+
+/* custom background color */
 .bg-custom-orange {
 	background-color: #F3732B;
 }
@@ -42,7 +100,24 @@ body {
 } 
 .bg-custom-verylightgray {
 	background-color: #F6F6F6;
-} 
+}
+.bg-footer-color {
+	background-color: #03111A;
+}
+.bg-main-color {
+	background-color: #061A28;
+}
+.bg-secondary-color {
+	background-color: #092336;
+}
+.bg-highlights {
+	background-color: #1b9691; 
+}
+
+
+
+
+/* Custom Text Color */
 
 .text-custom-orange {
 	color: #F3732B;
@@ -53,19 +128,171 @@ body {
 .text-custom-gray:hover {
 	color: #969494;
 }
+.text-footer-header,
+.text-highlights {
+	color: #1b9691;
+}
+.text-custom-secondary {
+	color: #061a28 !important;
+}
+.text-yellow-highlights {
+	color: #F7B32D;
+}
 
 
 
+/* custom badge */
 .badge-custom-orange {
 	color: #fff;
 	background-color: #F3732B;
 }
 
 
+
+/* Font Theme Defaults */
 .fs-50 {
 	font-size: 50px;
 }
 .fs-70 {
 	font-size: 70px;
 }
+.fs-60 {
+	font-size: 60px;
+}
+.fs-22 {
+	font-size: 22px;
+}
+.fs-20 {
+	font-size: 20px;
+}
+.fs-14 {
+	font-size: 14px;
+}
 
+
+
+/* Custom Theme Padding */
+.py-100 {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.py-60 {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.pt-60 {
+	padding-top: 60px;
+}
+.pb-30 {
+	padding-bottom: 30px;
+}
+.pt-30 {
+	padding-top: : 30px;
+}
+.pb-60 {
+	padding-bottom: 60px;
+}
+
+
+
+/* Banner Styling */
+/*#banner-section:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-image: url(images/300ppi/grid-circle.png);
+    background-repeat: no-repeat;
+    background-position: 0% 80%;
+    background-size: 40%;
+}*/
+.banner-button {
+	background-color: #F7B32D;
+	text-decoration: none !important;
+}
+.banner-button:hover {
+	background-color: #ffa900;
+}
+.banner-image {
+	width: 100%;
+}
+
+
+
+/* Users strip */
+#user-count-section {
+	background-image: url(images/user-count-background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+}
+
+
+
+
+/* Features Section */
+.link-primary {
+	color: #F7B32D;
+	text-decoration: none;
+}
+.link-primary:hover {
+	color: white;
+}
+.features-image {
+	width: 100%;
+}
+.features-divider {
+	border-color: #213e53;
+}
+
+/* Footer */
+.footer-links {
+	list-style-type: none;
+	padding: 0;
+}
+
+.footer-links li {
+	margin-bottom: 5px;
+}
+
+.footer-links li a  {
+	color: white;
+	text-decoration: none;
+}
+
+.footer-links li a:hover {
+	color: #f7b32d;
+}
+
+.footer-logo {
+	width: 70%;
+}
+
+.footer-contacts {
+	color: white;
+	text-decoration: none !important;	
+}
+.footer-contacts:hover {
+	color: #f7b32d !important;
+}
+.footer-divider {
+	border-color: #092336;
+}
+
+
+
+
+
+@font-face {
+  font-family: Larsseit;
+  src: url(fonts/Larsseit.ttf);
+}
+
+@font-face {
+  font-family: Larsseit ExtraBold;
+  src: url(fonts/Larsseit-ExtraBold.ttf);
+}
