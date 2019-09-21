@@ -1,11 +1,10 @@
   <!-- About Section -->
-  <section class="page-section bg-primary" id="login-section">
+  <section class="bg-main-color py-60 h-100" id="login-section">
     <div class="container">
       <div class="row justify-content-left">
         <div class="col-lg-6 text-left">
-        <h1 class="text-uppercase text-white font-weight-bold"><?php echo lang('login_heading');?></h1>
-
-        <p class="text-white"><?php echo lang('login_subheading');?></p>
+        <h4 class="text-white mb-4">Don't have an account yet? <a href="<?php echo base_url('register'); ?>" class="fs-22 link-primary">Register Here</a></h4>
+        <h1 class="text-white font-weight-bold"><?php echo lang('login_heading');?></h1>
 
         <div id="infoMessage"><?php echo $message;?></div>
 
@@ -25,7 +24,7 @@
             <?php echo lang('login_remember_label', 'remember');?>
           </p>
 
-          <button type="submit" name="login" class="btn btn-light btn-xl">Submit</button>
+          <button type="submit" name="login" class="btn banner-button rounded-100 px-5">Login</button>
 
         <?php echo form_close();?>
         <br>
@@ -33,8 +32,8 @@
         </div>
 
         <div class="col-lg-6 text-left">
-
-        </div>
+          <img src="<?php echo base_url() ?>assets/images/300ppi/grid-circle.png" alt="" width="100%">
+        </div>  
       </div>
     </div>
   </section>

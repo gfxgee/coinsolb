@@ -121,7 +121,7 @@ function gameOver () {
 
 	}
 
-	$('.play-area').html('<h5 class="mt-3"><strong>Game Over!</strong><br>You scored</h5><p class="m-0 points fs-70 text-custom-orange">'+score+'</p><h5>points</h5>');
+	$('.play-area').html('<h5 class="mt-3"><strong>Game Over!</strong><br>You scored</h5><h4 class="m-0 points fs-70 text-yellow-highlights">'+score+'</h4><h5>points</h5>');
 
 	$('.pause-button-container').fadeOut();
 	$('.replay-button-container').fadeIn();
@@ -178,6 +178,7 @@ $( document ).ready(function(){
 
 	// generates initial random equation
 	var systemGeneratedAnswer;
+	var userAnswer;
 
 	$('#play-normal').click(function(){
 
@@ -216,23 +217,25 @@ $( document ).ready(function(){
 
 	$('.play-button').click(function(){
 
-		$('#userAnswer').removeAttr('readonly');
+		if ( gameMode != '' ) {
 
-		$('.play-button-container').fadeOut('fast' , function (){
+			$('#userAnswer').removeAttr('readonly');
 
-			// reset score every new game
-			score = 0.0000;
-			spamFlag = 0;
-			
-			start = 1;
-			// initialize game time
+			$('.play-button-container').fadeOut('fast' , function (){
 
-			$('.pause-button-container').fadeIn();
+				// reset score every new game
+				score = 0.0000;
+				spamFlag = 0;
+				
+				start = 1;
+				// initialize game time
 
-			gameStart( true );
+				$('.pause-button-container').fadeIn();
 
-		});
+				gameStart( true );
 
+			});
+		}
 	});
 
 	$('.pause-button').click( function (){

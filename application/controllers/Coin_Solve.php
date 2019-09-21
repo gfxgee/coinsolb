@@ -38,6 +38,8 @@ class Coin_Solve extends CI_Controller {
 
 			$user_referral_code = $this->coin_solve_model->get_user_referral_code($user_id);
 
+			$user = $this->ion_auth->user($this->ion_auth->get_user_id())->row();
+
 			if( $user_referral_code ) $total_referrals = $this->coin_solve_model->count_user_referrals( $user_referral_code);
 
 			else $total_referrals = 0;
@@ -52,6 +54,7 @@ class Coin_Solve extends CI_Controller {
 				'total_user_withdrawal_amount'	=> $total_user_withdrawal_amount/10000,
 				'current_earnings_left'			=> ($total_points_earned-$total_user_withdrawal_amount)/10000,
 				'minimun_withdrawal'			=> 2,
+				'user_info'						=> $user,
 			);
 
 			$this->load->view('templates/header', $data);
@@ -108,11 +111,7 @@ class Coin_Solve extends CI_Controller {
 
 			}
 
-			$data = array(
-				'page_title'	=> 'page_play'
-			);
-
-			$this->render_page('play' , 'page_play');
+			$this->render_page('play' , 'CoinSolb - Play');
 		}
 		else
 		{
@@ -125,11 +124,7 @@ class Coin_Solve extends CI_Controller {
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
-			$data = array(
-				'page_title'	=> 'page_account'
-			);
-
-			$this->render_page( 'account' , 'page_account');
+			$this->render_page( 'account' , 'CoinSolb - User Account');
 		}
 		else
 		{
@@ -142,7 +137,7 @@ class Coin_Solve extends CI_Controller {
 	{
 		if ( $this->ion_auth->logged_in() ) 
 		{
-			$this->render_page( 'dashboard' , 'page_dashboard');
+			$this->render_page( 'dashboard' , 'CoinSolb - Dashboard');
 		}
 		else
 		{
@@ -322,7 +317,7 @@ class Coin_Solve extends CI_Controller {
 
 			}
 
-			else $this->render_page('withdraw' , 'page_withdraw');
+			else $this->render_page('withdraw' , 'CoinSolb - Withdrawals');
 
 		}
 

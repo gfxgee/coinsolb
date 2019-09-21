@@ -116,7 +116,12 @@ class Auth extends CI_Controller
 				'type' => 'password',
 			];
 
-			$this->load->view('templates/header');
+			$data = array (
+				'page_title'	=> 'CoinSolb - Login',
+				'page'			=> 'login'
+			);
+
+			$this->load->view('templates/header' , $data );
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'login', $this->data);
 			$this->load->view('templates/footer');
 		}

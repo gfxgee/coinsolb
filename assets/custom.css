@@ -15,12 +15,6 @@ a {
 	font-size: 14px;
 }
 
-#loginNav {
-	background-color: #FEFEFE;
-}
-#loginNav .navbar-nav .nav-item .nav-link {
-	font-size: .9rem;
-}
 .counter {
 	font-size: 50px;
 	color: #F4623A;
@@ -75,7 +69,13 @@ a {
 	border-top-right-radius: 20px !important; 
 	border-top-left-radius: 20px !important; 
 }
-
+.rounded-10 {
+	border-radius: 10px !important;
+}
+.rounded-top-10 {
+	border-top-right-radius: 10px !important; 
+	border-top-left-radius: 10px !important; 
+}
 
 
 /* Custom Button */
@@ -113,7 +113,12 @@ a {
 .bg-highlights {
 	background-color: #1b9691; 
 }
-
+.bg-yellow-color {
+	background-color: #F7B32D; 
+}
+.bg-tertiary-color {
+	background-color: #0D2F46;
+}
 
 
 
@@ -138,7 +143,9 @@ a {
 .text-yellow-highlights {
 	color: #F7B32D;
 }
-
+.text-custom-muted {
+	color: #9ba7b0;
+}
 
 
 /* custom badge */
@@ -150,6 +157,9 @@ a {
 
 
 /* Font Theme Defaults */
+.fs-100 {
+	font-size: 100px;
+}
 .fs-50 {
 	font-size: 50px;
 }
@@ -192,24 +202,20 @@ a {
 .pb-60 {
 	padding-bottom: 60px;
 }
+.pr-80 {
+	padding-right: 80px !important;
+}
 
 
 
 /* Banner Styling */
-/*#banner-section:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-    background-image: url(images/300ppi/grid-circle.png);
-    background-repeat: no-repeat;
-    background-position: 0% 80%;
-    background-size: 40%;
-}*/
+#banner-section {
+	background-image: url(images/300ppi/grid-circle.png);
+	background-size: 45%;
+	background-repeat: no-repeat;
+    background-position: 0px 140px;
+}
+
 .banner-button {
 	background-color: #F7B32D;
 	text-decoration: none !important;
@@ -219,6 +225,16 @@ a {
 }
 .banner-image {
 	width: 100%;
+}
+
+
+
+/* about section */
+#about-section {
+	background-image: url(images/300ppi/grid-circle.png);
+	background-size: 45%;
+	background-repeat: no-repeat;
+    background-position: 90% 100px;
 }
 
 
@@ -233,8 +249,14 @@ a {
 
 
 
-
 /* Features Section */
+#features-section {
+	background-image: url(images/300ppi/grid-circle.png);
+	background-size: 45%;
+	background-repeat: no-repeat;
+    background-position: -30% 350px;
+}
+
 .link-primary {
 	color: #F7B32D;
 	text-decoration: none;
@@ -248,6 +270,9 @@ a {
 .features-divider {
 	border-color: #213e53;
 }
+
+
+
 
 /* Footer */
 .footer-links {
@@ -285,6 +310,26 @@ a {
 
 
 
+
+
+/* dashboard tabs */
+.dashboard-tabs {
+	background-color: transparent;
+	border: 1px solid #F7B32D;
+	color: #F7B32D;
+
+  	transition: 0.4s;
+  	-webkit-transition:0.4s;
+  	-moz-transition:0.4s;
+  	-o-transition: 0.4s;
+
+}
+.dashboard-tabs:hover,
+.dashboard-tabs.active {
+	color: #061A28 !important;
+	background-color: #F7B32D !important;
+	border: 1px solid #F7B32D !important;
+}
 
 
 @font-face {
