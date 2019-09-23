@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Coin_Solve extends CI_Controller {
+class Coin_solve extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
