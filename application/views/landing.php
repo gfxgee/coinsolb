@@ -1,7 +1,7 @@
 <!-- banner -->
-<section id="banner-section" class="bg-main-color">
+<section id="banner-section" class="bg-main-color d-flex align-items-center h-100">
 	<div class="container">
-		<div class="row">
+		<div class="row mt-80">
 
 			<div class="col col-lg-6 col-sm-12 text-white py-60">
 				<h1 class="banner-headline fs-60">

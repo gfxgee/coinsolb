@@ -585,8 +585,12 @@ class Auth extends CI_Controller
 
 			$this->data['referral_code_from_link'] = $referral_code;
 
+			$data = array (
+				'page'			=> 'register',
+				'page_title'	=> 'CoinSolb - Register' 
+			);
 
-			$this->load->view('templates/header');
+			$this->load->view('templates/header' , $data);
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
 			$this->load->view('templates/footer');
 		}

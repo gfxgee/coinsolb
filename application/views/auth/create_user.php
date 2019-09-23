@@ -1,61 +1,62 @@
-  <!-- About Section -->
-  <section class="page-section py-5" id="login-section">
+  
+  <section class="bg-main-color d-flex align-items-center py-60" id="login-section">
     <div class="container">
-      <div class="row justify-content-left">
+      <div class="row mt-50 justify-content-left">
         <div class="col-lg-6 text-left">
-        <h1 class="text-uppercase font-weight-bold"><?php echo lang('create_user_heading');?></h1>
+        <h1 class="text-white font-weight-bold mb-3"><?php echo lang('create_user_heading');?></h1>
 
         <div id="infoMessage"><?php echo $message;?></div>
 
-        <small><?php echo lang('create_user_subheading');?></small>
-
         <?php echo form_open("register");?>
 
-          <div class="form-group mt-5">
-            <label for="referral_code">Enter Referral Code:</label>
-            <input type="text" name="referral_code" class="form-control" id="referral_code" aria-describedby="emailHelp" placeholder="Enter Referral Code" value="<?php echo $referral_code_from_link; ?>">
+          <div class="form-group">
+            <input type="text" name="first_name" class="form-control main-input" id="first_name" aria-describedby="emailHelp" placeholder="Enter First Name">
           </div>
 
           <div class="form-group">
-            <label for="first_name">First Name</label>
-            <input type="text" name="first_name" class="form-control" id="first_name" aria-describedby="emailHelp" placeholder="Enter First Name">
-          </div>
-
-          <div class="form-group">
-            <label for="last_name">Last Name</label>
-            <input type="text" name="last_name" class="form-control" id="last_name" aria-describedby="emailHelp" placeholder="Enter Last Name">
+            <input type="text" name="last_name" class="form-control main-input" id="last_name" aria-describedby="emailHelp" placeholder="Enter Last Name">
           </div>
           
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+            <input type="email" name="email" class="form-control main-input" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
           </div>
       
           <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            <input type="password" name="password" class="form-control main-input" id="password" placeholder="Password">
           </div>
 
           <div class="form-group">
-            <label for="password_confirm">Confirm Password</label>
-            <input type="password" name="password_confirm" class="form-control" id="password_confirm" placeholder="Confirm Password">
+            <input type="password" name="password_confirm" class="form-control main-input" id="password_confirm" placeholder="Confirm Password">
+          </div>
+          <p class="text-white">Got a Referral code? Type your referral code below (Optional)</p>
+          <div class="form-group">
+            <input type="text" name="referral_code" class="form-control main-input" id="referral_code" aria-describedby="emailHelp" placeholder="Enter Referral Code" value="<?php echo $referral_code_from_link; ?>">
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+            <label class="form-check-label text-white" for="defaultCheck1">
+              I accept the <a class="link-primary fs-16" href="<?php echo base_url('term-condition'); ?>">Terms and Conditions</a>.
+            </label>
+          </div>
+          
+          <div class="row mt-3">
+            <div class="col col-lg-4">
+              <button type="submit" name="create_user_submit_btn" class="btn banner-button rounded-100 px-5">Register</button>
+            </div>
+            <div class="col d-flex align-items-center">
+              <p class="m-0 text-white">Have an account? <a class="link-primary fs-16" href="<?php echo base_url('login'); ?>">Login Here</a></p>
+            </div>
           </div>
 
-          <p>
-            <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-            <?php echo lang('login_remember_label', 'remember');?>
-          </p>
-
-          <button type="submit" name="create_user_submit_btn" class="btn btn-light btn-xl">Register</button>
+        
 
         <?php echo form_close();?>
         <br>
-        <p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
         </div>
 
         <div class="col-lg-6 text-left">
-
-        </div>
+          <img src="<?php echo base_url() ?>assets/images/300ppi/grid-circle.png" alt="" width="100%">
+        </div>  
       </div>
     </div>
   </section>

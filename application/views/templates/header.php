@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body id="<?php if(isset($page)) echo $page.'_page'; ?>">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-main-color" id="main-nav">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-main-color" id="main-nav">
     <div class="container">
       <a class="navbar-brand" href="<?php echo base_url(); ?>">
         <img id="navbar-logo" src="<?php echo base_url(); ?>assets/images/300ppi/logo.png" width="20%" alt="">
@@ -61,7 +61,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger scroll" href="#faq-section">FAQ's</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger scroll" href="<?php echo base_url('contact'); ?>">Contact</a>
           </li>
@@ -77,7 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php } else { ?>
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('/'); ?>">Home</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url(); ?>">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="<?php echo base_url('about-us'); ?>">About</a>
@@ -85,16 +84,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#faq-section">FAQ's</a>
           </li>
-          <?php if( !$this->ion_auth->logged_in()) { ?>
           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger scroll" href="<?php echo base_url('contact'); ?>">Contact</a>
+          </li>
+          <?php if( !$this->ion_auth->logged_in()) { ?>
+          <li class="nav-item <?php echo ( $page == 'register') ? 'active' : ''; ?>">
             <a class="nav-link js-scroll-trigger" href="<?php echo base_url('register'); ?>">Register</a>
           </li>
           <?php } ?>
-          <li class="nav-item">
-            <?php if($this->ion_auth->logged_in()) { ?><a class="nav-link js-scroll-trigger play-now-button" href="<?php echo base_url('logout'); ?>">Logout</a> <?php } else { ?><a class="nav-link js-scroll-trigger play-now-button" href="<?php echo base_url('login'); ?>">Login</a> <?php } ?>
+          <li class="nav-item <?php echo ( $page == 'login') ? 'active' : ''; ?>">
+            <?php if($this->ion_auth->logged_in()) { ?><a class="nav-link js-scroll-trigger play-now-button" href="<?php echo base_url('logout'); ?>">Logout</a> <?php } else { ?><a class="nav-link js-scroll-trigger play-now-button" href="<?php echo base_url('login'); ?>">Login</a> <?php } }?>
           </li>
         </ul>
-      <?php } } ?>
+      <?php } ?>
       </div>
     </div>
   </nav>
