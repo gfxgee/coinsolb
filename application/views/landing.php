@@ -1,9 +1,9 @@
 <!-- banner -->
-<section id="banner-section" class="bg-main-color d-flex align-items-center h-100">
+<section id="banner-section" class="bg-main-color d-flex align-items-center py-100">
 	<div class="container">
-		<div class="row mt-80">
+		<div class="row">
 
-			<div class="col col-lg-6 col-sm-12 text-white py-60">
+			<div class="col col-lg-6 col-sm-12 text-white">
 				<h1 class="banner-headline fs-60">
 					<span class="text-highlights">Earn</span> while improving your 
 					<span class="text-highlights">Math skills</span> with us.
@@ -12,7 +12,7 @@
 				<a href="<?php echo base_url('register'); ?>" class="btn mt-3 text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button">Get Started</a>
 			</div>
 
-			<div class="col-6 col-lg-6 col-sm-12 d-flex justify-content-center py-60">
+			<div class="col-6 col-lg-6 col-sm-12 d-flex justify-content-center">
 				<img class="banner-image" src="<?php echo base_url(); ?>assets/images/banner-image.png" alt="Coin Solb Banner Image"/>
 			</div>
 

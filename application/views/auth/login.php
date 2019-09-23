@@ -1,7 +1,7 @@
 
-  <section class="bg-main-color d-flex align-items-center h-100" id="login-section">
+  <section class="bg-main-color d-flex align-items-center py-100" id="login-section">
     <div class="container">
-      <div class="row mt-50 justify-content-left">
+      <div class="row justify-content-left">
         <div class="col-lg-6 text-left">
         <h4 class="text-white mb-4">Don't have an account yet? <a href="<?php echo base_url('register'); ?>" class="fs-22 link-primary">Register Here</a></h4>
         <h1 class="text-white font-weight-bold mb-3"><?php echo lang('login_heading');?></h1>

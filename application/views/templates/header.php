@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body id="<?php if(isset($page)) echo $page.'_page'; ?>">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-main-color" id="main-nav">
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-main-color" id="main-nav">
     <div class="container">
       <a class="navbar-brand" href="<?php echo base_url(); ?>">
         <img id="navbar-logo" src="<?php echo base_url(); ?>assets/images/300ppi/logo.png" width="20%" alt="">
