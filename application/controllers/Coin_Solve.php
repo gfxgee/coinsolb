@@ -20,6 +20,9 @@ class Coin_solve extends CI_Controller {
 	 */
 	public function index()
 	{	
+
+		date_default_timezone_set('Asia/Manila');
+		
 		$this->render_page('landing' , 'Earn while improving your Math Skills | Coinsolb');
 	}
 
