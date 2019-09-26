@@ -53,7 +53,7 @@ class Coin_solve extends CI_Controller {
 				'total_referrals'		=> $total_referrals,
 				'total_user_withdrawal_amount'	=> $total_user_withdrawal_amount/10000,
 				'current_earnings_left'			=> ($total_points_earned-$total_user_withdrawal_amount)/10000,
-				'minimun_withdrawal'			=> 0,
+				'minimun_withdrawal'			=> 2,
 				'user_info'						=> $user,
 				'replay_time_left'				=> $replay_time,
 			);
