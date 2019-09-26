@@ -65,63 +65,63 @@
 			  							<div class="account" id="account-details-gcash">
 											<div class="form-group">
 												<label for="account-name">Account Name</label>
-												<input type="text" name="account-name" class="form-control" id="account-name" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Account Holder Name">
+												<input type="text" name="account-name" class="form-control main-input" id="account-name" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Account Holder Name">
 											</div>
 											<div class="form-group">
 												<label for="phone-number">Phone Number</label>
-												<input type="text" name="phone-number" class="form-control" id="phone-number" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Phone Number">
+												<input type="text" name="phone-number" class="form-control main-input" id="phone-number" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Phone Number">
 											</div>
 										</div>
 
 										<div class="account" id="account-details-e-load" style="display: none;">
 											<div class="form-group">
 												<label for="phone-number">Phone Number</label>
-												<input type="text" name="phone-number" class="form-control" id="phone-number" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Phone Number">
+												<input type="text" name="phone-number" class="form-control main-input" id="phone-number" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Phone Number">
 											</div>
 										</div>
 
 										<div class="account" id="account-details-steam-wallet" style="display: none;">
 											<div class="form-group">
 												<label for="account-name">Account Name</label>
-												<input type="text" name="account-name" class="form-control" id="account-name" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Account Holder Name">
+												<input type="text" name="account-name" class="form-control main-input" id="account-name" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Account Holder Name">
 											</div>
 											<div class="form-group">
 												<label for="phone-number">Phone Number</label>
-												<input type="text" name="phone-number" class="form-control" id="phone-number" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Phone Number">
+												<input type="text" name="phone-number" class="form-control main-input" id="phone-number" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Phone Number">
 											</div>
 										</div>
 
 										<div class="account" id="account-details-palawan" style="display: none;">
 											<div class="form-group">
 												<label for="first-name">Enter First Name</label>
-												<input type="text" name="first-name" class="form-control" id="first-name" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="First Name">
+												<input type="text" name="first-name" class="form-control main-input" id="first-name" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="First Name">
 											</div>
 											<div class="form-group">
 												<label for="middle-initial">Enter Middle Initial</label>
-												<input type="text" name="middle-initial" class="form-control" id="middle-initial" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Middle Initial">
+												<input type="text" name="middle-initial" class="form-control main-input" id="middle-initial" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Middle Initial">
 											</div>
 											<div class="form-group">
 												<label for="last-name">Enter Last Name</label>
-												<input type="text" name="last-name" class="form-control" id="last-name" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Last Name">
+												<input type="text" name="last-name" class="form-control main-input" id="last-name" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Last Name">
 											</div>
 											<div class="form-group">
 												<label for="full-address">Enter Full Address</label>
-												<input type="text" name="full-address" class="form-control" id="full-address" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Full Address">
+												<input type="text" name="full-address" class="form-control main-input" id="full-address" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Full Address">
 											</div>
 											<div class="form-group">
 												<label for="phone-number">Enter Phone Number</label>
-												<input type="text" name="phone-number" class="form-control" id="phone-number" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Phone Number">
+												<input type="text" name="phone-number" class="form-control main-input" id="phone-number" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Phone Number">
 											</div>
 										</div>
 
 				
 										<div class="form-group">
 											<label for="withdrawal-amount">Amount</label>
-											<input type="text" name="withdrawal-amount" class="form-control" id="withdrawal-amount" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Enter amount to withdraw:">
+											<input type="text" name="withdrawal-amount" class="form-control main-input" id="withdrawal-amount" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Enter amount to withdraw:">
 											<small class="text-muted">Please enter amount in dollar ($) currency.</small>
 										</div>
 
-										<button type="submit" class="btn btn-primary" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?>>Withdraw</button>
+										<button type="submit" class="btn banner-button rounded-100" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?>>Withdraw</button>
 									</form>
 								</div>
 							</div>

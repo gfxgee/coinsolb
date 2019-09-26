@@ -48,7 +48,7 @@
 							<div class="dropdown-divider my-4"></div>
 							<h5 class="m-0 mt-2 text-highlights">Referral Status</h5>
 							<div class=" my-4"></div>
-							<table id="referrals-table" class="table table-bordered" style="width:100%"></table>
+							<table id="referrals-table" class="table table-borderless" style="width:100%"></table>
 						</div>
 					</div>
 				

@@ -24,7 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="<?php echo base_url(); ?>assets/custom.css" rel="stylesheet">
   
   <!-- DataTable css -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/data-tables/datatables.min.css"/>
+
 
   <!-- Game theme -->
   <link href="<?php echo base_url(); ?>assets/game_library/style.css" rel="stylesheet">

@@ -51,7 +51,7 @@
 							<div class="dropdown-divider my-4"></div>
 							<h5 class="m-0 mt-2">History</h5>
 							<div class=" my-4"></div>
-							<table id="withdrawals-table" class="table table-bordered" style="width:100%"></table>
+							<table id="withdrawals-table" class="table table-borderless" style="width:100%"></table>
 
 						</div>
 					</div>

@@ -47,7 +47,7 @@
 							<div class="dropdown-divider my-4"></div>
 							<h5 class="m-0 mt-2 text-highlights">History</h5>
 							<div class=" my-4"></div>
-							<table id="score-table" class="table table-bordered" style="width:100%"></table>
+							<table id="score-table" class="table table-borderless data-table-tables" style="width:100%"></table>
 						</div>
 					</div>
 				
