@@ -23,7 +23,7 @@
 
 		</div>
 		
-		<?php if ($replay_time_left >= 3600 ) { ?>
+		<?php if (isset($replay_time_left) && $replay_time_left >= 3600 ) { ?>
 
 		<div class="row bg-secondary-color" id="select-game">
 			<div class="col-lg-10 m-auto p-5 text-center text-white">
