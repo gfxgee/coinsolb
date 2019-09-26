@@ -26,14 +26,14 @@ function generateEquation (){
 	secondNumber = Math.floor(Math.random() * 10);
 
 	// validate number for to avoid negative value
-	if ( firstNumber < secondNumber ) {
+	if ( firstNumber <= secondNumber ) {
 		holder = firstNumber;
 		finalAnswer = secondNumber;
 		secondNumber = holder;
 	}
 
 	// prohibits 0 value on the second number
-	if ( secondNumber < 1 ) {
+	if ( secondNumber <= 1 ) {
 		secondNumber++;
 	}
 
@@ -107,21 +107,18 @@ function gameOver () {
 	start = 0;
 
 	// save result to user database
-	if ( spamFlag < 1 ) {
-		
-		$.post('coin_solve/save_points_details' , { score : score , points_origin : 'App Game' } , function ( result ) {});	
-
-	}
+	$.post('coin_solve/save_points_details' , { score : score , points_origin : 'App Game' } , function ( result ) {});	
 
 
 	if ( spamFlag > 0 ) {
 
 		// reset game for spamming
 		score = 0.0000;
+		$('.play-area').html('<h5 class="mt-3 text-danger"><strong>Game Over!</strong><br>You scored '+score+'points for spamming the game. You can play again after an hour.</h5>');
 
 	}
 
-	$('.play-area').html('<h5 class="mt-3"><strong>Game Over!</strong><br>You scored</h5><h4 class="m-0 points fs-70 text-yellow-highlights">'+score+'</h4><h5>points</h5>');
+	else $('.play-area').html('<h5 class="mt-3"><strong>Game Over!</strong><br>You scored</h5><h4 class="m-0 points fs-70 text-yellow-highlights">'+score+'</h4><h5>points</h5>');
 
 	$('.pause-button-container').fadeOut();
 	$('.replay-button-container').fadeIn();

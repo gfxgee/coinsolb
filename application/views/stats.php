@@ -30,35 +30,27 @@
 
 				<div class="tab-content mt-5 pb-60" id="pills-tabContent">
 
-					<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">						
+					<div class="tab-pane fade show active" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab">						
 						<div class="col-lg-12 p-0 text-left">
 							<div class="row p-0 px-3"> 
 								<div class="col-lg-4 p-0 m-0 text-left ">
-									<h6 class="mb-2 text-custom-muted">Full Name</h6>
-									<h3 class="mt-2"><?php echo $user_info->first_name . ' ' . $user_info->last_name; ?></span></h3>
+									<h6 class="mb-2 text-custom-muted">Current Earnings</h6>
+									<h2 class="">$<span><?php echo $current_earnings_left; ?></span></h2>
+									<a href="<?php echo base_url('/withdraw'); ?>" class="link-primary">Withdraw Now</a>
 								</div>
-								<div class="col-lg-8 p-0">
-									<h6 class="mb-2 text-custom-muted">Referral Code</h6>
-									<h3 class="mt-2"><?php echo $user_referral_code; ?></h3>
+								<div class="col-lg-4 p-0">
+									<h6 class="mb-2 text-custom-muted">Total Points Earned</h6>
+									<h2 class=""><?php echo $total_score; ?></h2>
 								</div>
-							</div>
-
-							<div class="row p-0 px-3 mt-4"> 
-								<div class="col-lg-4 p-0 m-0 text-left ">
-									<h6 class="mb-2 text-custom-muted">Email Address</h6>
-									<h3 class="mt-2"><?php echo $user_info->email; ?></h3>
-								</div>
-								<div class="col-lg-8 p-0">
-									<h6 class="mb-2 text-custom-muted">Referral Link</h6>
-									<a class="fs-22 link-primary" href="<?php echo base_url('/register/').$user_referral_code; ?>"><?php echo base_url('/register/').$user_referral_code; ?></a>
+								<div class="col-lg-4 p-0 ">
+									<h6 class="mb-2 text-custom-muted">Points from Referrals</h6>
+									<h2 class=""><?php echo $total_referral_score; ?></h2>
+									<a href="<?php echo base_url('/discussion'); ?>" class="link-primary">Read Discussions</a>
 								</div>
 							</div>
-								
-							<a href="<?php echo base_url('account'); ?>" class="btn mt-3 text-custom-secondary px-3 py-1 rounded-100 banner-button">Edit Informations</a>
-
 						</div>
 					</div>
-
+				
 				</div>
 			</div>
 		</div>

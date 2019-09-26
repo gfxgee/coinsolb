@@ -30,35 +30,27 @@
 
 				<div class="tab-content mt-5 pb-60" id="pills-tabContent">
 
-					<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">						
+					
+					<div class="tab-pane fade show active" id="pills-points" role="tabpanel" aria-labelledby="pills-points-tab">
 						<div class="col-lg-12 p-0 text-left">
-							<div class="row p-0 px-3"> 
-								<div class="col-lg-4 p-0 m-0 text-left ">
-									<h6 class="mb-2 text-custom-muted">Full Name</h6>
-									<h3 class="mt-2"><?php echo $user_info->first_name . ' ' . $user_info->last_name; ?></span></h3>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+							<div class="row p-3"> 
+								<div class="col-lg-3 p-0 pt-2">
+									<h6 class="text-custom-muted">Current Points</h6>
+									<h2 class="pt-2"><?php echo $current_earnings_left*10000; ?></h2>
 								</div>
-								<div class="col-lg-8 p-0">
-									<h6 class="mb-2 text-custom-muted">Referral Code</h6>
-									<h3 class="mt-2"><?php echo $user_referral_code; ?></h3>
-								</div>
-							</div>
-
-							<div class="row p-0 px-3 mt-4"> 
-								<div class="col-lg-4 p-0 m-0 text-left ">
-									<h6 class="mb-2 text-custom-muted">Email Address</h6>
-									<h3 class="mt-2"><?php echo $user_info->email; ?></h3>
-								</div>
-								<div class="col-lg-8 p-0">
-									<h6 class="mb-2 text-custom-muted">Referral Link</h6>
-									<a class="fs-22 link-primary" href="<?php echo base_url('/register/').$user_referral_code; ?>"><?php echo base_url('/register/').$user_referral_code; ?></a>
+								<div class="col-lg-3 p-0 pt-2">
+									<h6 class="text-custom-muted">Total Points Earned</h6>
+									<h2 class="pt-2"><?php echo $total_score; ?></h2>
 								</div>
 							</div>
-								
-							<a href="<?php echo base_url('account'); ?>" class="btn mt-3 text-custom-secondary px-3 py-1 rounded-100 banner-button">Edit Informations</a>
-
+							<div class="dropdown-divider my-4"></div>
+							<h5 class="m-0 mt-2 text-highlights">History</h5>
+							<div class=" my-4"></div>
+							<table id="score-table" class="table table-bordered" style="width:100%"></table>
 						</div>
 					</div>
-
+				
 				</div>
 			</div>
 		</div>

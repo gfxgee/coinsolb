@@ -5,7 +5,16 @@
         <div class="col-lg-6 text-left">
         <h1 class="text-white font-weight-bold mb-3"><?php echo lang('create_user_heading');?></h1>
 
-        <div id="infoMessage"><?php echo $message;?></div>
+        <?php if ( $message ) { ?>      
+  
+        <div class="alert alert-custom-danger alert-dismissible fade show" role="alert">
+          <?php echo $message;?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+       <?php } ?>
 
         <?php echo form_open("register");?>
 

@@ -215,6 +215,26 @@ a {
 }
 
 
+
+/* Custom alert */
+.alert-custom-danger {
+	color: red;
+	border-color: red;
+}
+.alert-custom-danger p {
+	margin-bottom: 0px;
+}
+.alert-custom-danger .close {
+	color: red;
+	text-shadow: none;
+	opacity: 1;
+}
+.alert-custom-danger .close:hover {
+	opacity: .5;
+}
+
+
+
 /* Custom Input */
 .main-input,
 .main-input:active,
@@ -226,6 +246,7 @@ a {
     outline: none;
     color: white;
 }
+
 
 
 /* Custom Margin */

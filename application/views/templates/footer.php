@@ -1,4 +1,5 @@
 
+
   <!-- Footer -->
   <footer class="bg-footer-color pt-60 pb-30">
     <div class="container">
@@ -55,6 +56,29 @@
   
   <!-- Load custom javascripts -->
   <script src="<?php echo base_url(); ?>assets/custom.js"></script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){ 
+      var time_left = <?php echo (isset($replay_time_left)) ? 3600 - $replay_time_left : 0; ?>;
+      var minutes, seconds;
+      var time_run = setInterval ( function () { 
+        minutes = Math.floor( time_left / 60 );
+        seconds = time_left - (minutes*60);
+        
+        if ( minutes > 0 ) $('.running-time').text( minutes + ' : ' + seconds );
+
+        else $('.running-time').text( seconds );
+
+        time_left--; 
+
+        if ( time_left == 0 ) {
+          location.reload();
+        }
+
+      } , 1000);
+    });
+  </script>
 
 </body>
 

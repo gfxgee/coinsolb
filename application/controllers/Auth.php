@@ -512,13 +512,10 @@ class Auth extends CI_Controller
 				'last_name' => $this->input->post('last_name'),
 				'company' => $this->input->post('company'),
 				'phone' => $this->input->post('phone'),
+				'referral_code' => $this->input->post('referral_code'),
 			];
 		}
 
-		if ($this->input->post('referral_code')) {
-
-			$additional_data['referral_code'] = $this->input->post('referral_code');
-		}
 
 		if ($this->form_validation->run() === TRUE && $this->ion_auth->register($identity, $password, $email, $additional_data))
 		{
@@ -526,7 +523,10 @@ class Auth extends CI_Controller
 			// check to see if we are creating the user
 			// redirect them back to the admin page
 			$this->session->set_flashdata('message', $this->ion_auth->messages());
-			redirect("auth", 'refresh');
+
+			$this->ion_auth->login( $identity , $password );
+
+			redirect("dashboard", 'refresh');
 		}
 		else
 		{

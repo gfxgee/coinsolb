@@ -20,11 +20,11 @@ class Coin_solve extends CI_Controller {
 	 */
 	public function index()
 	{	
-		$this->render_page('landing' , 'CoinSolb - Earn while improving your Math Skills');
+		$this->render_page('landing' , 'Earn while improving your Math Skills | Coinsolb');
 	}
 
 
-	public function render_page ( $page , $page_title ) 
+	public function render_page ( $page , $page_title , $replay_time = 0) 
 	{
 		if (  $this->ion_auth->logged_in() ) {
 
@@ -55,6 +55,7 @@ class Coin_solve extends CI_Controller {
 				'current_earnings_left'			=> ($total_points_earned-$total_user_withdrawal_amount)/10000,
 				'minimun_withdrawal'			=> 2,
 				'user_info'						=> $user,
+				'replay_time_left'				=> $replay_time,
 			);
 
 			$this->load->view('templates/header', $data);
@@ -84,7 +85,6 @@ class Coin_solve extends CI_Controller {
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
-
 			$user_id = $this->ion_auth->get_user_id();
 			
 			$total_score_count = $this->coin_solve_model->get_user_scores_count($user_id , 'App Game');
@@ -111,7 +111,25 @@ class Coin_solve extends CI_Controller {
 
 			}
 
-			$this->render_page('play' , 'CoinSolb - Play');
+
+			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
+				
+				$this->render_page('play' , 'CoinSolb - Play');
+
+			} else {
+
+				date_default_timezone_set('Asia/Manila');
+
+				$current_time = strtotime(date('m/d/Y h:i:s a',time()));
+
+				$last_game = strtotime($this->coin_solve_model->get_latest_game_result( $user_id )->timestamp);
+
+				$offset = $current_time - $last_game;
+
+				$this->render_page('play' , 'Play | CoinSolb' , $offset );
+
+			}
+
 		}
 		else
 		{
@@ -124,7 +142,7 @@ class Coin_solve extends CI_Controller {
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
-			$this->render_page( 'account' , 'CoinSolb - User Account');
+			$this->render_page( 'account' , 'My Account | Coinsolb');
 		}
 		else
 		{
@@ -137,7 +155,7 @@ class Coin_solve extends CI_Controller {
 	{
 		if ( $this->ion_auth->logged_in() ) 
 		{
-			$this->render_page( 'dashboard' , 'CoinSolb - Dashboard');
+			$this->render_page( 'dashboard' , 'Dashboard | Coinsolb');
 		}
 		else
 		{
@@ -317,7 +335,47 @@ class Coin_solve extends CI_Controller {
 
 			}
 
-			else $this->render_page('withdraw' , 'CoinSolb - Withdrawals');
+			else $this->render_page('withdraw' , 'Withdraw | CoinSolb');
+
+		}
+
+	}
+
+	public function stats () {
+
+		if ( $this->ion_auth->logged_in() ) {
+
+			$this->render_page('stats' , 'User Statistics | Coinsolb');
+
+		}
+
+	}
+
+	public function points_history () {
+
+		if ( $this->ion_auth->logged_in() ) {
+
+			$this->render_page('points-history' , 'Points History | Coinsolb');
+
+		}
+
+	}
+
+	public function withdrawals () {
+
+		if ( $this->ion_auth->logged_in() ) {
+
+			$this->render_page('withdrawals' , 'Withdrawals | Coinsolb');
+
+		}
+
+	}
+
+	public function referrals () {
+
+		if ( $this->ion_auth->logged_in() ) {
+
+			$this->render_page('referrals' , 'Referrals | Coinsolb');
 
 		}
 

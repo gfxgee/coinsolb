@@ -22,6 +22,8 @@
 			</div>
 
 		</div>
+		
+		<?php if ($replay_time_left >= 3600 ) { ?>
 
 		<div class="row bg-secondary-color" id="select-game">
 			<div class="col-lg-10 m-auto p-5 text-center text-white">
@@ -69,7 +71,7 @@
 								<h2><span class="second-number text-highlights font-weight-bold fs-70">0</span></h2>
 							</div>
 						</div>
-						<input id="userAnswer" type="text" name="user-answer" class="mt-3 mb-3 bg-main-color text-yellow-highlights" readonly>
+						<input id="userAnswer" type="text" name="user-answer" class="mt-3 mb-3 bg-main-color text-yellow-highlights" readonly autocomplete="off">
 						<small class="font-weight-bold text-muted result-message">Press Enter after answering.</small>
 					</div>
 					<div class="col-lg-4 p-2 px-4 text-left">
@@ -92,6 +94,16 @@
 				</div>
 			</div>
 		</div>
+
+		<?php } else {?>
+
+		<div class="row bg-secondary-color" id="select-game">
+			<div class="col-lg-12 m-auto p-5 text-center text-white">
+				<h2 class="my-5">You have <span class="text-highlights"><span class="running-time">00:00</span> seconds</span> until you can play again.</h2>
+			</div>
+		</div>
+
+		<?php } ?>
 
 	</div>
 </section>
