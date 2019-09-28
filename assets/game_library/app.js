@@ -26,14 +26,12 @@ function generateEquation (){
 	secondNumber = Math.floor(Math.random() * 10);
 
 	// validate number for to avoid negative value
-	if ( gameMode != 'normal') {
-		
-		if ( firstNumber <= secondNumber ) {
-			holder = firstNumber;
-			finalAnswer = secondNumber;
-			secondNumber = holder;
-		}
+	if ( firstNumber <= secondNumber ) {
+		holder = firstNumber;
+		firstNumber = secondNumber;
+		secondNumber = holder;
 	}
+	
 	// prohibits 0 value on the second number
 	if ( secondNumber == 0 ) {
 		secondNumber++;

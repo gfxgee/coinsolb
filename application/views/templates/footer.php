@@ -15,9 +15,9 @@
           <ul class="footer-links mt-4">
             <li><a class="js-scroll-trigger scroll" href="#banner-section">Home</a></li>
             <li><a href="<?php echo base_url('about-us'); ?>">About</a></li>
-            <li><a href="">FAQ's</a></li>
-            <li><a href="">Discussions</a></li>
-            <li><a href="">Contact Us</a></li>
+            <li><a href="<?php echo base_url('faq'); ?>">FAQ's</a></li>
+            <li><a href="<?php echo base_url('discussions'); ?>">Discussions</a></li>
+            <li><a href="<?php echo base_url('contact'); ?>">Contact Us</a></li>
           </ul>
         </div>
 

@@ -18,12 +18,16 @@ class Coin_solve extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function meta_title_separator() {
+
+		return '-';
+
+	}
+
 	public function index()
 	{	
-
-		date_default_timezone_set('Asia/Manila');
-		
-		$this->render_page('landing' , 'Earn while improving your Math Skills | Coinsolb');
+		$this->render_page('landing' , 'Earn while improving your Math Skills '.$this->meta_title_separator().' Coinsolb');
 	}
 
 
@@ -117,19 +121,21 @@ class Coin_solve extends CI_Controller {
 
 			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
 				
-				$this->render_page('play' , 'CoinSolb - Play');
+				$this->render_page('play' , 'CoinSolb - Play' , 3600 );
 
 			} else {
 
-				date_default_timezone_set('Asia/Manila');
+				date_default_timezone_set("Asia/Manila");
 
-				$current_time = strtotime(date('m/d/Y h:i:s a',time()));
+				$current_date = new DateTime("now");
+
+				$current_time = $current_date->getTimestamp();
 
 				$last_game = strtotime($this->coin_solve_model->get_latest_game_result( $user_id )->timestamp);
 
 				$offset = $current_time - $last_game;
 
-				$this->render_page('play' , 'Play | CoinSolb' , $offset );
+				$this->render_page('play' , 'Play '.$this->meta_title_separator().' CoinSolb' , $offset );
 
 			}
 
@@ -145,7 +151,7 @@ class Coin_solve extends CI_Controller {
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
-			$this->render_page( 'account' , 'My Account | Coinsolb');
+			$this->render_page( 'account' , 'My Account '.$this->meta_title_separator().' Coinsolb');
 		}
 		else
 		{
@@ -158,7 +164,7 @@ class Coin_solve extends CI_Controller {
 	{
 		if ( $this->ion_auth->logged_in() ) 
 		{
-			$this->render_page( 'dashboard' , 'Dashboard | Coinsolb');
+			$this->render_page( 'dashboard' , 'Dashboard '.$this->meta_title_separator().' Coinsolb');
 		}
 		else
 		{
@@ -313,7 +319,24 @@ class Coin_solve extends CI_Controller {
 
 		if ( $this->ion_auth->logged_in() ) {
 
-			if ( $score == 0 && $points_origin == '' && $user_id == 0 ) {
+			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
+				
+				$offset = 3600;
+
+			} else {
+
+				date_default_timezone_set("Asia/Manila");
+
+				$current_date = new DateTime("now");
+
+				$current_time = $current_date->getTimestamp();
+
+				$last_game = strtotime($this->coin_solve_model->get_latest_game_result( $this->ion_auth->get_user_id() )->timestamp);
+
+				$offset = $current_time - $last_game;
+			}
+
+			if ( $score == 0 && $points_origin == '' && $user_id == 0 && $offset >= 3600 ) {
 				
 				$score = $this->input->post('score');
 				$points_origin = $this->input->post('points_origin');
@@ -338,7 +361,7 @@ class Coin_solve extends CI_Controller {
 
 			}
 
-			else $this->render_page('withdraw' , 'Withdraw | CoinSolb');
+			else $this->render_page('withdraw' , 'Withdraw '.$this->meta_title_separator().' CoinSolb');
 
 		}
 
@@ -348,7 +371,7 @@ class Coin_solve extends CI_Controller {
 
 		if ( $this->ion_auth->logged_in() ) {
 
-			$this->render_page('stats' , 'User Statistics | Coinsolb');
+			$this->render_page('stats' , 'User Statistics '.$this->meta_title_separator().' Coinsolb');
 
 		}
 
@@ -358,7 +381,7 @@ class Coin_solve extends CI_Controller {
 
 		if ( $this->ion_auth->logged_in() ) {
 
-			$this->render_page('points-history' , 'Points History | Coinsolb');
+			$this->render_page('points-history' , 'Points History '.$this->meta_title_separator().' Coinsolb');
 
 		}
 
@@ -368,7 +391,7 @@ class Coin_solve extends CI_Controller {
 
 		if ( $this->ion_auth->logged_in() ) {
 
-			$this->render_page('withdrawals' , 'Withdrawals | Coinsolb');
+			$this->render_page('withdrawals' , 'Withdrawals '.$this->meta_title_separator().' Coinsolb');
 
 		}
 
@@ -378,9 +401,27 @@ class Coin_solve extends CI_Controller {
 
 		if ( $this->ion_auth->logged_in() ) {
 
-			$this->render_page('referrals' , 'Referrals | Coinsolb');
+			$this->render_page('referrals' , 'Referrals '.$this->meta_title_separator().' Coinsolb');
 
 		}
+
+	}
+
+	public function about () {
+
+		$this->render_page('about' , 'About Coinsolb '.$this->meta_title_separator().' Coinsolb');
+
+	}
+
+	public function faq () {
+
+		$this->render_page('faq' , 'Frequently Asked Questions about Coinsolb '.$this->meta_title_separator().' Coinsolb');
+
+	}
+
+	public function contact () {
+
+		$this->render_page('contact' , 'How you can contact Coinsolb '.$this->meta_title_separator().' Coinsolb');
 
 	}
 }

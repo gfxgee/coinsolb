@@ -66,4 +66,4 @@
 	</div>
 </section>
 
-<?php $this->load->view('faq'); ?>
+<?php $this->load->view('templates/faq'); ?>

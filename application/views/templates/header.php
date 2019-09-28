@@ -41,15 +41,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-main-color" id="main-nav">
     <div class="container">
-      <a class="navbar-brand" href="<?php echo base_url(); ?>">
-        <img id="navbar-logo" src="<?php echo base_url(); ?>assets/images/300ppi/logo.png" width="20%" alt="">
+      <a class="navbar-brand p-0" href="<?php echo base_url(); ?>">
+        <img id="navbar-logo" src="<?php echo base_url(); ?>assets/images/300ppi/logo.png" width="200px;" alt="">
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <?php if ( isset($page)) { if ( $page == 'landing' ) { ?>
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link js-scroll-trigger scroll" href="#banner-section">Home</a>
           </li>
@@ -66,41 +66,61 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a class="nav-link js-scroll-trigger scroll" href="#faq-section">FAQ's</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger scroll" href="<?php echo base_url('contact'); ?>">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('contact'); ?>">Contact</a>
           </li>
           <?php if($this->ion_auth->logged_in()) {?>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger play-now-button" href="<?php echo base_url('dashboard'); ?>">Dashboard</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('dashboard'); ?>">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('logout'); ?>">Logout</a>
+          </li>
+        <?php } else { ?>
+          <li class="nav-item dropdown <?php echo ( $page == 'login' || $page == 'register') ? 'active' : ''; ?>">
+            <a class="nav-link dropdown-toggle login-button" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Login / Register
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="<?php echo base_url('login'); ?>">Login</a>
+              <a class="dropdown-item" href="<?php echo base_url('register'); ?>">Register</a>
+            </div>
           </li>
         <?php } ?>
-          <li class="nav-item">
-            <?php if($this->ion_auth->logged_in()) { ?><a class="nav-link js-scroll-trigger play-now-button" href="<?php echo base_url('logout'); ?>">Logout</a> <?php } else { ?><a class="nav-link js-scroll-trigger play-now-button" href="<?php echo base_url('login'); ?>">Login</a> <?php } ?>
-          </li>
         </ul>
       <?php } else { ?>
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="<?php echo base_url(); ?>">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?php echo ( $page == 'about') ? 'active' : ''; ?>">
             <a class="nav-link js-scroll-trigger" href="<?php echo base_url('about-us'); ?>">About</a>
           </li>
+          <li class="nav-item <?php echo ( $page == 'faq') ? 'active' : ''; ?>">
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('faq'); ?>">FAQ's</a>
+          </li>
+          <li class="nav-item <?php echo ( $page == 'contact') ? 'active' : ''; ?>">
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('contact'); ?>">Contact</a>
+          </li>
+          <?php if($this->ion_auth->logged_in()) {?>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#faq-section">FAQ's</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('dashboard'); ?>">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger scroll" href="<?php echo base_url('contact'); ?>">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('logout'); ?>">Logout</a>
           </li>
-          <?php if( !$this->ion_auth->logged_in()) { ?>
-          <li class="nav-item <?php echo ( $page == 'register') ? 'active' : ''; ?>">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('register'); ?>">Register</a>
-          </li>
+          <?php } else { ?>
+            <li class="nav-item dropdown <?php echo ( $page == 'login' || $page == 'register') ? 'active' : ''; ?>">
+              <a class="nav-link dropdown-toggle login-button" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login / Register
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item <?php echo ( $page == 'login') ? 'active' : ''; ?>" href="<?php echo base_url('login'); ?>">Login</a>
+                <a class="dropdown-item <?php echo ( $page == 'register') ? 'active' : ''; ?>" href="<?php echo base_url('register'); ?>">Register</a>
+              </div>
+            </li>
           <?php } ?>
-          <li class="nav-item <?php echo ( $page == 'login') ? 'active' : ''; ?>">
-            <?php if($this->ion_auth->logged_in()) { ?><a class="nav-link js-scroll-trigger play-now-button" href="<?php echo base_url('logout'); ?>">Logout</a> <?php } else { ?><a class="nav-link js-scroll-trigger play-now-button" href="<?php echo base_url('login'); ?>">Login</a> <?php } }?>
-          </li>
         </ul>
-      <?php } ?>
+      <?php } } ?>
       </div>
     </div>
   </nav>

@@ -135,27 +135,4 @@
 	</div>
 </section>
 
-<?php $this->load->view('faq'); ?>
-
-
-<section class="page-section h-100" id="withdraw">
-	<div class="container pt-5 pb-5">
-
-		<div class="row">
-
-			<div class="col-3 text-left p-4 bg-white">
-				<h3 class="text-left">Withdraw</h3>
-				<small class="mt-2">Here you can withdraw your earnings.</small>
-			</div>
-
-			<div class="col p-0 m-0 text-right ">
-				<p class="counter text-custom-orange">$<span><?php echo $current_earnings_left; ?></span></p>
-				<small>Current earnings. <a href="#" class="badge badge-custom-orange">Withdraw Now</a></small>
-			</div>
-
-		</div>
-
-		<div class="row bg-white">
-		</div>
-
-</section>
+<?php $this->load->view('templates/faq'); ?>

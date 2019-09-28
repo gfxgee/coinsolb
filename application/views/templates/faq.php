@@ -1,19 +1,10 @@
-<!-- about banner -->
-<section id="about-us-section" class="bg-main-color d-flex align-items-center py-100">
-	<div class="container">
-		<div class="row">
-
-			<div class="col col-lg-12 col-sm-12 text-white">
-				<h1 class="banner-headline fs-60">Frequently Asked Questions</h1>
-			</div>
-
-		</div>
-	</div>
-</section>
-
 <!-- Faqs section -->
 <section id="faq-section" class="bg-main-color">
 	<div class="container">
+		
+		<div class="col col-lg-12 col-sm-12 text-white pt-5">
+			<h2 class="banner-headline">Frequently Asked Questions</h2>
+		</div>
 
 		<div class="row pb-60">
 			
@@ -81,5 +72,3 @@
 		</div>
 	</div>
 </section>
-
-<?php $this->load->view('templates/users-count') ?>

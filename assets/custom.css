@@ -53,6 +53,32 @@ a {
 	color: #f7b32d;
 }
 
+#main-nav .login-button {
+	padding-left: 20px !important;
+    padding-right: 20px !important;
+    background: #122B3D;
+    border-radius: 100px;
+}
+#main-nav .dropdown-menu {
+    background: #122b3d;
+    border: 1px solid #122b3d;
+}
+
+#main-nav .dropdown-item:hover {
+	background-color: transparent;
+	color: #F7B32D;
+}
+#main-nav .active .dropdown-item {
+	color: white;
+}
+#main-nav .active .dropdown-item:hover,
+#main-nav .active .dropdown-item.active {
+	background-color: transparent;
+	color: #F7B32D;
+}
+
+
+
 
 /* Custom Border */
 .no-border {
@@ -213,6 +239,10 @@ a {
 .pr-80 {
 	padding-right: 80px !important;
 }
+.py-20 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
 
 
 
@@ -274,7 +304,7 @@ a {
 	text-decoration: none !important;
 }
 .banner-button:hover {
-	background-color: #ffa900;
+	background-color: white;
 }
 .banner-image {
 	width: 100%;
@@ -282,13 +312,26 @@ a {
 
 
 
-/* about section */
+/* about section and about page */
 #about-section {
 	background-image: url(images/300ppi/grid-circle.png);
 	background-size: 45%;
 	background-repeat: no-repeat;
     background-position: 90% 100px;
 }
+#about-us-section {
+	background-image: url(images/300ppi/grid-circle.png);
+	background-size: 45%;
+	background-repeat: no-repeat;
+    background-position: 0px 20px;
+}
+#about-details-section {
+	background-image: url(images/300ppi/grid-circle.png);
+	background-size: 45%;
+	background-repeat: no-repeat;
+    background-position: 50% 200px;
+}
+
 
 
 

@@ -98,7 +98,13 @@ class Coin_solve_model extends CI_Model {
 
 	public function record_game_details ( $score , $points_origin , $user_id) {
 
-		$query = "insert into game_details values('','$user_id', '$score' , CURRENT_TIMESTAMP , '$points_origin')";
+		date_default_timezone_set("Asia/Manila");
+
+		$current_date = new DateTime("now");
+
+		$current_date = date('Y-m-d H:i:s' , $current_date->getTimestamp());
+
+		$query = "insert into game_details values('','$user_id', '$score' , '$current_date' , '$points_origin')";
 		
 		$result = $this->db->query($query);
 
@@ -179,11 +185,17 @@ class Coin_solve_model extends CI_Model {
 
 	public function add_withdrawal ( $user_id , $data ) {
 
+		date_default_timezone_set("Asia/Manila");
+
+		$current_date = new DateTime("now");
+
+		$current_date = date('Y-m-d H:i:s' , $current_date->getTimestamp());
+
 		$amount = $data['withdrawal-amount']*10000;
 
 		$data = json_encode($data);
 
-		$query = "insert into withdrawals values('', '$amount' , CURRENT_TIMESTAMP , '$user_id' , '$data' , 'Pending')";
+		$query = "insert into withdrawals values('', '$amount' , '$current_date' , '$user_id' , '$data' , 'Pending')";
 		
 		$result = $this->db->query($query);
 

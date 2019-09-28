@@ -9,3 +9,9 @@
     text-align: center;
     outline: none;
 }
+
+#userAnswer::-webkit-input-placeholder {
+	color: white !important;
+	font-size: 16px !important;
+	margin: 0 !important;
+}

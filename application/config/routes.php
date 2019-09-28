@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] 		= 'coin_solve';
 $route['404_override'] 				= '';
 $route['translate_uri_dashes'] 		= FALSE;
+
 $route['play'] 						= 'coin_solve/play';
 $route['dashboard'] 				= 'coin_solve/dashboard';
 $route['account'] 					= 'coin_solve/account';
@@ -60,6 +61,9 @@ $route['stats'] 					= 'coin_solve/stats';
 $route['points'] 					= 'coin_solve/points_history';
 $route['withdrawals'] 				= 'coin_solve/withdrawals';
 $route['referrals'] 				= 'coin_solve/referrals';
+$route['about-us'] 					= 'coin_solve/about';
+$route['contact'] 					= 'coin_solve/contact';
+$route['faq'] 						= 'coin_solve/faq';
 $route['login']						= 'auth/login';
 $route['register']					= 'auth/create_user';
 $route['register/(:any)']			= 'auth/create_user/$1';

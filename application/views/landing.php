@@ -1,9 +1,8 @@
 <!-- banner -->
-<section id="banner-section" class="bg-main-color d-flex align-items-center py-100">
+<section id="banner-section" class="bg-main-color d-flex align-items-center">
 	<div class="container">
 		<div class="row">
-
-			<div class="col col-lg-6 col-sm-12 text-white">
+			<div class="col col-lg-6 col-sm-12 text-white  py-100">
 				<h1 class="banner-headline fs-60">
 					<span class="text-highlights">Earn</span> while improving your 
 					<span class="text-highlights">Math skills</span> with us.
@@ -12,8 +11,8 @@
 				<a href="<?php echo base_url('register'); ?>" class="btn mt-3 text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button">Get Started</a>
 			</div>
 
-			<div class="col-6 col-lg-6 col-sm-12 d-flex justify-content-center">
-				<img class="banner-image" src="<?php echo base_url(); ?>assets/images/banner-image.png" alt="Coin Solb Banner Image"/>
+			<div class="col-6 col-lg-6 col-sm-12 d-flex justify-content-center  py-100">
+				<img class="banner-image" src="<?php echo base_url(); ?>assets/images/banner-image.png" alt="Coin Solb Banner Image" width="100%"/>
 			</div>
 
 		</div>
@@ -50,7 +49,7 @@
 		</div>
 
 		<div class="row mt-5">
-			<div class="col col-lg-6">
+			<div class="col col-lg-6 col-sm-12">
 
 				<div class="card bg-secondary-color text-white rounded-20 no-border p-2">
 					<div class="card-body">
@@ -99,19 +98,19 @@
 				<h2 class="banner-headline">Our Accomplishments and<br><span class="text-highlights">What they say about us</span></h2>
 				<p class="pt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
 
-				<div class="row mt-5">
+				<div class="row">
 
-					<div class="col col-lg-4">
+					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">
 						<h6>Registered Users</h6>
 						<h2 class="text-highlights fs-50 mt-3">9,136</h2>
 					</div>
 
-					<div class="col col-lg-4">
+					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">
 						<h6>Total problems solved</h6>
 						<h2 class="text-highlights fs-50 mt-3">95,662</h2>
 					</div>
 
-					<div class="col col-lg-4">
+					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">
 						<h6>Total Paid ($)</h6>
 						<h2 class="text-highlights fs-50 mt-3">136</h2>
 					</div>
@@ -123,14 +122,14 @@
 		<hr class="features-divider"/>
 		<div class="row">
 
-			<div class="col col-lg-6 pt-30 pb-60">
+			<div class="col col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
 				<p class="fs-70 text-highlights p-0 m-0"><i class="fas fa-quote-left"></i></p>
 				<p class="font-italic text-white fs-20 ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
 				<p class="font-weight-bold text-white mt-4 fs-20">Tiffany Valdez</p>
 			</div>
 
 
-			<div class="col col-lg-6 pt-30 pb-60">
+			<div class="col col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
 				<p class="fs-70 text-highlights p-0 m-0"><i class="fas fa-quote-left"></i></p>
 				<p class="font-italic text-white fs-20 ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
 				<p class="font-weight-bold text-white mt-4 fs-20">Mark James</p>
@@ -140,18 +139,6 @@
 	</div>
 </section>
 
-<!-- User count section -->
-<section id="user-count-section" class="bg-highlights">
-	<div class="container">
-		<div class="row">
-			<div class="col col-lg-8 col-sm-12 text-white py-60">
-				<h2>Join <?php if(isset($user_count)) echo $user_count; ?>+ solvers who trust Coinsolb</h2>
-			</div>
-			<div class="col col-lg-4 col-sm-12 text-white py-60 d-flex justify-content-center">
-				<a href="<?php echo base_url('register'); ?>" class="btn text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button">Get Started</a>
-			</div>
-		</div>
-	</div>
-</section>
+<?php $this->load->view('templates/users-count') ?>
 
-<?php $this->load->view('faq'); ?>
+<?php $this->load->view('templates/faq'); ?>
