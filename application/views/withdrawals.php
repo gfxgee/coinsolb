@@ -32,11 +32,9 @@
 
 					<div class="tab-pane fade show active" id="pills-withdrawals" role="tabpanel" aria-labelledby="pills-withdrawals-tab">
 						<div class="col-lg-12 p-0 text-left">
-							<p>Minimum withdrawal for Paypal, Bitcoin, GCash, and for E-Load (TM-Globe-Smart) is $2 (Php 100).</p>
-							<p>For Steam Wallet, Mobile Legend Diamonds, and Palawan Express is $5 (Php 250).</p>
-							<p>The payments are made within 5 - 15 business days (Mon-Fri) right after the administrator checks your account.</p>
-							<p>There are no withdrawal fees upon requesting for a withdrawal. Everything you earn will be yours. No strings attached!</p>
-							<p>You may setup your payment accounts in <a class="link-primary" id="pills-withdrawals-tab" data-toggle="pill" href="#pills-withdrawals" role="tab" aria-controls="pills-withdrawals" aria-selected="false">My Wallet</a> page.</p>
+							<p class="card-text">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*51; ?>. </p>
+						    <p class="card-text">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
+							<p class="card-text">Minimum amount withdrawn on <span class="text-highlights">Palawan and Steam wallet</span>: $5 = ₱250.00.</p>
 							
 							<div class="row p-3">
 

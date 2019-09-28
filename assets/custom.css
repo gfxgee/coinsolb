@@ -49,6 +49,7 @@ a {
   	-moz-transition:0.4s;
   	-o-transition: 0.4s;
 }
+#main-nav a:hover,
 #main-nav .active a {
 	color: #f7b32d;
 }
@@ -243,6 +244,9 @@ a {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+.pb-100 {
+	padding-bottom: 100px;
+}
 
 
 
@@ -291,12 +295,12 @@ a {
 
 
 
-/* Banner Styling */
+/* Home Banner Styling */
 #banner-section {
-	background-image: url(images/300ppi/grid-circle.png);
-	background-size: 45%;
+	background-image: url(images/300ppi/home-grid-circle.png);
+	background-size: 100%;
 	background-repeat: no-repeat;
-    background-position: 0px 200px;
+    background-position: 0px -100px;
 }
 
 .banner-button {
@@ -325,12 +329,14 @@ a {
 	background-repeat: no-repeat;
     background-position: 0px 20px;
 }
+
 #about-details-section {
 	background-image: url(images/300ppi/grid-circle.png);
 	background-size: 45%;
 	background-repeat: no-repeat;
-    background-position: 50% 200px;
+    background-position: 50% 300px;
 }
+
 
 
 
@@ -460,6 +466,22 @@ a {
 	background-color: #F7B32D !important;
 	color: white !important;
 }
+
+
+
+/* Other Page overlay images */
+#faq-page-section,
+#contact-us-section,
+#about-us-section,
+#terms-conditions-section {
+	background-image: url(images/300ppi/double-grid-circle.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: 0px -120px;
+}
+
+
+
 
 
 

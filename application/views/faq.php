@@ -1,5 +1,5 @@
 <!-- about banner -->
-<section id="about-us-section" class="bg-main-color d-flex align-items-center py-100">
+<section id="faq-page-section" class="bg-main-color d-flex align-items-center py-100">
 	<div class="container">
 		<div class="row">
 
@@ -82,4 +82,4 @@
 	</div>
 </section>
 
-<?php $this->load->view('templates/users-count') ?>
+<?php if( !$this->ion_auth->logged_in()) { $this->load->view('templates/users-count'); } ?>

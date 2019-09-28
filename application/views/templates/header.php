@@ -5,11 +5,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148337774-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-148337774-1');
+  </script>
+
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
   <meta name="author" content="Coin Solb">
+
+  <meta property="og:title"              content="Coinsolb" />
+  <meta property="og:description"        content="Improve your math skills with Coinsolb! Your time will not be wasted becuase you earn points and improve your math skill while playing." />
+  <!-- <meta property="og:image"              content="<?php echo base_url(); ?>assets/images/banner.jpg" />  -->
+
+  <meta name="directory" content="public">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="solve, math problems, simple math, addition, substration, multiplication, division, earn, play, motive, time, coinsolb" name="keywords">
+  <meta content="Improve your math skills with Coinsolb! Your time will not be wasted becuase you earn points and improve your math skill while playing." name="description">
   
   <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/300ppi/favicon.png" sizes="32x32">
 
@@ -44,52 +62,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <a class="navbar-brand p-0" href="<?php echo base_url(); ?>">
         <img id="navbar-logo" src="<?php echo base_url(); ?>assets/images/300ppi/logo.png" width="200px;" alt="">
       </a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="text-white"><i class="fas fa-bars"></i></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <?php if ( isset($page)) { if ( $page == 'landing' ) { ?>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link js-scroll-trigger scroll" href="#banner-section">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger scroll" href="#about-section">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger scroll" href="#features-section">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger scroll" href="#accomplish-section">Accomplishments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger scroll" href="#faq-section">FAQ's</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('contact'); ?>">Contact</a>
-          </li>
-          <?php if($this->ion_auth->logged_in()) {?>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('dashboard'); ?>">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('logout'); ?>">Logout</a>
-          </li>
-        <?php } else { ?>
-          <li class="nav-item dropdown <?php echo ( $page == 'login' || $page == 'register') ? 'active' : ''; ?>">
-            <a class="nav-link dropdown-toggle login-button" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Login / Register
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="<?php echo base_url('login'); ?>">Login</a>
-              <a class="dropdown-item" href="<?php echo base_url('register'); ?>">Register</a>
-            </div>
-          </li>
-        <?php } ?>
-        </ul>
-      <?php } else { ?>
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
+          <li class="nav-item <?php echo ( $page == 'landing') ? 'active' : ''; ?>">
             <a class="nav-link js-scroll-trigger" href="<?php echo base_url(); ?>">Home</a>
           </li>
           <li class="nav-item <?php echo ( $page == 'about') ? 'active' : ''; ?>">
@@ -120,7 +98,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </li>
           <?php } ?>
         </ul>
-      <?php } } ?>
       </div>
     </div>
   </nav>

@@ -25,6 +25,7 @@ function generateEquation (){
 	firstNumber = Math.floor(Math.random() * 10);
 	secondNumber = Math.floor(Math.random() * 10);
 
+
 	// validate number for to avoid negative value
 	if ( firstNumber <= secondNumber ) {
 		holder = firstNumber;
@@ -115,7 +116,7 @@ function gameOver () {
 
 		// reset game for spamming
 		score = 0.0000;
-		$('.play-area').html('<h5 class="mt-3 text-danger"><strong>Game Over!</strong><br>You scored '+score+'points for spamming the game. You can play again after an hour.</h5>');
+		$('.play-area').html('<h5 class="mt-3 text-danger"><strong class="fs-22">Game Over!</strong></h5><br><p class="pt-30">You scored '+score+' points for spamming the game. You can play again after an hour.</p>');
 
 	}
 
@@ -229,6 +230,7 @@ $( document ).ready(function(){
 				// initialize game time
 
 				$('.pause-button-container').fadeIn();
+				$('#userAnswer').removeAttr('placeholder');
 
 				gameStart( true );
 
@@ -238,23 +240,7 @@ $( document ).ready(function(){
 
 	$('.pause-button').click( function (){
 
-		$(this).text('Resume');
-
-		if ( isPause ) {
-
-			$(this).text('Pause');
-
-			isPause = false;
-
-			$('#userAnswer').removeAttr('readonly');
-		}
-
-		else {
-
-			$('#userAnswer').attr('readonly' , '');
-
-			isPause = true;
-		}
+		location.reload();
 
 	});
 

@@ -64,6 +64,7 @@ $route['referrals'] 				= 'coin_solve/referrals';
 $route['about-us'] 					= 'coin_solve/about';
 $route['contact'] 					= 'coin_solve/contact';
 $route['faq'] 						= 'coin_solve/faq';
+$route['terms-conditions'] 			= 'coin_solve/terms_conditions';
 $route['login']						= 'auth/login';
 $route['register']					= 'auth/create_user';
 $route['register/(:any)']			= 'auth/create_user/$1';

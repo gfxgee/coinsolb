@@ -36,11 +36,13 @@
 
 							<div class="row">
 								<div class="col-4">
-									<div class="card bg-dark text-white mb-3">
+									<div class="card bg-main-color text-white mb-3">
 									  <div class="card-header">Select type of Payment</div>
 									  <div class="card-body">
-									    <h3 class="card-title text-custom-orange">Balance: $<span><?php echo $current_earnings_left; ?></span></h3>
-									    <small class="card-text">Your current balance $<?php echo $current_earnings_left; ?> converted to Pesos: <?php echo $current_earnings_left*51; ?>. Minimum amount withdrawn on GCash, E-Load and Razer Gold (for Mobile Legends, PUBG, Rules of survival and many more...) is $2 = ₱100. Minimum amount withdrawn on Palawan and Steam wallet: $5 = ₱250.00.</small>
+									    <h3 class="card-title text-highlights">Balance: $<span><?php echo $current_earnings_left; ?></span></h3>
+									    <p class="card-text fs-14">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*51; ?>. </p>
+									    <p class="card-text fs-14">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
+										<p class="card-text fs-14">Minimum amount withdrawn on <span class="text-highlights">Palawan and Steam wallet</span>: $5 = ₱250.00.</p>
 									    
 									<form id="withdraw_form" method="post" action="<?php echo base_url('/withdraw');?>">
 										<div class="form-group mt-4">

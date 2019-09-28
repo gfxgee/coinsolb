@@ -27,7 +27,7 @@ class Coin_solve extends CI_Controller {
 
 	public function index()
 	{	
-		$this->render_page('landing' , 'Earn while improving your Math Skills '.$this->meta_title_separator().' Coinsolb');
+		$this->render_page('landing' , 'Coinsolb '.$this->meta_title_separator().' Earn while improving your Math Skills');
 	}
 
 
@@ -134,6 +134,8 @@ class Coin_solve extends CI_Controller {
 				$last_game = strtotime($this->coin_solve_model->get_latest_game_result( $user_id )->timestamp);
 
 				$offset = $current_time - $last_game;
+
+				if ($this->ion_auth->is_admin()) $offset = 5000;
 
 				$this->render_page('play' , 'Play '.$this->meta_title_separator().' CoinSolb' , $offset );
 
@@ -422,6 +424,12 @@ class Coin_solve extends CI_Controller {
 	public function contact () {
 
 		$this->render_page('contact' , 'How you can contact Coinsolb '.$this->meta_title_separator().' Coinsolb');
+
+	}
+
+	public function terms_conditions() {
+
+		$this->render_page('terms-conditions' , 'Terms and Conditions '.$this->meta_title_separator().' Coinsolb');
 
 	}
 }

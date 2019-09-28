@@ -5,12 +5,12 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-4 pr-5">
+        <div class="col-12 col-lg-4 col-md-6 pr-5 pb-5">
           <a href="/"><img class="footer-logo" src="<?php echo base_url(); ?>assets/images/300ppi/logo.png"/></a>
           <p class="mt-4 text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
         </div>
 
-        <div class="col-2 pl-5">
+        <div class="col-12 col-lg-2 col-md-2 pb-5">
           <h6 class="font-weight-bold text-footer-header">Links</h6>
           <ul class="footer-links mt-4">
             <li><a class="js-scroll-trigger scroll" href="#banner-section">Home</a></li>
@@ -21,12 +21,12 @@
           </ul>
         </div>
 
-        <div class="col-3 pl-5">
+        <div class="col-12 col-lg-3 col-md-2 pb-5">
           <h6 class="font-weight-bold text-footer-header mb-4">Contacts</h6>
           <a class="text-white footer-contacts" href="mailto:coinsolbinfo@gmail.com">coinsolbinfo@gmail.com</a>
         </div>
 
-        <div class="col-2 pl-5">
+        <div class="col-12 col-lg-3 pb-5">
           <h6 class="font-weight-bold text-footer-header mb-4">Follow Us</h6>
           <a class="text-white footer-contacts" href=""><span style="font-size: 20px"><i class="fab fa-facebook-square"></i></span> &nbsp;&nbsp; CoinSolb</a>
         </div>
@@ -35,11 +35,11 @@
       <hr class="footer-divider mt-5">
 
       <div class="row">
-        <div class="col-6 text-left">
+        <div class="col-12 text-left">
           <p class="text-white">© 2019 Coinsolb &nbsp;&nbsp; | &nbsp;&nbsp; All Rights Reserved</p>
         </div>
-        <div class="col-6 text-right">
-          <p class="text-white"><a href="" class="footer-contacts">Terms & Conditions</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="" class="footer-contacts">Privacy</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="" class="footer-contacts">Cookies</a></p>
+        <div class="col-12 text-right">
+          <p class="text-white"><a href="<?php echo base_url('terms-conditions'); ?>" class="footer-contacts">Terms & Conditions</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="" class="footer-contacts">Privacy</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="" class="footer-contacts">Cookies</a></p>
         </div>
       </div>
     </div>

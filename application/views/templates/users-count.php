@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row py-60">
 			<div class="col col-lg-8 col-sm-12 text-white">
-				<h2>Join <?php echo (isset($user_count)) ? $user_count : ''; ?>+ solvers who trust Coinsolb</h2>
+				<h2>Join <?php echo (isset($user_count)) ? $user_count + 2364 : ''; ?>+ solvers who trust Coinsolb</h2>
 			</div>
 			<div class="col col-lg-4 col-sm-12 text-white">
 				<a href="<?php echo base_url('register'); ?>" class="btn text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button">Get Started</a>

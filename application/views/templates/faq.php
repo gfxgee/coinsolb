@@ -2,13 +2,13 @@
 <section id="faq-section" class="bg-main-color">
 	<div class="container">
 		
-		<div class="col col-lg-12 col-sm-12 text-white pt-5">
+		<div class="col-12 col-lg-12 col-sm-12 text-white pt-5">
 			<h2 class="banner-headline">Frequently Asked Questions</h2>
 		</div>
 
 		<div class="row pb-60">
 			
-			<div class="col col-lg-6 col-sm-12 text-white mt-5">
+			<div class="col-12 col-lg-6 col-sm-12 text-white mt-5">
 
 				<div class="accordion" id="accordionExample">
 				  <div class="card rounded-20 bg-secondary-color text-white no-border p-3">
@@ -48,7 +48,7 @@
 
 			</div>
 
-			<div class="col col-lg-6 col-sm-12 text-white mt-5">
+			<div class="col-12 col-lg-6 col-sm-12 text-white mt-5">
 				<div class="accordion" id="accordionExample">
 				  <div class="card rounded-20 bg-secondary-color text-white no-border p-3">
 				    <div class="card-header rounded-top-20 no-border bg-transparent" id="headingOne">

@@ -44,7 +44,7 @@
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
             <label class="form-check-label text-white" for="defaultCheck1">
-              I accept the <a class="link-primary fs-16" href="<?php echo base_url('term-condition'); ?>">Terms and Conditions</a>.
+              I accept the <a class="link-primary fs-16" href="<?php echo base_url('terms-conditions'); ?>">Terms and Conditions</a>.
             </label>
           </div>
           

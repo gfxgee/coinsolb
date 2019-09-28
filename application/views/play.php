@@ -2,7 +2,7 @@
 	<div class="container pt-5 pb-5">
 		<div class="row">
 
-			<div class="col-lg-3 text-left pt-0">
+			<div class="col-6 col-lg-3 text-left pt-0">
 				<a href="<?php echo base_url('dashboard'); ?>" class="btn text-custom-secondary bg-yellow-color rounded-10 p-3 pr-80">
 					<h4 class="text-left">Dashboard</h4>
 					<small class="mt-2">Your personal informations</small>
@@ -66,7 +66,7 @@
 				<h2 id="game-type">Game Type</h2>
 				<h6 id="game-operators">Addition and Subtraction</h6>
 				<div class="row p-3 pt-4">
-					<div class="col-lg-7 p-4 px-5 text-center bg-tertiary-color rounded rounded-lg play-area">
+					<div class="col-12 col-lg-7 p-4 px-5 text-center bg-tertiary-color rounded rounded-lg play-area pb-4">
 						<div class="row text-center">
 							<div class="col-4 col-lg-4 col-sm-4">
 								<h2><span class="first-number text-highlights font-weight-bold fs-70">0</span></h2>
@@ -81,7 +81,7 @@
 						<input id="userAnswer" type="text" name="user-answer" class="mt-3 mb-3 bg-main-color text-yellow-highlights" readonly autocomplete="off" placeholder="Press start to begin the game">
 						<small class="font-weight-bold text-muted result-message">Press Enter after answering.</small>
 					</div>
-					<div class="col-lg-4 p-2 px-4 text-left">
+					<div class="col-12 col-lg-5 p-2 px-4 text-left">
 						<h6 class="text-highlights mb-2"><i class="far fa-clock"></i> Time left</h6>
 						<h2><span class="time-left mt-0">0</span> <span class="fs-22">seconds</span></h2>
 						<div class="mt-4"></div>
@@ -95,7 +95,7 @@
 							<button type="submit" class="btn btn-lg rounded-100 p-3 px-5 replay-button bg-yellow-color text-white">Replay</button>
 						</div>
 						<div class="pause-button-container mt-4" style="display: none;">
-							<button type="submit" class="btn btn-lg rounded-100 p-3 px-5 pause-button bg-yellow-color text-white">Pause</button>
+							<button type="submit" class="btn btn-lg rounded-100 p-3 px-5 pause-button bg-yellow-color text-white">Back to Modes</button>
 						</div>
 					</div>
 				</div>
@@ -124,8 +124,8 @@
 						<h6 class="text-highlights fs-14 mb-2"><i class="far fa-clock"></i> Time left until next game.</h6>
 						<h4><span class="running-time">00:00</span> seconds</h4>
 						
-						<div class="pause-button-container mt-4" style="display: none;">
-							<button type="submit" class="btn btn-lg rounded-100 p-3 px-5 pause-button bg-yellow-color text-white">Pause</button>
+						<div class="pause-button-container mt-4">
+							<button type="submit" class="btn btn-lg rounded-100 p-3 px-5 pause-button bg-yellow-color text-white">Back to Modes</button>
 						</div>
 					</div>
 				</div>
