@@ -50,7 +50,7 @@
 							<button class="mt-4 mb-3 btn btn-lg rounded-100 px-5 banner-button font-weight-bold" id="play-hard">Play Now</button>
 							<p class="m-0 mt-4"><i class="fas fa-check text-highlights mr-2"></i>Multiplication and Division</p>
 							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>60 seconds playing time</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>Will refresh every 1 hour & 30 minutes</p>
+							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>Will refresh every 1 hour</p>
 							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>2 points for every correct answer</p>
 							
 							<p class="text-muted mt-5 fs-14 font-italic">Bonus: Will instantly receive extra <strong>$2</strong> after <strong>30,000 points</strong></p>
@@ -85,7 +85,7 @@
 						<h6 class="text-highlights mb-2"><i class="far fa-clock"></i> Time left</h6>
 						<h2><span class="time-left mt-0">0</span> <span class="fs-22">seconds</span></h2>
 						<div class="mt-4"></div>
-						<h6 class="text-highlights"><i class="fas fa-check"></i> Time left</h6>
+						<h6 class="text-highlights"><i class="fas fa-check"></i> Points</h6>
 						<h2><span class="points-earned mt-0">0</span></h2>
 
 						<div class="play-button-container mt-4">
@@ -95,7 +95,7 @@
 							<button type="submit" class="btn btn-lg rounded-100 p-3 px-5 replay-button bg-yellow-color text-white">Replay</button>
 						</div>
 						<div class="pause-button-container mt-4" style="display: none;">
-							<button type="submit" class="btn btn-lg rounded-100 p-3 px-5 pause-button bg-yellow-color text-white">Back to Modes</button>
+							<button type="submit" class="btn btn-lg rounded-100 p-3 px-5 bg-yellow-color text-white" disabled>Started</button>
 						</div>
 					</div>
 				</div>

@@ -15,19 +15,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     gtag('config', 'UA-148337774-1');
   </script>
 
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Coin Solb">
 
-  <meta property="og:title"              content="Coinsolb" />
-  <meta property="og:description"        content="Improve your math skills with Coinsolb! Your time will not be wasted becuase you earn points and improve your math skill while playing." />
+  <meta property="og:title" content="<?php if(isset($page_title)) echo $page_title; ?>" />
+  <meta property="og:description" content="<?php if(isset($meta_description)) echo $meta_description; ?>" />
   <!-- <meta property="og:image"              content="<?php echo base_url(); ?>assets/images/banner.jpg" />  -->
 
   <meta name="directory" content="public">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="solve, math problems, simple math, addition, substration, multiplication, division, earn, play, motive, time, coinsolb" name="keywords">
-  <meta content="Improve your math skills with Coinsolb! Your time will not be wasted becuase you earn points and improve your math skill while playing." name="description">
+  <meta content="<?php if(isset($meta_description)) echo $meta_description; ?>" name="description">
   
   <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/300ppi/favicon.png" sizes="32x32">
 

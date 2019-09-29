@@ -23,6 +23,11 @@
 				<p class="pt-3">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker <a href="" class="link-primary fs-16">including versions</a> of Lorem Ipsum.</p>
 
 			</div>
+	
+			<div class="col-12 col-lg-6 col-sm-12 d-flex justify-content-center align-items-center py-60">
+				<img src="<?php echo base_url(); ?>assets/images/coinsolb-logo-large.png" alt="">
+			</div>
+
 		</div>
 	</div>
 </section>
@@ -41,7 +46,7 @@
 
 		<div class="row mt-5">
 			<div class="col col-lg-6 col-sm-12">
-
+				
 				
 			</div>
 

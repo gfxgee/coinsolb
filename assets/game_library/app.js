@@ -22,9 +22,14 @@ function generateEquation (){
 	var operator_render;
 
 	// Generate random numbers
-	firstNumber = Math.floor(Math.random() * 10);
-	secondNumber = Math.floor(Math.random() * 10);
-
+	if ( gameMode == 'normal' ) {
+		firstNumber = Math.floor(Math.random() * 10);
+		secondNumber = Math.floor(Math.random() * 10);
+	}
+	else {
+		firstNumber = Math.floor(Math.random() * 7) + 3;
+		secondNumber = Math.floor(Math.random() * 7) + 3;
+	}
 
 	// validate number for to avoid negative value
 	if ( firstNumber <= secondNumber ) {

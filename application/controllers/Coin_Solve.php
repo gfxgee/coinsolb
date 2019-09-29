@@ -27,11 +27,12 @@ class Coin_solve extends CI_Controller {
 
 	public function index()
 	{	
-		$this->render_page('landing' , 'Coinsolb '.$this->meta_title_separator().' Earn while improving your Math Skills');
+		$meta_description = 'Improve your math skills with Coinsolb! Your time will not be wasted becuase you earn points and improve your math skill while playing.';
+		$this->render_page('landing' , 'Coinsolb '.$this->meta_title_separator().' Earn while improving your Math Skills' , 0 , $meta_description );
 	}
 
 
-	public function render_page ( $page , $page_title , $replay_time = 0) 
+	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description) 
 	{
 		if (  $this->ion_auth->logged_in() ) {
 
@@ -52,12 +53,13 @@ class Coin_solve extends CI_Controller {
 			else $total_referrals = 0;
 
 			$data = array(
-				'page'					=> $page,
-				'total_score' 			=> $total_points_earned,
-				'total_referral_score' 	=> $total_points_from_referral,
-				'page_title'			=> $page_title,
-				'user_referral_code'	=> $user_referral_code,
-				'total_referrals'		=> $total_referrals,
+				'page'							=> $page,
+				'meta_description'				=> $meta_description,
+				'total_score' 					=> $total_points_earned,
+				'total_referral_score' 			=> $total_points_from_referral,
+				'page_title'					=> $page_title,
+				'user_referral_code'			=> $user_referral_code,
+				'total_referrals'				=> $total_referrals,
 				'total_user_withdrawal_amount'	=> $total_user_withdrawal_amount/10000,
 				'current_earnings_left'			=> ($total_points_earned-$total_user_withdrawal_amount)/10000,
 				'minimun_withdrawal'			=> 2,
@@ -78,6 +80,7 @@ class Coin_solve extends CI_Controller {
 				'page'					=> $page,
 				'page_title'			=> $page_title,
 				'user_count'			=> $total_users,
+				'meta_description'		=> $meta_description
 			);
 
 			$this->load->view('templates/header', $data);
@@ -89,6 +92,8 @@ class Coin_solve extends CI_Controller {
 
 	public function play () 
 	{
+
+		$meta_description = 'Play to earn points while enhancing you math skills with Coinsolb and get some awesomes rewards from the points you earned.';
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
@@ -121,7 +126,7 @@ class Coin_solve extends CI_Controller {
 
 			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
 				
-				$this->render_page('play' , 'CoinSolb - Play' , 3600 );
+				$this->render_page('play' , 'CoinSolb - Play' , 3600 , $meta_description);
 
 			} else {
 
@@ -137,7 +142,7 @@ class Coin_solve extends CI_Controller {
 
 				if ($this->ion_auth->is_admin()) $offset = 5000;
 
-				$this->render_page('play' , 'Play '.$this->meta_title_separator().' CoinSolb' , $offset );
+				$this->render_page('play' , 'Play '.$this->meta_title_separator().' CoinSolb' , $offset , $meta_description );
 
 			}
 
@@ -151,9 +156,11 @@ class Coin_solve extends CI_Controller {
 
 	public function account () {
 
+		$meta_description = 'You have the full ability to change your Coinsolb account information here. We value your privacy.';
+
 		if ( $this->ion_auth->logged_in() ) 
 		{	
-			$this->render_page( 'account' , 'My Account '.$this->meta_title_separator().' Coinsolb');
+			$this->render_page( 'account' , 'My Account '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description );
 		}
 		else
 		{
@@ -164,9 +171,11 @@ class Coin_solve extends CI_Controller {
 
 	public function dashboard ()
 	{
+		$meta_description = 'Check out the lastest happening on your Coinsolb account here, from your earned points, withdrawals and more.';
+
 		if ( $this->ion_auth->logged_in() ) 
 		{
-			$this->render_page( 'dashboard' , 'Dashboard '.$this->meta_title_separator().' Coinsolb');
+			$this->render_page( 'dashboard' , 'Dashboard '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 		}
 		else
 		{
@@ -355,6 +364,8 @@ class Coin_solve extends CI_Controller {
 
 	public function withdraw () {
 
+		$meta_description = 'Convert your points to physical earnings. Coinsolb lets you choose variety of ways to do it.';
+
 		if ( $this->ion_auth->logged_in() ) {
 			
 			if ( $this->input->post('select-payment')) {
@@ -363,7 +374,7 @@ class Coin_solve extends CI_Controller {
 
 			}
 
-			else $this->render_page('withdraw' , 'Withdraw '.$this->meta_title_separator().' CoinSolb');
+			else $this->render_page('withdraw' , 'Withdraw '.$this->meta_title_separator().' CoinSolb' , 0 , $meta_description);
 
 		}
 
@@ -371,9 +382,11 @@ class Coin_solve extends CI_Controller {
 
 	public function stats () {
 
+		$meta_description = 'Check out the lastest happening on your Coinsolb account here, from your earned points, withdrawals and more.';
+
 		if ( $this->ion_auth->logged_in() ) {
 
-			$this->render_page('stats' , 'User Statistics '.$this->meta_title_separator().' Coinsolb');
+			$this->render_page('stats' , 'User Statistics '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
 		}
 
@@ -381,9 +394,11 @@ class Coin_solve extends CI_Controller {
 
 	public function points_history () {
 
+		$meta_description = 'Check out the lastest happening on your Coinsolb account here, from your earned points, withdrawals and more.';
+
 		if ( $this->ion_auth->logged_in() ) {
 
-			$this->render_page('points-history' , 'Points History '.$this->meta_title_separator().' Coinsolb');
+			$this->render_page('points-history' , 'Points History '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
 		}
 
@@ -391,9 +406,11 @@ class Coin_solve extends CI_Controller {
 
 	public function withdrawals () {
 
+		$meta_description = 'Convert your points to physical earnings. Coinsolb lets you choose variety of ways to do it.';
+
 		if ( $this->ion_auth->logged_in() ) {
 
-			$this->render_page('withdrawals' , 'Withdrawals '.$this->meta_title_separator().' Coinsolb');
+			$this->render_page('withdrawals' , 'Withdrawals '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
 		}
 
@@ -401,9 +418,11 @@ class Coin_solve extends CI_Controller {
 
 	public function referrals () {
 
+		$meta_description = 'Check out the lastest happening on your Coinsolb account here, from your earned points, withdrawals and more.';
+
 		if ( $this->ion_auth->logged_in() ) {
 
-			$this->render_page('referrals' , 'Referrals '.$this->meta_title_separator().' Coinsolb');
+			$this->render_page('referrals' , 'Referrals '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
 		}
 
@@ -411,23 +430,31 @@ class Coin_solve extends CI_Controller {
 
 	public function about () {
 
-		$this->render_page('about' , 'About Coinsolb '.$this->meta_title_separator().' Coinsolb');
+		$meta_description = 'Find out what is Coinsolb. Here you can check out how the application works and what are the things we can help you.';
+
+		$this->render_page('about' , 'About Coinsolb '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description );
 
 	}
 
 	public function faq () {
 
-		$this->render_page('faq' , 'Frequently Asked Questions about Coinsolb '.$this->meta_title_separator().' Coinsolb');
+		$meta_description = 'Do you have any question about Coinsolb? Here we answer all of the most frequently asked question and give you more details.';
+
+		$this->render_page('faq' , 'Frequently Asked Questions about Coinsolb '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
 	}
 
 	public function contact () {
 
-		$this->render_page('contact' , 'How you can contact Coinsolb '.$this->meta_title_separator().' Coinsolb');
+		$meta_description = 'For more personal concern and questions you can contact Coinsolb on this page.';
+
+		$this->render_page('contact' , 'How you can contact Coinsolb '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
 	}
 
 	public function terms_conditions() {
+
+		$meta_description = 'For more personal concern and questions you can contact Coinsolb on this page.';
 
 		$this->render_page('terms-conditions' , 'Terms and Conditions '.$this->meta_title_separator().' Coinsolb');
 
