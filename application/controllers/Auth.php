@@ -117,8 +117,9 @@ class Auth extends CI_Controller
 			];
 
 			$data = array (
-				'page_title'	=> 'CoinSolb - Login',
-				'page'			=> 'login'
+				'page_title'		=> 'CoinSolb - Login',
+				'page'				=> 'login',
+				'meta_description'	=> 'Login to your account on Coinsolb and start improving your math skills or track your points and be able to convert it to earnings.',
 			);
 
 			$this->load->view('templates/header' , $data );
@@ -587,7 +588,8 @@ class Auth extends CI_Controller
 
 			$data = array (
 				'page'			=> 'register',
-				'page_title'	=> 'CoinSolb - Register' 
+				'page_title'	=> 'CoinSolb - Register',
+				'meta_description'	=> 'Register with our app and be able to improve your math skills while earning points to convert it to physical earnings.', 
 			);
 
 			$this->load->view('templates/header' , $data);
