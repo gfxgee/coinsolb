@@ -79,12 +79,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a class="nav-link js-scroll-trigger" href="<?php echo base_url('contact'); ?>">Contact</a>
           </li>
           <?php if($this->ion_auth->logged_in()) {?>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('dashboard'); ?>">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('logout'); ?>">Logout</a>
-          </li>
+
+            <li class="nav-item dropdown <?php echo ( $page == 'dashboard' || $page == 'logout' || $page == 'play') ? 'active' : ''; ?>">
+              <a class="nav-link dropdown-toggle login-button" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My Account
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item <?php echo ( $page == 'dashboard') ? 'active' : ''; ?>" href="<?php echo base_url('dashboard'); ?>">Dashboard</a>
+                <a class="dropdown-item <?php echo ( $page == 'play') ? 'active' : ''; ?>" href="<?php echo base_url('play'); ?>">Play</a>
+
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item <?php echo ( $page == 'logout') ? 'active' : ''; ?>" href="<?php echo base_url('logout'); ?>">Logout</a>
+              </div>
+            </li>
           <?php } else { ?>
             <li class="nav-item dropdown <?php echo ( $page == 'login' || $page == 'register') ? 'active' : ''; ?>">
               <a class="nav-link dropdown-toggle login-button" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

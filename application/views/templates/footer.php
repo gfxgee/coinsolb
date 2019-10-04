@@ -7,7 +7,7 @@
 
         <div class="col-12 col-lg-4 col-md-6 pr-5 pb-5">
           <a href="/"><img class="footer-logo" src="<?php echo base_url(); ?>assets/images/300ppi/logo.png"/></a>
-          <p class="mt-4 text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          <p class="mt-4 text-white">Improve your math skills with Coinsolb! Your time will not be wasted becuase you earn points and improve your math skill while playing.</p>
         </div>
 
         <div class="col-12 col-lg-2 col-md-2 pb-5">
@@ -51,13 +51,16 @@
   
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/data-tables/datatables.min.js"></script>
 
-  
-  <!-- Load game -->
-  <script src="<?php echo base_url(); ?>assets/game_library/app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   
   <!-- Load custom javascripts -->
   <script src="<?php echo base_url(); ?>assets/custom.js"></script>
 
+
+  <!-- Load game -->
+  <?php if (isset($page) && $page == 'play') { ?>
+  <script src="<?php echo base_url(); ?>assets/game_library/app.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){ 
@@ -80,6 +83,7 @@
       } , 1000);
     });
   </script>
+  <?php } ?>
 
 </body>
 

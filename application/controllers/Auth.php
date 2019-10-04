@@ -504,16 +504,18 @@ class Auth extends CI_Controller
 
 		if ($this->form_validation->run() === TRUE)
 		{
-			$email = strtolower($this->input->post('email'));
-			$identity = ($identity_column === 'email') ? $email : $this->input->post('identity');
-			$password = $this->input->post('password');
+			$email = strip_tags(strtolower($this->input->post('email')));
+			$identity = ($identity_column === 'email') ? $email : strip_tags($this->input->post('identity'));
+			$password = strip_tags($this->input->post('password'));
+
+
 
 			$additional_data = [
-				'first_name' => $this->input->post('first_name'),
-				'last_name' => $this->input->post('last_name'),
-				'company' => $this->input->post('company'),
-				'phone' => $this->input->post('phone'),
-				'referral_code' => $this->input->post('referral_code'),
+				'first_name' => strip_tags($this->input->post('first_name')),
+				'last_name' => strip_tags($this->input->post('last_name')),
+				'company' => strip_tags($this->input->post('company')),
+				'phone' => strip_tags($this->input->post('phone')),
+				'referral_code' => strip_tags($this->input->post('referral_code')),
 			];
 		}
 
@@ -653,16 +655,16 @@ class Auth extends CI_Controller
 			if ($this->form_validation->run() === TRUE)
 			{
 				$data = [
-					'first_name' => $this->input->post('first_name'),
-					'last_name' => $this->input->post('last_name'),
-					'company' => $this->input->post('company'),
-					'phone' => $this->input->post('phone'),
+					'first_name' => strip_tags($this->input->post('first_name')),
+					'last_name' => strip_tags($this->input->post('last_name')),
+					'company' => strip_tags($this->input->post('company')),
+					'phone' => strip_tags($this->input->post('phone')),
 				];
 
 				// update the password if it was posted
-				if ($this->input->post('password'))
+				if (strip_tags($this->input->post('password')))
 				{
-					$data['password'] = $this->input->post('password');
+					$data['password'] = strip_tags($this->input->post('password'));
 				}
 
 				// Only allow updating groups if user is admin
@@ -671,7 +673,7 @@ class Auth extends CI_Controller
 					// Update the groups user belongs to
 					$this->ion_auth->remove_from_group('', $id);
 					
-					$groupData = $this->input->post('groups');
+					$groupData = strip_tags($this->input->post('groups'));
 					if (isset($groupData) && !empty($groupData))
 					{
 						foreach ($groupData as $grp)
@@ -755,6 +757,9 @@ class Auth extends CI_Controller
 	 */
 	public function create_group()
 	{
+
+		redirect('/' , 'refresh');
+
 		$this->data['title'] = $this->lang->line('create_group_title');
 
 		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
@@ -806,6 +811,8 @@ class Auth extends CI_Controller
 	 */
 	public function edit_group($id)
 	{
+		redirect('/' , 'refresh');
+		
 		// bail if no group id given
 		if (!$id || empty($id))
 		{

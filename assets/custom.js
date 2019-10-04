@@ -15,6 +15,7 @@
 $(document).ready(function() {
     $('#score-table').DataTable({
     	"pageLength" : 25,
+        "order" : [],
         "ajax": {
             url : "coin_solve/get_user_points_history",
             type : 'GET'
@@ -28,6 +29,7 @@ $(document).ready(function() {
 
     $('#referrals-table').DataTable({
         "pageLength" : 25,
+        "order" : [],
         "ajax": {
             url : "coin_solve/get_user_referrals_history",
             type : 'GET'
@@ -41,6 +43,7 @@ $(document).ready(function() {
 
     $('#withdrawals-table').DataTable({
         "pageLength" : 25,
+        "order" : [],
         "ajax": {
             url : "coin_solve/get_user_withdrawals_history",
             type : 'GET'

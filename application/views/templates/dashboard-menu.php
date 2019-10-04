@@ -17,10 +17,6 @@
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link px-2 mx-3 rounded-100 dashboard-tabs <?php echo (isset($page) && $page == 'withdrawals')? 'active' : '';?>" href="<?php echo base_url('withdrawals'); ?>">Withdrawals</a>
-					</li>
-
-					<li class="nav-item">
 						<a class="nav-link px-2 mr-0 ml-3 rounded-100 dashboard-tabs <?php echo (isset($page) && $page == 'withdraw')? 'active' : '';?>" href="<?php echo base_url('withdraw'); ?>">Withdraw</a>
 					</li>
 

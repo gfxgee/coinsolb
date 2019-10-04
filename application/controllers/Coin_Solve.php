@@ -19,6 +19,7 @@ class Coin_solve extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
+
 	public function meta_title_separator() {
 
 		return '-';
@@ -28,7 +29,8 @@ class Coin_solve extends CI_Controller {
 	public function index()
 	{	
 		$meta_description = 'Improve your math skills with Coinsolb! Your time will not be wasted becuase you earn points and improve your math skill while playing.';
-		$this->render_page('landing' , 'Coinsolb '.$this->meta_title_separator().' Earn while improving your Math Skills' , 0 , $meta_description );
+
+		$this->render_page('landing' , 'Coinsolb' , 0 , $meta_description );
 	}
 
 
@@ -91,14 +93,21 @@ class Coin_solve extends CI_Controller {
 	}
 
 	public function play () 
-	{
+	{	
+
+		$user_id = $this->ion_auth->get_user_id();
 
 		$meta_description = 'Play to earn points while enhancing you math skills with Coinsolb and get some awesomes rewards from the points you earned.';
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
-			$user_id = $this->ion_auth->get_user_id();
 			
+			if(isset($_COOKIE['score'])) {
+
+				$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id );
+
+			}
+
 			$total_score_count = $this->coin_solve_model->get_user_scores_count($user_id , 'App Game');
 
 			if ( $total_score_count >= 5 ) {
@@ -376,6 +385,9 @@ class Coin_solve extends CI_Controller {
 
 			else $this->render_page('withdraw' , 'Withdraw '.$this->meta_title_separator().' CoinSolb' , 0 , $meta_description);
 
+		}
+		else {
+			redirect('/' , 'refresh');
 		}
 
 	}

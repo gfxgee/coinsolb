@@ -114,8 +114,7 @@ function gameOver () {
 	start = 0;
 
 	// save result to user database
-	$.post('coin_solve/save_points_details' , { score : score , points_origin : 'App Game' } , function ( result ) {});	
-
+	Cookies.set('score', score, { expires: 1 });
 
 	if ( spamFlag > 0 ) {
 
@@ -129,16 +128,13 @@ function gameOver () {
 
 	$('.pause-button-container').fadeOut();
 	$('.replay-button-container').fadeIn();
-	$('.replay-button').click (function(){
-		location.reload();
-	});
 
 }
 
 // start game throught aloted time
 function gameStart() {
 
-	var time;
+	var time, penalty = 30, offset = 0;
 
 	if ( gameMode == 'normal' ) time = 80;
 	else time = 60;
@@ -153,11 +149,28 @@ function gameStart() {
 		$('.time-left').text(time);
 
 
-		if ( time > 30 && spamFlag > 30 ) {
+		if ( offset < offset+5 && spamFlag > 15 ) {
+
+			$('#userAnswer').attr({ readonly : 'true' , placeholder : 'You have '+penalty+' second penalty.'});
+			$('.result-message').html('<span class="text-danger">You have been spamming.</span>');
 
 			// if is game over
-			gameOver();
-			clearInterval ( gameStartTimer );
+			if ( penalty > 0 ) {
+				isPause = true;
+				penalty--;
+			}
+
+			else {
+				penalty = 30;
+				isPause = false;
+				spamFlag = 0;
+			}
+
+		}
+		else {
+			$('#userAnswer').removeAttr('readonly');
+			$('#userAnswer').removeAttr('placeholder');
+			$('.result-message').html('Press Enter after answering.');
 		}
 
 		if ( time == 0 ) {
@@ -168,8 +181,9 @@ function gameStart() {
 			clearInterval ( gameStartTimer );
 		}
 
-		if ( !isPause ) time--;
+		if ( !isPause ) { time--; offset++; }
 
+		console.log(offset);
 
 	}, 1000);
 
@@ -179,6 +193,9 @@ function gameStart() {
 $( document ).ready(function(){
 
 	'use strict';
+
+
+	Cookies.remove('score', { path: '/' });
 
 	// generates initial random equation
 	var systemGeneratedAnswer;
@@ -243,7 +260,7 @@ $( document ).ready(function(){
 		}
 	});
 
-	$('.pause-button').click( function (){
+	$('.replay-button').click( function (){
 
 		location.reload();
 

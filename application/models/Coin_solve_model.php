@@ -75,9 +75,9 @@ class Coin_solve_model extends CI_Model {
 
 	public function get_user_referrals ( $from_user_id = '' , $referral_code = '') {
 
-		if ( $from_user_id != '' ) return $this->db->get_where('referral_details' , array('from_user_id' => $from_user_id));
+		if ( $from_user_id != '' ) return $this->db->order_by('id' , 'DESC')->get_where('referral_details' , array('from_user_id' => $from_user_id));
 
-		else return $this->db->get_where('referral_details' , array('referral_code' => $referral_code));
+		else return $this->db->order_by('id' , 'DESC')->get_where('referral_details' , array('referral_code' => $referral_code));
 	}
 
 	public function get_pending_referrals ( $from_user_id ) {
@@ -104,7 +104,10 @@ class Coin_solve_model extends CI_Model {
 
 		$current_date = date('Y-m-d H:i:s' , $current_date->getTimestamp());
 
-		$query = "insert into game_details values('','$user_id', '$score' , '$current_date' , '$points_origin')";
+		if (isset($_SERVER['REMOTE_ADDR'])) $ip_address = $_SERVER['REMOTE_ADDR'];
+		else $ip_address = '';
+
+		$query = "insert into game_details values('','$user_id', '$score' , '$current_date' , '$points_origin' , '$ip_address' )";
 		
 		$result = $this->db->query($query);
 
@@ -129,7 +132,7 @@ class Coin_solve_model extends CI_Model {
 
 	public function get_user_scores ( $user_id ) {
 
-		return $this->db->get_where('game_details' , array('user_id' => $user_id));
+		return $this->db->order_by('id' , 'DESC')->get_where('game_details' , array('user_id' => $user_id));
 
 	}
 
@@ -212,7 +215,7 @@ class Coin_solve_model extends CI_Model {
 
 	public function get_user_withdrawals( $user_id ) {
 
-		return $this->db->get_where('withdrawals' , array('user_id' => $user_id));
+		return $this->db->order_by('id' , 'DESC')->get_where('withdrawals' , array('user_id' => $user_id));
 
 	}
 

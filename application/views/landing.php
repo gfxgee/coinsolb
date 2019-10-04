@@ -7,7 +7,7 @@
 					<span class="text-highlights">Improve</span> your <br>
 					<span class="text-highlights">Math skills</span> with Coinsolb.
 				</h1>
-				<p class="fs-22 my-3">Your time will not be wasted becuase you earn points and improve your math skill while playing.</p>
+				<p class="fs-22 my-3">Your time will not be wasted because you earn points and improve your math skill while playing.</p>
 				<a href="<?php echo (!$this->ion_auth->logged_in()) ? base_url('register') : base_url('play') ; ?>" class="btn mt-3 text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button">Get Started</a>
 			</div>
 
