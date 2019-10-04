@@ -472,3 +472,4 @@ class Coin_solve extends CI_Controller {
 
 	}
 }
+
