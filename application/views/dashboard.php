@@ -3,23 +3,8 @@
 
 		<div class="row">
 
-			<div class="col-6 col-lg-3 text-left p-4 bg-secondary-color text-white rounded-top-10">
-				<h4 class="text-left">Dashboard</h4>
-				<small class="mt-2">Your personal informations</small>
-			</div>
-
-			<div class="col-6 col-lg-3 text-left pt-0">
-				<a href="<?php echo base_url('/play'); ?>" class="btn text-custom-secondary bg-yellow-color rounded-10 p-3">
-					<h4 class="text-left">Play Now!</h4>
-					<small class="mt-2">And grow your earnings!</small>
-				</a>
-			</div>
-
-			<div class="col-lg-6 p-0 m-0 text-right" >
-				<h2 class="fs-50 text-highlights">$<span><?php echo $current_earnings_left; ?></span></h2>
-				<small class="text-white">Current earnings. <a href="<?php echo base_url('withdraw'); ?>" class="link-primary">Withdraw Now</a></small>
-			</div>
-
+			<?php $this->load->view('templates/dashboard-main-menu'); ?>
+			
 		</div>
 
 		<div class="row bg-secondary-color text-white">
@@ -54,7 +39,8 @@
 								</div>
 							</div>
 								
-							<a href="<?php echo base_url('account'); ?>" class="btn mt-3 text-custom-secondary px-3 py-1 rounded-100 banner-button">Edit Informations</a>
+							<a href="" class="btn mt-3 text-custom-secondary px-3 py-1 rounded-100 banner-button" data-toggle="modal" data-target="#exampleModal">Edit Informations</a>
+							
 
 						</div>
 					</div>
@@ -65,5 +51,53 @@
 
 	</div>
 </section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-5 text-white bg-main-color">
+      <div class="modal-header no-border">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-white"><i class="fas fa-times"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	 <?php if ( isset($form_data['message']) ) { ?>      
+  
+        <div class="alert alert-custom-danger alert-dismissible fade show" role="alert">
+          <?php echo $form_data['message'];?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      <?php } ?>
+
+        <form method="post" action="<?php echo base_url('account'); ?>">
+		  <div class="form-group">
+		    <label for="">First Name</label>
+		    <input type="text" class="form-control main-input" id="first_name" name="first_name" placeholder="<?php echo $user_info->first_name; ?>" value="<?php echo $user_info->first_name; ?>">
+		  </div>
+		  <div class="form-group">
+		    <label for="">Last Name</label>
+		    <input type="text" class="form-control main-input" id="last_name" name="last_name" placeholder="<?php echo $user_info->last_name; ?>" value="<?php echo $user_info->last_name; ?>">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">New Password</label>
+		    <input type="password" class="form-control main-input" id="password" name="password" placeholder="New Password">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Confirm New Password</label>
+		    <input type="password" class="form-control main-input" id="password_confirm" name="password_confirm" placeholder="Confirm Password">
+		  </div>
+      </div>
+      <div class="modal-footer no-border">
+        <button type="submit" class="btn rounded-100 banner-button px-3 py-1 bg-yellow-color no-border">Save changes</button>
+      </div>
+		</form>
+    </div>
+  </div>
+</div>
+
 
 <?php $this->load->view('templates/faq'); ?>

@@ -48,7 +48,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="<?php echo base_url(); ?>assets/game_library/style.css" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/61cd694d48.js" crossorigin="anonymous"></script>
+  <link href="<?php echo base_url(); ?>assets/fontawesome/css/all.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>assets/fontawesome/css/brands.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>assets/fontawesome/css/solid.css" rel="stylesheet">
+  <!-- <script src="https://kit.fontawesome.com/61cd694d48.js" crossorigin="anonymous"></script> -->
 
 
 </head>
@@ -80,13 +83,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </li>
           <?php if($this->ion_auth->logged_in()) {?>
 
-            <li class="nav-item dropdown <?php echo ( $page == 'dashboard' || $page == 'logout' || $page == 'play') ? 'active' : ''; ?>">
+            <li class="nav-item dropdown <?php echo ( $page == 'dashboard' || $page == 'logout' || $page == 'play' || $page == 'choose' ) ? 'active' : ''; ?>">
               <a class="nav-link dropdown-toggle login-button" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item <?php echo ( $page == 'dashboard') ? 'active' : ''; ?>" href="<?php echo base_url('dashboard'); ?>">Dashboard</a>
-                <a class="dropdown-item <?php echo ( $page == 'play') ? 'active' : ''; ?>" href="<?php echo base_url('play'); ?>">Play</a>
+                <a class="dropdown-item <?php echo ( $page == 'choose') ? 'active' : ''; ?>" href="<?php echo base_url('choose'); ?>">Play</a>
+                <a class="dropdown-item <?php echo ( $page == 'withdraw') ? 'active' : ''; ?>" href="<?php echo base_url('withdraw'); ?>">Withdraw</a>
 
                 <div class="dropdown-divider"></div>
 

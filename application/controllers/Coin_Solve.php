@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Coin_solve extends CI_Controller {
+
+class Coin_solve extends CI_Controller  {
 
 	/**
 	 * Index Page for this controller.
@@ -19,6 +20,7 @@ class Coin_solve extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
+	public $data = [];
 
 	public function meta_title_separator() {
 
@@ -34,7 +36,7 @@ class Coin_solve extends CI_Controller {
 	}
 
 
-	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description) 
+	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description , $form_data = []) 
 	{
 		if (  $this->ion_auth->logged_in() ) {
 
@@ -67,6 +69,7 @@ class Coin_solve extends CI_Controller {
 				'minimun_withdrawal'			=> 2,
 				'user_info'						=> $user,
 				'replay_time_left'				=> $replay_time,
+				'form_data'						=> $form_data,
 			);
 
 			$this->load->view('templates/header', $data);
@@ -165,16 +168,140 @@ class Coin_solve extends CI_Controller {
 
 	public function account () {
 
-		$meta_description = 'You have the full ability to change your Coinsolb account information here. We value your privacy.';
+		$this->load->library(['ion_auth', 'form_validation']);
 
-		if ( $this->ion_auth->logged_in() ) 
-		{	
-			$this->render_page( 'account' , 'My Account '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description );
+		$this->data['title'] = $this->lang->line('edit_user_heading');
+
+		if ( $this->ion_auth->logged_in() && !$this->ion_auth->is_admin() ) {
+			$id = $this->ion_auth->get_user_id();
 		}
-		else
+
+		if ( $this->ion_auth->is_admin() ) {
+			redirect('auth','refresh');
+		}
+
+		$user = $this->ion_auth->user($id)->row();
+		$groups = $this->ion_auth->groups()->result_array();
+		$currentGroups = $this->ion_auth->get_users_groups($id)->result();
+			
+		//USAGE NOTE - you can do more complicated queries like this
+		//$groups = $this->ion_auth->where(['field' => 'value'])->groups()->result_array();
+	
+
+		// validate form input
+		$this->form_validation->set_rules('first_name', $this->lang->line('edit_user_validation_fname_label'), 'trim|required');
+		$this->form_validation->set_rules('last_name', $this->lang->line('edit_user_validation_lname_label'), 'trim|required');
+		$this->form_validation->set_rules('phone', $this->lang->line('edit_user_validation_phone_label'), 'trim');
+		$this->form_validation->set_rules('company', $this->lang->line('edit_user_validation_company_label'), 'trim');
+
+		if (isset($_POST) && !empty($_POST))
 		{
-			redirect ( '' , 'refresh');
+			// do we have a valid request?
+
+			// update the password if it was posted
+			if ($this->input->post('password'))
+			{
+				$this->form_validation->set_rules('password', $this->lang->line('edit_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|matches[password_confirm]');
+				$this->form_validation->set_rules('password_confirm', $this->lang->line('edit_user_validation_password_confirm_label'), 'required');
+			}
+
+			if ($this->form_validation->run() === TRUE)
+			{
+				$data = [
+					'first_name' => strip_tags($this->input->post('first_name')),
+					'last_name' => strip_tags($this->input->post('last_name')),
+					'company' => strip_tags($this->input->post('company')),
+					'phone' => strip_tags($this->input->post('phone')),
+				];
+
+				// update the password if it was posted
+				if (strip_tags($this->input->post('password')))
+				{
+					$data['password'] = strip_tags($this->input->post('password'));
+				}
+
+				// Only allow updating groups if user is admin
+				if ($this->ion_auth->is_admin())
+				{
+					// Update the groups user belongs to
+					$this->ion_auth->remove_from_group('', $id);
+					
+					$groupData = strip_tags($this->input->post('groups'));
+					if (isset($groupData) && !empty($groupData))
+					{
+						foreach ($groupData as $grp)
+						{
+							$this->ion_auth->add_to_group($grp, $id);
+						}
+
+					}
+				}
+
+				// check to see if we are updating the user
+				if ($this->ion_auth->update($user->id, $data))
+				{
+					// redirect them back to the admin page if admin, or to the base url if non admin
+					$this->session->set_flashdata('message', $this->ion_auth->messages());
+					redirect ('dashboard' , 'refresh');
+
+				}
+				else
+				{
+					// redirect them back to the admin page if admin, or to the base url if non admin
+					$this->session->set_flashdata('message', $this->ion_auth->errors());
+					redirect ('dashboard' , 'refresh');
+
+				}
+
+			}
 		}
+
+		// set the flash data error message if there is one
+		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+		// pass the user to the view
+		$this->data['user'] = $user;
+		$this->data['groups'] = $groups;
+		$this->data['currentGroups'] = $currentGroups;
+
+		$this->data['first_name'] = [
+			'name'  => 'first_name',
+			'id'    => 'first_name',
+			'type'  => 'text',
+			'value' => $this->form_validation->set_value('first_name', $user->first_name),
+		];
+		$this->data['last_name'] = [
+			'name'  => 'last_name',
+			'id'    => 'last_name',
+			'type'  => 'text',
+			'value' => $this->form_validation->set_value('last_name', $user->last_name),
+		];
+		$this->data['company'] = [
+			'name'  => 'company',
+			'id'    => 'company',
+			'type'  => 'text',
+			'value' => $this->form_validation->set_value('company', $user->company),
+		];
+		$this->data['phone'] = [
+			'name'  => 'phone',
+			'id'    => 'phone',
+			'type'  => 'text',
+			'value' => $this->form_validation->set_value('phone', $user->phone),
+		];
+		$this->data['password'] = [
+			'name' => 'password',
+			'id'   => 'password',
+			'type' => 'password'
+		];
+		$this->data['password_confirm'] = [
+			'name' => 'password_confirm',
+			'id'   => 'password_confirm',
+			'type' => 'password'
+		];
+		
+		$meta_description = 'Check out the lastest happening on your Coinsolb account here, from your earned points, withdrawals and more.';
+
+		$this->render_page( 'dashboard' , 'Dashboard '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description , $this->data);
 
 	}
 
@@ -468,7 +595,14 @@ class Coin_solve extends CI_Controller {
 
 		$meta_description = 'For more personal concern and questions you can contact Coinsolb on this page.';
 
-		$this->render_page('terms-conditions' , 'Terms and Conditions '.$this->meta_title_separator().' Coinsolb');
+		$this->render_page('terms-conditions' , 'Terms and Conditions '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
+	}
+
+	public function choose (){
+
+		$meta_description = 'Choose your game to play and improve your skill in math.';
+
+		$this->render_page('choose' , 'Choose Game '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 	}
 }

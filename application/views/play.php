@@ -2,17 +2,17 @@
 	<div class="container pt-5 pb-5">
 		<div class="row">
 
-			<div class="col-6 col-lg-3 text-left pt-0">
+			<div class="col-6 col-lg-3 text-left pt-0 mb-3">
 				<a href="<?php echo base_url('dashboard'); ?>" class="btn text-custom-secondary bg-yellow-color rounded-10 p-3 pr-80">
-					<h4 class="text-left">Dashboard</h4>
+					<h4 class="text-left"><i class="fal fa-user-circle"></i> Dashboard</h4>
 					<small class="mt-2">Your personal informations</small>
 				</a>
 			</div>
 
-			<div class="col-lg-2 text-left p-4 bg-secondary-color text-white rounded-top-10">
+			<div class="col-lg-2 text-left p-3 bg-secondary-color text-white rounded-top-10">
 				
-				<h4 class="text-left">Play Now!</h4>
-				<small class="mt-2">And your earnings!</small>
+				<h4 class="text-left"><i class="far fa-play-circle"></i> Play Now!</h4>
+				<small class="mt-2">And grow your earnings!</small>
 				
 			</div>
 
@@ -24,44 +24,8 @@
 		</div>
 		
 		<?php if ($replay_time_left >= 3600 ) { ?>
-
-		<div class="row bg-secondary-color" id="select-game">
-			<div class="col-lg-10 m-auto p-5 text-center text-white">
-				<h2 class="mt-5">Choose the mode you want to play:</h2>
-					
-				<div class="row">
-					<div class="col-lg-6 p-3 text-center">
-						<div class="p-5 text-center text-white">
-							<p class="fs-70 font-weight-bold text-highlights"><i class="fas fa-plus"></i> <i class="fas fa-minus"></i></p>
-							<h3>Normal</h3>
-							<button class="mt-4 mb-3 btn btn-lg rounded-100 px-5 banner-button font-weight-bold" id="play-normal">Play Now</button>
-							<p class="m-0 mt-4"><i class="fas fa-check text-highlights mr-2"></i>Addition and Subtraction</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>80 seconds playing time</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>Will refresh every 1 hour</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>1 point for every correct answer</p>
-						</div>
-					</div>
-
-
-					<div class="col-lg-6 p-3 text-center">
-						<div class="p-5 text-center">
-							<p class="fs-70 font-weight-bold text-highlights"><i class="fas fa-divide"></i> <i class="fas fa-times"></i></p>
-							<h3>Hard</h3>
-							<button class="mt-4 mb-3 btn btn-lg rounded-100 px-5 banner-button font-weight-bold" id="play-hard">Play Now</button>
-							<p class="m-0 mt-4"><i class="fas fa-check text-highlights mr-2"></i>Multiplication and Division</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>60 seconds playing time</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>Will refresh every 1 hour</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>2 points for every correct answer</p>
-							
-							<p class="text-muted mt-5 fs-14 font-italic">Bonus: Will instantly receive extra <strong>$2</strong> after <strong>30,000 points</strong></p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="row bg-secondary-color text-white" id="game-container" style="display: none;">
+	
+		<div class="row bg-secondary-color text-white" id="game-container">
 			<div class="col-lg-8 m-auto p-5 text-center">
 				<h2 id="game-type">Game Type</h2>
 				<h6 id="game-operators">Addition and Subtraction</h6>
@@ -100,7 +64,7 @@
 					</div>
 				</div>
 
-				<p class="text-white mt-5">You can change game modes <a class="link-primary" href="<?php echo base_url('play'); ?>">here</a>.</p>
+				<p class="text-white mt-5">You can change game modes <a class="link-primary" href="<?php echo base_url('choose'); ?>">here</a>.</p>
 			</div>
 		</div>
 
@@ -120,13 +84,10 @@
 						
 						<small class="mt-5text-white result-message">While waiting you can practice <a class="link-primary" href="<?php echo base_url('play'); ?>">here</a>.</small>
 					</div>
-					<div class="col-lg-4 p-2 px-4 text-left">
-						<h6 class="text-highlights fs-14 mb-2"><i class="far fa-clock"></i> Time left until next game.</h6>
-						<h4><span class="running-time">00:00</span> seconds</h4>
-						
-						<div class="pause-button-container mt-4">
-							<button type="submit" class="btn btn-lg rounded-100 p-3 px-5 pause-button bg-yellow-color text-white">Back to Modes</button>
-						</div>
+					<div class="col-lg-5 p-2 px-4 text-center">
+						<h6 class="text-highlights fs-14 mb-2 mt-5"><i class="far fa-clock"></i> Time left until next game.</h6>
+						<h2><span class="running-time fs-50">00 : 00</span></h2>
+						<p class="time-type">Minutes</p>
 					</div>
 				</div>
 

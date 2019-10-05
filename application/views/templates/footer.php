@@ -13,7 +13,7 @@
         <div class="col-12 col-lg-2 col-md-2 pb-5">
           <h6 class="font-weight-bold text-footer-header">Links</h6>
           <ul class="footer-links mt-4">
-            <li><a class="js-scroll-trigger scroll" href="#banner-section">Home</a></li>
+            <li><a href="<?php echo base_url('/'); ?>">Home</a></li>
             <li><a href="<?php echo base_url('about-us'); ?>">About</a></li>
             <li><a href="<?php echo base_url('faq'); ?>">FAQ's</a></li>
             <li><a href="<?php echo base_url('discussions'); ?>">Discussions</a></li>
@@ -59,7 +59,7 @@
 
 
   <!-- Load game -->
-  <?php if (isset($page) && $page == 'play') { ?>
+  <?php if (isset($page) && ($page == 'play' || $page == 'choose') ) { ?>
   <script src="<?php echo base_url(); ?>assets/game_library/app.js"></script>
 
   <script type="text/javascript">
@@ -70,14 +70,23 @@
         minutes = Math.floor( time_left / 60 );
         seconds = time_left - (minutes*60);
         
-        if ( minutes > 0 ) $('.running-time').text( minutes + ' : ' + seconds );
+        if ( minutes > 0 ) { 
+          if ( seconds < 10 ) seconds = '0' + seconds;
+          if ( minutes < 10 ) minutes = '0' + minutes;
+          $('.running-time').text( minutes + ' : ' + seconds);
+        }
 
-        else $('.running-time').text( seconds );
+        else { 
+          $('.running-time').text( seconds ); 
+          $('.time-type').text('Seconds');
+        }
 
         time_left--; 
 
         if ( time_left == 0 ) {
-          location.reload();
+
+          location.href = 'choose';
+
         }
 
       } , 1000);

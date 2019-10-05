@@ -3,35 +3,15 @@
 
 		<div class="row">
 
-			<div class="col-lg-3 text-left p-4 bg-secondary-color text-white rounded-top-10">
-				<h4 class="text-left">Dashboard</h4>
-				<small class="mt-2">Your personal informations</small>
-			</div>
-
-			<div class="col-lg-3 text-left pt-0">
-				<a href="<?php echo base_url('/play'); ?>" class="btn text-custom-secondary bg-yellow-color rounded-10 p-3">
-					<h4 class="text-left">Play Now!</h4>
-					<small class="mt-2">And grow your earnings!</small>
-				</a>
-			</div>
-
-			<div class="col-lg-6 p-0 m-0 text-right ">
-				<h2 class="fs-50 text-highlights">$<span><?php echo $current_earnings_left; ?></span></h2>
-				<small class="text-white">Current earnings. <a href="<?php echo base_url('withdraw'); ?>" class="link-primary">Withdraw Now</a></small>
-			</div>
+			<?php $this->load->view('templates/dashboard-main-menu'); ?>
 
 		</div>
 
 		<div class="row bg-secondary-color text-white">
 
-			<div class="col-lg-12 p-4">
+			<div class="col-12 col-lg-12 col-md-12 p-4">
 
 				<?php $this->load->view('templates/dashboard-menu'); ?>
-
-				<p class="card-text mt-5">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*51; ?>. </p>
-			    <p class="card-text">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
-				<p class="card-text">Minimum amount withdrawn on <span class="text-highlights">Palawan and Steam wallet</span>: $5 = ₱250.00.</p>
-
 
 				<div class="tab-content mt-5" id="pills-tabContent">
 
@@ -40,17 +20,16 @@
 						<div class="col-lg-12 p-0">
 
 							<div class="row">
-								<div class="col-12 col-lg-4 col-md-4 col-sm-12 ">
+								<div class="col-12 col-lg-12 col-md-12 col-sm-12 ">
 									<div class="card bg-main-color text-white mb-3">
-									  <div class="card-header">Select type of Payment</div>
 									  <div class="card-body">
 									    <h3 class="card-title text-highlights">Balance: $<span><?php echo $current_earnings_left; ?></span></h3>
-									    <p class="card-text fs-14">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*51; ?>. </p>
+									    <p class="card-text fs-14">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*50; ?>. </p>
 									    <p class="card-text fs-14">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
 										<p class="card-text fs-14">Minimum amount withdrawn on <span class="text-highlights">Palawan and Steam wallet</span>: $5 = ₱250.00.</p>
 									    
 									<form id="withdraw_form" method="post" action="<?php echo base_url('/withdraw');?>">
-										<div class="form-group mt-4">
+										<div class="form-group mt-4 col-12 col-lg-4 col-md-4">
 											<label for="select-payment">Available payment type</label>
 											<select class="form-control" name="select-payment" id="select-payment" <?php echo ($current_earnings_left >= $minimun_withdrawal ) ? '' : 'disabled'; ?>>
 												<option value="gcash">Gcash</option>

@@ -171,6 +171,10 @@ function gameStart() {
 			$('#userAnswer').removeAttr('readonly');
 			$('#userAnswer').removeAttr('placeholder');
 			$('.result-message').html('Press Enter after answering.');
+
+			penalty = 30;
+			isPause = false;
+			spamFlag = 0;
 		}
 
 		if ( time == 0 ) {
@@ -203,40 +207,41 @@ $( document ).ready(function(){
 
 	$('#play-normal').click(function(){
 
-		$('#select-game').fadeOut(function(){
-
-			$('#game-container').fadeIn();
-			$('#game-type').text('Normal Mode');
-			$('#game-operators').text('Addition and Subtraction');
-
-			gameMode = 'normal';
-			points = 1;
-
-			systemGeneratedAnswer = generateEquation();
-
-		});
+		location.href = "play?type=normal";
 
 	});
 
 	$('#play-hard').click(function(){
 
-		$('#select-game').fadeOut(function(){
-
-			$('#game-container').fadeIn();
-			$('#game-type').text('Hard Mode');
-			$('#game-operators').text('Multiplication and Subtraction');
-
-			gameMode = 'hard';
-			points = 2;
-
-			systemGeneratedAnswer = generateEquation();
-
-		});
+		location.href = "play?type=hard";
 
 	});
 
 
 	$('.play-button').click(function(){
+
+		gameMode = location.href.split('=')[1];
+
+		if ( gameMode == 'normal' ) { 
+			points = 1;
+			
+			$('#game-container').fadeIn();
+			$('#game-type').text('Normal Mode');
+			$('#game-operators').text('Addition and Subtraction');
+
+		} else if ( gameMode == 'hard') {
+			points = 2;
+			
+			$('#game-container').fadeIn();
+			$('#game-type').text('Hard Mode');
+			$('#game-operators').text('Multiplication and Division');
+		}
+		else {
+			alert('Please select a game mode');
+			location.href ='choose';
+		}
+
+		systemGeneratedAnswer = generateEquation();
 
 		if ( gameMode != '' ) {
 
@@ -249,6 +254,7 @@ $( document ).ready(function(){
 				spamFlag = 0;
 				
 				start = 1;
+
 				// initialize game time
 
 				$('.pause-button-container').fadeIn();
