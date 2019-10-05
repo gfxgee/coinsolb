@@ -134,7 +134,7 @@ function gameOver () {
 // start game throught aloted time
 function gameStart() {
 
-	var time, penalty = 30, offset = 0;
+	var time, penalty = 15, offset = 0;
 
 	if ( gameMode == 'normal' ) time = 80;
 	else time = 60;
@@ -148,8 +148,7 @@ function gameStart() {
 		// display user real time timer
 		$('.time-left').text(time);
 
-
-		if ( offset < offset+5 && spamFlag > 15 ) {
+		if ( offset < offset + 5 && spamFlag > 15 ) {
 
 			$('#userAnswer').attr({ readonly : 'true' , placeholder : 'You have '+penalty+' second penalty.'});
 			$('.result-message').html('<span class="text-danger">You have been spamming.</span>');
@@ -161,20 +160,23 @@ function gameStart() {
 			}
 
 			else {
-				penalty = 30;
+				penalty = 15;
 				isPause = false;
 				spamFlag = 0;
+				offset = 0;
 			}
-
 		}
+		
+		else if ( offset > 5 ) {
+
+			spamFlag = 0;
+			offset = 0;
+		}
+
 		else {
 			$('#userAnswer').removeAttr('readonly');
 			$('#userAnswer').removeAttr('placeholder');
 			$('.result-message').html('Press Enter after answering.');
-
-			penalty = 30;
-			isPause = false;
-			spamFlag = 0;
 		}
 
 		if ( time == 0 ) {
@@ -187,7 +189,7 @@ function gameStart() {
 
 		if ( !isPause ) { time--; offset++; }
 
-		console.log(offset);
+		console.log('offset:'+offset+' spanflag:'+spamFlag);
 
 	}, 1000);
 
