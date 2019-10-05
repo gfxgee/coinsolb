@@ -606,3 +606,4 @@ class Coin_solve extends CI_Controller  {
 		$this->render_page('choose' , 'Choose Game '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 	}
 }
+
