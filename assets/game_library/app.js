@@ -166,7 +166,7 @@ function gameStart() {
 				offset = 0;
 			}
 		}
-		
+
 		else if ( offset > 5 ) {
 
 			spamFlag = 0;
@@ -189,7 +189,6 @@ function gameStart() {
 
 		if ( !isPause ) { time--; offset++; }
 
-		console.log('offset:'+offset+' spanflag:'+spamFlag);
 
 	}, 1000);
 
