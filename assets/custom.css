@@ -494,3 +494,19 @@ a {
   font-family: Larsseit ExtraBold;
   src: url(fonts/Larsseit-ExtraBold.ttf);
 }
+
+
+
+/* media queries */
+@media (max-width: 768px ) {
+	#pills-tab {
+		display: block !important;
+		overflow: auto;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch; /* [3] */
+  		-ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */ }
+	}
+	#pills-tab li {
+		 display: inline-block;
+	}
+}

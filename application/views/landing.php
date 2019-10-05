@@ -11,7 +11,7 @@
 				<a href="<?php echo (!$this->ion_auth->logged_in()) ? base_url('register') : base_url('play') ; ?>" class="btn mt-3 text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button">Get Started</a>
 			</div>
 
-			<div class="col-12 col-lg-6 col-sm-12 d-flex justify-content-center py-100">
+			<div class="col-12 col-lg-6 col-sm-12 d-none d-sm-block py-100">
 				<img class="banner-image" src="<?php echo base_url(); ?>assets/images/banner-image.png" alt="Coin Solb Banner Image" width="100%"/>
 			</div>
 

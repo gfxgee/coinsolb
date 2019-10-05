@@ -1,5 +1,5 @@
 <section class="bg-main-color " id="dashboard">
-	<div class="container pt-5 pb-5">
+	<div class="container pb-5">
 
 		<div class="row">
 
@@ -16,24 +16,24 @@
 				<div class="tab-content mt-5 pb-60" id="pills-tabContent">
 
 					<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">						
-						<div class="col-lg-12 p-0 text-left">
+						<div class="col-12 col-lg-12 p-0 text-left">
 							<div class="row p-0 px-3"> 
-								<div class="col-lg-4 p-0 m-0 text-left ">
+								<div class="col-6 col-lg-4 p-0 m-0 text-left ">
 									<h6 class="mb-2 text-custom-muted">Full Name</h6>
 									<h3 class="mt-2"><?php echo $user_info->first_name . ' ' . $user_info->last_name; ?></span></h3>
 								</div>
-								<div class="col-lg-8 p-0">
+								<div class="col-6 col-lg-8 p-0">
 									<h6 class="mb-2 text-custom-muted">Referral Code</h6>
 									<h3 class="mt-2"><?php echo $user_referral_code; ?></h3>
 								</div>
 							</div>
 
-							<div class="row p-0 px-3 mt-4"> 
-								<div class="col-lg-4 p-0 m-0 text-left ">
+							<div class="row p-0 px-3"> 
+								<div class="col-6 col-lg-4 p-0 m-0 text-left mt-4">
 									<h6 class="mb-2 text-custom-muted">Email Address</h6>
 									<h3 class="mt-2"><?php echo $user_info->email; ?></h3>
 								</div>
-								<div class="col-lg-8 p-0">
+								<div class="col-12 col-lg-8 p-0 mt-4">
 									<h6 class="mb-2 text-custom-muted">Referral Link</h6>
 									<a class="fs-22 link-primary" href="<?php echo base_url('/register/').$user_referral_code; ?>"><?php echo base_url('/register/').$user_referral_code; ?></a>
 								</div>
