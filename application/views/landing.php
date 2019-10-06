@@ -54,14 +54,14 @@
 				<div class="card bg-secondary-color text-white rounded-20 no-border p-2">
 					<div class="card-body">
 						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-plus"></i> <i class="fas fa-minus"></i></span> Normal Mode (Addition & Subtraction)</h5>
-						<p class="card-text">80 seconds of Playing time and will refresh after 1 hour. You will earn 1 point for every correct answer. <a class="link-primary" href="<?php echo base_url('play'); ?>">Play Now!</a></p>
+						<p class="card-text">80 seconds of Playing time and will refresh after 1 hour. You will earn 1 point for every correct answer. <a class="link-primary" href="<?php echo ($this->ion_auth->logged_in())? base_url('play') : base_url('login'); ?>">Play Now!</a></p>
 					</div>
 				</div>
 
 				<div class="card bg-secondary-color text-white rounded-20 no-border p-2 mt-4">
 					<div class="card-body">
 						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-divide"></i> <i class="fas fa-times"></i></span> Hard Mode (Multiplition & Division)</h5>
-						<p class="card-text">60 seconds of Playing time and will refresh after 1 hour and 30minutes. You will earn 2 points for every correct answer. <a class="link-primary" href="<?php echo base_url('play'); ?>">Play Now!</a></p>
+						<p class="card-text">60 seconds of Playing time and will refresh after 1 hour. You will earn 2 points for every correct answer. <a class="link-primary" href="<?php echo ($this->ion_auth->logged_in())? base_url('play') : base_url('login'); ?>">Play Now!</a></p>
 					</div>
 				</div>
 
@@ -74,8 +74,8 @@
 
 				<div class="card bg-secondary-color text-white rounded-20 no-border p-2 mt-4">
 					<div class="card-body">
-						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-money-check-alt"></i> </span> Payment methods</h5>
-						<p class="card-text">Available payment method: Gcash, E-load(Smart, Globe), Razer Gold for Mobile Legends, PUBG, Rules of survival and etc., Palawan Express and Steam Wallet.</p>
+						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-gamepad"></i> </span> Practice Mode</h5>
+						<p class="card-text">Here you can practice before or after playing the game to get more efficient scores and earn higher points <a class="link-primary" href="<?php echo base_url('practice'); ?>">Practice now!</a></p>
 					</div>
 				</div>
 

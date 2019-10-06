@@ -222,6 +222,7 @@ $( document ).ready(function(){
 
 	if ( gametype == 'normal' ) { 
 		
+		$('.number-operator').html('<i class="fas fa-plus"></i>');
 		$('#game-container').fadeIn();
 		$('#game-type').text('Normal Mode');
 		$('#game-operators').text('Addition and Subtraction');
@@ -229,6 +230,7 @@ $( document ).ready(function(){
 	} 
 	else if ( gametype == 'hard') {
 		
+		$('.number-operator').html('<i class="fas fa-divide"></i>');
 		$('#game-container').fadeIn();
 		$('#game-type').text('Hard Mode');
 		$('#game-operators').text('Multiplication and Division');

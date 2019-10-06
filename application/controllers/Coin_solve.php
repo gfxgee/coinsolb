@@ -616,11 +616,11 @@ class Coin_solve extends CI_Controller  {
 		$this->render_page('choose' , 'Choose Game '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 	}
 
-	public function discussions ($id = "") {
+	public function discussions ($slug = "") {
 
-		if ( $id ) {
+		if ( $slug ) {
 
-			$post = $this->coin_solve_model->get_post_by_id($id);
+			$post = $this->coin_solve_model->get_post_by_id($slug);
 
 			$meta_description = mb_strimwidth($post->post_content , 0 , 200 , '. . .');
 

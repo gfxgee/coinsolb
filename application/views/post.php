@@ -24,7 +24,7 @@
 
 					<li class="mt-2">
 						
-						<a href="<?php echo base_url('discussions/').$recent_post->post_id; ?>" class="mt-0 text-white mb-0"><h6 class="m-0"><span class="text-highlights text-uppercase"><?php echo $recent_post->post_type; ?>:</span> <?php echo $recent_post->post_title; ?></h6></a>
+						<a href="<?php echo base_url('discussions/').$recent_post->post_slug; ?>" class="mt-0 text-white mb-0"><h6 class="m-0"><span class="text-highlights text-uppercase"><?php echo $recent_post->post_type; ?>:</span> <?php echo $recent_post->post_title; ?></h6></a>
 
 					</li>
 

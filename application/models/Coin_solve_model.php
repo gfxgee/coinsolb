@@ -249,9 +249,9 @@ class Coin_solve_model extends CI_Model {
 	}
 
 
-	public function get_post_by_id ( $id ) {
+	public function get_post_by_id ( $slug ) {
 
-		return $this->db->get_where('posts' , array('post_id' => $id))->row();
+		return $this->db->get_where('posts' , array('post_slug' => $slug))->row();
 
 	}
 

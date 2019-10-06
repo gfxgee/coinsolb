@@ -23,7 +23,7 @@ $this->load->view('templates/page-title-header' , $data);
 					</div>
 					
 					<div class="card-footer bg-transparent no-border">
-						<a href="<?php echo base_url('discussions/').$post->post_id; ?>" class="link-primary">Read more</a>
+						<a href="<?php echo base_url('discussions/').$post->post_slug; ?>" class="link-primary">Read more</a>
 					</div>
 
 				</div>
