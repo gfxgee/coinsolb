@@ -247,6 +247,9 @@ a {
 .pb-100 {
 	padding-bottom: 100px;
 }
+.pl-60 {
+	padding-left: 60px;
+}
 
 
 
@@ -470,16 +473,27 @@ a {
 
 
 /* Other Page overlay images */
-#faq-page-section,
-#contact-us-section,
-#about-us-section,
-#terms-conditions-section {
+.page_banner {
 	background-image: url(images/300ppi/double-grid-circle.png);
 	background-size: cover;
 	background-repeat: no-repeat;
     background-position: 0px -120px;
 }
 
+
+
+
+/* post page */
+.recent_posts li {
+	list-style: none;
+	background-color: #092336; 
+	padding: 20px 20px !important;
+	border-radius: 25px;
+}
+.recent_posts li a:hover {
+	text-decoration: none;
+	color: #F7B32D !important;
+}	
 
 
 

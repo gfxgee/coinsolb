@@ -36,7 +36,7 @@ class Coin_solve extends CI_Controller  {
 	}
 
 
-	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description , $form_data = []) 
+	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description , $posts = []) 
 	{
 		if (  $this->ion_auth->logged_in() ) {
 
@@ -69,8 +69,13 @@ class Coin_solve extends CI_Controller  {
 				'minimun_withdrawal'			=> 2,
 				'user_info'						=> $user,
 				'replay_time_left'				=> $replay_time,
-				'form_data'						=> $form_data,
+				'posts'							=> $posts,
 			);
+
+			
+			if ($page == 'post') {
+				$data['recent_posts'] = $this->coin_solve_model->get_recent_posts();
+			}
 
 			$this->load->view('templates/header', $data);
 			$this->load->view( $page , $data);
@@ -85,8 +90,13 @@ class Coin_solve extends CI_Controller  {
 				'page'					=> $page,
 				'page_title'			=> $page_title,
 				'user_count'			=> $total_users,
-				'meta_description'		=> $meta_description
+				'meta_description'		=> $meta_description,
+				'posts'					=> $posts,
 			);
+
+			if ($page == 'post') {
+				$data['recent_posts'] = $this->coin_solve_model->get_recent_posts();
+			}
 
 			$this->load->view('templates/header', $data);
 			$this->load->view( $page , $data);
@@ -301,7 +311,7 @@ class Coin_solve extends CI_Controller  {
 		
 		$meta_description = 'Check out the lastest happening on your Coinsolb account here, from your earned points, withdrawals and more.';
 
-		$this->render_page( 'dashboard' , 'Dashboard '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description , $this->data);
+		$this->render_page( 'dashboard' , 'Dashboard '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description );
 
 	}
 
@@ -604,6 +614,28 @@ class Coin_solve extends CI_Controller  {
 		$meta_description = 'Choose your game to play and improve your skill in math.';
 
 		$this->render_page('choose' , 'Choose Game '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
+	}
+
+	public function discussions ($id = "") {
+
+		if ( $id ) {
+
+			$post = $this->coin_solve_model->get_post_by_id($id);
+
+			$meta_description = mb_strimwidth($post->post_content , 0 , 200 , '. . .');
+
+			$this->render_page('post' , $post->post_title , 0 , $meta_description , $post );
+
+		}
+
+		else {
+
+			$posts = $this->coin_solve_model->get_all_posts();
+
+			$meta_description = 'Here are the discussion on the questions you have for Coinsolb.';
+
+			$this->render_page('discussions' , 'Discussions '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description , $posts );
+		}
 	}
 }
 

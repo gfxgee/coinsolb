@@ -237,6 +237,24 @@ class Coin_solve_model extends CI_Model {
 
 	}
 
+	public function get_all_posts ( ) {
+
+		return $this->db->order_by('post_timestamp', 'DESC')->get('posts')->result();
+
+	}
+	public function get_recent_posts ( ) {
+
+		return $this->db->order_by('post_timestamp', 'DESC')->limit(3)->get('posts')->result();
+
+	}
+
+
+	public function get_post_by_id ( $id ) {
+
+		return $this->db->get_where('posts' , array('post_id' => $id))->row();
+
+	}
+
 }
 
 

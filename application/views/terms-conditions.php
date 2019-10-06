@@ -1,16 +1,10 @@
 <!-- contact banner -->
-<section id="terms-conditions-section" class="bg-main-color d-flex align-items-center py-100">
-	<div class="container">
-		<div class="row">
+<?php 
 
-			<div class="col-12 col-lg-10 col-sm-12 text-white">
-				<h1 class="banner-headline fs-60">Terms and Conditions</h1>
-			</div>
+$data['page_banner_title'] = 'Terms and Condition';
+$this->load->view('templates/page-title-header' , $data); 
 
-		</div>
-	</div>
-</section>
-
+?>
 <!-- features -->
 <section id="features-section" class="bg-secondary-color">
 	<div class="container">

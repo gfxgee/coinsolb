@@ -218,6 +218,21 @@ $( document ).ready(function(){
 
 	});
 
+	var gametype = location.href.split('=')[1];
+
+	if ( gametype == 'normal' ) { 
+		
+		$('#game-container').fadeIn();
+		$('#game-type').text('Normal Mode');
+		$('#game-operators').text('Addition and Subtraction');
+
+	} 
+	else if ( gametype == 'hard') {
+		
+		$('#game-container').fadeIn();
+		$('#game-type').text('Hard Mode');
+		$('#game-operators').text('Multiplication and Division');
+	}
 
 	$('.play-button').click(function(){
 
@@ -225,17 +240,9 @@ $( document ).ready(function(){
 
 		if ( gameMode == 'normal' ) { 
 			points = 1;
-			
-			$('#game-container').fadeIn();
-			$('#game-type').text('Normal Mode');
-			$('#game-operators').text('Addition and Subtraction');
 
 		} else if ( gameMode == 'hard') {
 			points = 2;
-			
-			$('#game-container').fadeIn();
-			$('#game-type').text('Hard Mode');
-			$('#game-operators').text('Multiplication and Division');
 		}
 		else {
 			alert('Please select a game mode');

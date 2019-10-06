@@ -30,6 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
   <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/300ppi/favicon.png" sizes="32x32">
 
+  
 
   <title><?php if(isset($page_title)) echo $page_title; ?></title>
 
@@ -75,6 +76,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="nav-item <?php echo ( $page == 'about') ? 'active' : ''; ?>">
             <a class="nav-link js-scroll-trigger" href="<?php echo base_url('about-us'); ?>">About</a>
           </li>
+
+          <li class="nav-item <?php echo ( $page == 'discussions' || $page == 'post' ) ? 'active' : ''; ?>">
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('discussions'); ?>">Discussion</a>
+          </li>
+
           <li class="nav-item <?php echo ( $page == 'faq') ? 'active' : ''; ?>">
             <a class="nav-link js-scroll-trigger" href="<?php echo base_url('faq'); ?>">FAQ's</a>
           </li>

@@ -1,15 +1,9 @@
-<!-- about banner -->
-<section id="faq-page-section" class="bg-main-color d-flex align-items-center py-100">
-	<div class="container">
-		<div class="row">
+<?php 
 
-			<div class="col col-lg-12 col-sm-12 text-white">
-				<h1 class="banner-headline fs-60">Frequently Asked Questions</h1>
-			</div>
+$data['page_banner_title'] = 'Frequently Asked Question';
+$this->load->view('templates/page-title-header' , $data); 
 
-		</div>
-	</div>
-</section>
+?>
 
 <!-- Faqs section -->
 <section id="faq-section" class="bg-main-color">

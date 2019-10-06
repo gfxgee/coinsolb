@@ -1,5 +1,4 @@
-<div class="row pb-60">
-			
+		<div class="row pb-60">
 			<div class="col-12 col-lg-6 col-sm-12 text-white mt-5">
 
 				<div class="accordion" id="accordionExample">

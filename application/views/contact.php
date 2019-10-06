@@ -1,15 +1,11 @@
-<!-- contact banner -->
-<section id="contact-us-section" class="bg-main-color d-flex align-items-center py-100">
-	<div class="container">
-		<div class="row">
 
-			<div class="col col-lg-6 col-sm-12 text-white">
-				<h1 class="banner-headline fs-60">Contact Us</h1>
-			</div>
 
-		</div>
-	</div>
-</section>
+<?php 
+
+$data['page_banner_title'] = 'Contact Us';
+$this->load->view('templates/page-title-header' , $data); 
+
+?>
 
 <!-- contact details -->
 <section id="contact-details-section" class="bg-main-color">

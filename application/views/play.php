@@ -33,8 +33,8 @@
 	
 		<div class="row bg-secondary-color text-white" id="game-container">
 			<div class="col-lg-8 m-auto p-5 text-center">
-				<h2 id="game-type">Game Type</h2>
-				<h6 id="game-operators">Addition and Subtraction</h6>
+				<h2 id="game-type">Select Game Type</h2>
+				<h6 id="game-operators"></h6>
 				<div class="row p-3 pt-4">
 					<div class="col-12 col-lg-7 col-md-7 p-4 px-5 mb-4 text-center bg-tertiary-color rounded rounded-lg play-area pb-4">
 						<div class="row text-center">
