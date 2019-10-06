@@ -10,11 +10,11 @@ $this->load->view('templates/page-title-header' , $data);
 	<div class="container">
 		<div class="row text-left">
 			<div class="col col-lg-6 col-sm-12 text-white py-60">
-				<p class="pt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+				<p class="pt-3">Mathematics is perhaps one of the dreaded subjects in school. It’s not a secret that a considerable percentage of the population hates math. Some consider it boring while others find the principles difficult to comprehend.</p>
 
-				<p class="pt-3">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially uncum passages, and more recently with desktop pu.</p>
+				<p class="pt-3">For school teachers and tutors, making students become interested in math can be challenging. But it does not mean there is no way to catch the student’s attention and make them love the subject. There are now many tools available to help children learn while having fun.</p>
 
-				<p class="pt-3">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker <a href="" class="link-primary fs-16">including versions</a> of Lorem Ipsum.</p>
+				<p class="pt-3">Coinsolb makes math learning more exciting by turning it into a game anyone can play using their personal computer or mobile devices. Children can improve their addition, division, multiplication, and division skills while playing games online. Plus, they can accumulate points as they play and receive rewards!</p>
 
 			</div>
 	
@@ -32,18 +32,10 @@ $this->load->view('templates/page-title-header' , $data);
 	<div class="container py-60">
 
 		<div class="row">
-			<div class="col col-lg-10 col-sm-12 text-white">
+			<div class="col-12 col-lg-9 col-sm-12 text-white text-left">
 				<h2 class="banner-headline"><span class="text-highlights">How it works</span></h2>
-				<p class="pt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+				<p class="pt-3">The steps are simple. Sign up and start solving math problems. You can select Normal mode which shows addition and subtraction problems or Hard mode for multiplication and division problems.</p>
 			</div>
-		</div>
-
-		<div class="row mt-5">
-			<div class="col col-lg-6 col-sm-12">
-				
-				
-			</div>
-
 		</div>
 	</div>
 </section>
@@ -56,7 +48,7 @@ $this->load->view('templates/page-title-header' , $data);
 		<div class="row text-center">
 			<div class="col col-lg-10 col-sm-12 text-white pt-60 pb-30 m-auto">
 				<h2 class="banner-headline">Our Accomplishments and<br><span class="text-highlights">What they say about us</span></h2>
-				<p class="pt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+				<p class="pt-3">Coinsolb has helped thousands of people learn to love math. Don’t just take our word for it. Trust the numbers and try it for yourself.</p>
 
 				<div class="row">
 

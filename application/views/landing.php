@@ -7,7 +7,7 @@
 					<span class="text-highlights">Improve</span> your <br>
 					<span class="text-highlights">Math skills</span> with Coinsolb.
 				</h1>
-				<p class="fs-22 my-3">Your time will not be wasted because you earn points and improve your math skill while playing.</p>
+				<p class="fs-22 my-3">Struggling with math? Improve your math skills while having fun. Learn while playing games.</p>
 				<a href="<?php echo (!$this->ion_auth->logged_in()) ? base_url('register') : base_url('play') ; ?>" class="btn mt-3 text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button">Get Started</a>
 			</div>
 
@@ -25,9 +25,9 @@
 		<div class="row text-center">
 			<div class="col col-lg-10 col-sm-12 text-white py-60 m-auto">
 				<h2 class="banner-headline">About Us</h2>
-				<p class="pt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+				<p class="pt-3">Math is perhaps one of the dreaded subjects in school. It’s not a secret that a considerable percentage of the population hates math. Some consider it boring while others find the principles difficult to comprehend.</p>
 
-				<p class="pt-3">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<p class="pt-3">Coinsolb makes math learning more exciting by turning it into a game anyone can play using their personal computer or mobile devices. Children can improve their addition, division, multiplication, and division skills while playing games online. Plus, they can accumulate points as they play and receive rewards!</p>
 
 				<a href="<?php echo base_url('about-us'); ?>" class="btn mt-3 text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button">Read More</a>
 
@@ -44,7 +44,7 @@
 		<div class="row">
 			<div class="col col-lg-10 col-sm-12 text-white">
 				<h2 class="banner-headline"><span class="text-highlights">Features</span> you're gonna love</h2>
-				<p class="pt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+				<p class="pt-3">There are many things to love about Coinsolb. You will not only learn how to add, subtract, multiply and divide, you will also earn points and rewards as you play!</p>
 			</div>
 		</div>
 
@@ -96,7 +96,7 @@
 		<div class="row text-center">
 			<div class="col-12 col-lg-10 col-sm-12 text-white pt-60 pb-30 m-auto">
 				<h2 class="banner-headline px-3">Our Accomplishments and<br><span class="text-highlights">What they say about us</span></h2>
-				<p class="pt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+				<p class="pt-3">Coinsolb has helped thousands of people learn to love math. Don’t just take our word for it. Trust the numbers and try it for yourself.</p>
 
 				<div class="row">
 

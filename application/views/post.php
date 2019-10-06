@@ -15,6 +15,10 @@
 				
 				<div class="mt-4 text-white"><?php echo $posts->post_content; ?></div>
 
+
+
+				<div id="disqus_thread" class="mt-5 bg-secondary-color p-4"></div>
+
 			</div>
 
 			<div class="col-lg-4 pt-5 pl-60">
@@ -33,10 +37,12 @@
 
 			</div>
 
+
+
 		</div>
+
 
 	</div>
 
 
 </section>
-
