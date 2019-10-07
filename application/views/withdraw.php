@@ -21,8 +21,8 @@
 
 							<div class="row">
 								<div class="col-12 col-lg-12 col-md-12 col-sm-12 ">
-									<div class="card bg-main-color text-white mb-3">
-									  <div class="card-body">
+									<div class="text-white mb-3">
+									  <div class="">
 									    <h3 class="card-title text-highlights">Balance: $<span><?php echo $current_earnings_left; ?></span></h3>
 									    <p class="card-text fs-14">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*50; ?>. </p>
 									    <p class="card-text fs-14">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
@@ -43,7 +43,7 @@
 									</div>
 								</div>
 
-								<div class="col-12 col-lg-8 col-md-8 col-sm-12 p-0 pl-3">
+								<div class="col-12 col-lg-7 col-md-7 col-sm-12 mt-5">
 									<h4>Please enter the details</h4>
 
 			  						<div class="dropdown-divider my-3"></div>

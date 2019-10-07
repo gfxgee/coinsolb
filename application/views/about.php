@@ -14,7 +14,7 @@ $this->load->view('templates/page-title-header' , $data);
 
 				<p class="pt-3">For school teachers and tutors, making students become interested in math can be challenging. But it does not mean there is no way to catch the student’s attention and make them love the subject. There are now many tools available to help children learn while having fun.</p>
 
-				<p class="pt-3">Coinsolb makes math learning more exciting by turning it into a game anyone can play using their personal computer or mobile devices. Children can improve their addition, division, multiplication, and division skills while playing games online. Plus, they can accumulate points as they play and receive rewards!</p>
+				<p class="pt-3">Coinsolb makes math learning more exciting by turning it into a game anyone can play using their personal computer or mobile devices. Children can improve their addition, subtraction, multiplication, and division skills while playing games online. Plus, they can accumulate points as they play and receive rewards!</p>
 
 			</div>
 	

@@ -28,7 +28,8 @@
 
         <div class="col-12 col-lg-3 pb-5">
           <h6 class="font-weight-bold text-footer-header mb-4">Follow Us</h6>
-          <div class="fb-like text-white" data-href="https://www.facebook.com/coinsolb" data-width="200" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+          <a href="https://www.facebook.com/coinsolb" class="text-white footer-contacts"><i class="fab fa-facebook-square"></i>&nbsp;&nbsp; Coinsolb</a>
+          <div class="fb-like text-white mt-4" data-href="https://www.facebook.com/coinsolb" data-width="200" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
 
         </div>
 
@@ -96,6 +97,27 @@
       } , 1000);
     });
   </script>
+  <?php } ?>
+
+  <?php if (isset($page) && ($page == 'post') ) { ?>
+   <script type="text/javascript">
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://coinsolb.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
   <?php } ?>
 
 

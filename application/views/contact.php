@@ -20,7 +20,7 @@ $this->load->view('templates/page-title-header' , $data);
 			<div class="col-12 col-lg-6 col-sm-12 py-60 text-white">
 				<h2 class="banner-headline"><span class="text-highlights">Be Updated!</span></h2>
 				<p class="pt-3">For more updates, Like and follow us on Facebook.</p>
-				<a href="#" class="btn mt-3 text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button"><i class="fab fa-facebook-square"></i> Coinsolb</a>
+				<a href="https://www.facebook.com/coinsolb" class="btn mt-3 text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button"><i class="fab fa-facebook-square"></i> Coinsolb</a>
 			</div>
 
 		</div>

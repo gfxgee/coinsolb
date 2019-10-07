@@ -27,7 +27,7 @@
 				<h2 class="banner-headline">About Us</h2>
 				<p class="pt-3">Math is perhaps one of the dreaded subjects in school. It’s not a secret that a considerable percentage of the population hates math. Some consider it boring while others find the principles difficult to comprehend.</p>
 
-				<p class="pt-3">Coinsolb makes math learning more exciting by turning it into a game anyone can play using their personal computer or mobile devices. Children can improve their addition, division, multiplication, and division skills while playing games online. Plus, they can accumulate points as they play and receive rewards!</p>
+				<p class="pt-3">Coinsolb makes math learning more exciting by turning it into a game anyone can play using their personal computer or mobile devices. Children can improve their addition, subtraction, multiplication, and division skills while playing games online. Plus, they can accumulate points as they play and receive rewards!</p>
 
 				<a href="<?php echo base_url('about-us'); ?>" class="btn mt-3 text-custom-secondary px-5 py-2 fs-22 rounded-100 banner-button">Read More</a>
 
@@ -60,7 +60,7 @@
 
 				<div class="card bg-secondary-color text-white rounded-20 no-border p-2 mt-4">
 					<div class="card-body">
-						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-divide"></i> <i class="fas fa-times"></i></span> Hard Mode (Multiplition & Division)</h5>
+						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-divide"></i> <i class="fas fa-times"></i></span> Hard Mode (Multiplication & Division)</h5>
 						<p class="card-text">60 seconds of Playing time and will refresh after 1 hour. You will earn 2 points for every correct answer. <a class="link-primary" href="<?php echo ($this->ion_auth->logged_in())? base_url('play') : base_url('login'); ?>">Play Now!</a></p>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 				<div class="card bg-secondary-color text-white rounded-20 no-border p-2 mt-4">
 					<div class="card-body">
 						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-users"></i></span> Referral Commision and Bonus</h5>
-						<p class="card-text"> You’ll be given referral points everytime the user successfully sign up with your referral code and play once in our game. <a class="link-primary" href="<?php echo base_url('register'); ?>">Invite now!</a></p>
+						<p class="card-text"> You’ll be given referral points everytime the user successfully sign up with your referral code and play once in our game. <a class="link-primary" href="<?php echo base_url('referrals'); ?>">Invite now!</a></p>
 					</div>
 				</div>
 
@@ -120,19 +120,20 @@
 			</div>
 		</div>
 		<hr class="features-divider"/>
-		<div class="row">
+		<div class="row col-12 col-lg-9 col-md-9 col-sm-12 m-auto">
 
+			
 			<div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
 				<p class="fs-70 text-highlights p-0 m-0"><i class="fas fa-quote-left"></i></p>
-				<p class="font-italic text-white fs-20 ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-				<p class="font-weight-bold text-white mt-4 fs-20">Tiffany Valdez</p>
+				<p class="font-italic text-white fs-20 ">This app is really recommended for anyone who want's to improve their Math skills and stay motivated in their studies.</p>
+				<h6 class="text-white mt-4 fs-20">Jerry Castillo</h6>
 			</div>
 
 
 			<div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
 				<p class="fs-70 text-highlights p-0 m-0"><i class="fas fa-quote-left"></i></p>
-				<p class="font-italic text-white fs-20 ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-				<p class="font-weight-bold text-white mt-4 fs-20">Mark James</p>
+				<p class="font-italic text-white fs-20 ">I like their point system and rewards, it keeps me motivated to use Coinsolb always since I can use it on mobile also.</p>
+				<h6 class="text-white mt-4 fs-20">Juan Mabini</h6>
 			</div>
 
 		</div>

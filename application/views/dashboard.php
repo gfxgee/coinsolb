@@ -34,8 +34,11 @@
 									<h3 class="mt-2"><?php echo $user_info->email; ?></h3>
 								</div>
 								<div class="col-12 col-lg-8 p-0 mt-4">
-									<h6 class="mb-2 text-custom-muted">Referral Link</h6>
-									<a class="fs-22 link-primary" href="<?php echo base_url('/register/').$user_referral_code; ?>"><?php echo base_url('/register/').$user_referral_code; ?></a>
+									<h6 class="text-custom-muted">Your Referral Link</h6>										
+									<p class="referral_link fs-22 link-primary"><?php echo base_url('/register/').$user_referral_code; ?></p>
+
+									<button class="btn banner-button rounded-100 copy-link" onclick="copyToClipboard('.referral_link')"  data-toggle="tooltip" data-placement="top"><i class="far fa-clipboard"></i> Copy Link</button>
+									<p class="mt-3 text-white fs-14">User this referral code to redeem extra points.</p>		
 								</div>
 							</div>
 								

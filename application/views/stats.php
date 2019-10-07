@@ -30,7 +30,7 @@
 								<div class="col-6 col-lg-4 p-0 mb-4">
 									<h6 class="mb-2 text-custom-muted">Points from Referrals</h6>
 									<h2 class=""><?php echo $total_referral_score; ?></h2>
-									<a href="<?php echo base_url('/discussion'); ?>" class="link-primary">Read Discussions</a>
+									<a href="<?php echo base_url('discussions'); ?>" class="link-primary">Read Discussions</a>
 								</div>
 							</div>
 						</div>
