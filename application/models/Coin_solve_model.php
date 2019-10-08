@@ -233,7 +233,7 @@ class Coin_solve_model extends CI_Model {
 
 	public function get_latest_game_result ( $user_id ) {
 
-		return $this->db->order_by('timestamp', 'DESC')->get_where('game_details' , array('user_id' => $user_id))->row();
+		return $this->db->order_by('timestamp', 'DESC')->get_where('game_details' , array('user_id' => $user_id , 'points_origin' => 'App Game'))->row();
 
 	}
 

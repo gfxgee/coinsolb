@@ -171,7 +171,7 @@ class Coin_solve extends CI_Controller  {
 		}
 		else
 		{
-			redirect ( '' , 'refresh');
+			redirect ( 'login' , 'refresh');
 		}
 	}
 

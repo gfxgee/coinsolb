@@ -529,6 +529,8 @@ class Auth extends CI_Controller
 
 			$this->ion_auth->login( $identity , $password );
 
+			$this->coin_solve_model->record_game_details( 300 , 'Sign Up' , $this->ion_auth->get_user_id() );
+
 			redirect("dashboard", 'refresh');
 		}
 		else

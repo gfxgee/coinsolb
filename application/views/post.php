@@ -11,7 +11,9 @@
 				<h1 class="text-white m-0"><?php echo $posts->post_title; ?></h1>
 				<!-- <small class="text-muted"><?php echo date("d M. Y  h:i a", strtotime($posts->post_timestamp)); ?></small> -->
 
-				<img width="100%" src="<?php echo base_url(); ?>/assets/images/image-temp.jpg" alt="" class="mt-4" />
+				<?php if( $posts->post_image ) { ?>
+					<img width="100%" src="<?php echo $posts->post_image; ?>" alt="" class="mt-4" />
+				<?php } ?>
 				
 				<div class="mt-4 text-white"><?php echo $posts->post_content; ?></div>
 
