@@ -30,7 +30,7 @@ class Coin_solve extends CI_Controller  {
 
 	public function index()
 	{	
-		$meta_description = 'Improve your math skills with Coinsolb! Your time will not be wasted becuase you earn points and improve your math skill while playing.';
+		$meta_description = 'Coinsolb makes math learning more exciting by turning it into a game anyone can play using their personal computer or mobile devices.';
 
 		$this->render_page('landing' , 'Coinsolb' , 0 , $meta_description );
 	}
@@ -135,7 +135,7 @@ class Coin_solve extends CI_Controller  {
 
 						$total_referring_points_count = $this->coin_solve_model->get_user_scores_count($user_id , 'Referral Points');
 
-						if ( $total_referring_points_count <= 5 ) $this->save_points_details( 500 , 'Referral Points' , $user_id_of_referral->user_id );
+						if ( $total_referring_points_count <= 10 ) $this->save_points_details( 300 , 'Referral Points' , $user_id_of_referral->user_id );
 
 						else { $this->save_points_details( 20 , 'Referral Points' , $user_id_of_referral->user_id ); }
 
@@ -524,7 +524,7 @@ class Coin_solve extends CI_Controller  {
 
 		}
 		else {
-			redirect('/' , 'refresh');
+			redirect('login' , 'refresh');
 		}
 
 	}
@@ -538,6 +538,9 @@ class Coin_solve extends CI_Controller  {
 			$this->render_page('stats' , 'User Statistics '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
 		}
+		else {
+			redirect('login' , 'refresh');
+		}
 
 	}
 
@@ -549,6 +552,9 @@ class Coin_solve extends CI_Controller  {
 
 			$this->render_page('points-history' , 'Points History '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
+		}
+		else {
+			redirect('login' , 'refresh');
 		}
 
 	}
@@ -562,6 +568,9 @@ class Coin_solve extends CI_Controller  {
 			$this->render_page('withdrawals' , 'Withdrawals '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
 		}
+		else {
+			redirect('login' , 'refresh');
+		}
 
 	}
 
@@ -573,6 +582,9 @@ class Coin_solve extends CI_Controller  {
 
 			$this->render_page('referrals' , 'Referrals '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
+		}
+		else {
+			redirect('login' , 'refresh');
 		}
 
 	}

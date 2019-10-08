@@ -17,8 +17,7 @@
 
 					
 					<div class="tab-pane fade show active" id="pills-points" role="tabpanel" aria-labelledby="pills-points-tab">
-						<div class="col-lg-12 p-0 text-left">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+						<div class="col-lg-12 p-0 text-left">Check out your progress here by scanning through all the points you gathered and see you if you have improved and earned more points.</p>
 							<div class="row p-3"> 
 								<div class="col-lg-3 p-0 pt-2">
 									<h6 class="text-custom-muted">Current Points</h6>
