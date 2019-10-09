@@ -325,7 +325,7 @@ class Coin_solve extends CI_Controller  {
 		}
 		else
 		{
-			redirect ('' , 'refresh');
+			redirect ('login' , 'refresh');
 		}
 	}
 
@@ -615,7 +615,7 @@ class Coin_solve extends CI_Controller  {
 
 	public function terms_conditions() {
 
-		$meta_description = 'For more personal concern and questions you can contact Coinsolb on this page.';
+		$meta_description = 'By getting to the site at Coinsolb.com, you are consenting to be bound by these terms and condition, every appropriate law, and guidelines, and concur that you are answerable for consistence with any relevant neighborhood laws.';
 
 		$this->render_page('terms-conditions' , 'Terms and Conditions '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 
@@ -626,6 +626,20 @@ class Coin_solve extends CI_Controller  {
 		$meta_description = 'Choose your game to play and improve your skill in math.';
 
 		$this->render_page('choose' , 'Choose Game '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
+	}
+
+	public function privacy (){
+
+		$meta_description = "Your Privacy is imperative to us. It is Coinsolb's strategy to regard your security with respect to any data we may gather from you over our site and different locales we possess and work.";
+
+		$this->render_page('privacy' , 'Privacy Policy'.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
+	}
+
+	public function cookies (){
+
+		$meta_description = "All information you need on what cookies are and why coinsolb needs to user cookies. Coinsolb also want you to know what are cookies function on this application.";
+
+		$this->render_page('cookies' , 'Privacy Policy'.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 	}
 
 	public function discussions ($slug = "") {

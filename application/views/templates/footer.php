@@ -41,7 +41,7 @@
           <p class="text-white">© 2019 Coinsolb &nbsp;&nbsp; | &nbsp;&nbsp; All Rights Reserved</p>
         </div>
         <div class="col-12 col-lg-6 text-right">
-          <p class="text-white"><a href="<?php echo base_url('terms-conditions'); ?>" class="footer-contacts">Terms & Conditions</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="" class="footer-contacts">Privacy</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="" class="footer-contacts">Cookies</a></p>
+          <p class="text-white"><a href="<?php echo base_url('terms-conditions'); ?>" class="footer-contacts">Terms & Conditions</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="<?php echo base_url('privacy'); ?>" class="footer-contacts">Privacy</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="<?php echo base_url('cookies'); ?>" class="footer-contacts">Cookies</a></p>
         </div>
       </div>
     </div>
