@@ -14,7 +14,7 @@
 			'faq_content'	=> '<p>You can find you referral code in the dashboard and navigate to the account tab or referrals tab upon <a class="link-primary fs-16" href="'.base_url('login').'">logging in</a>.</p>' ),
 		'4'	=> array (
 			'faq_title' 	=> 'Is Coinsolb free of use?',
-			'faq_content'	=> '<p>Yes it is absolutely free to use. We at Coinsolb wants to help out those who are needing improvements on their basic math skills.</p><a href="'.base_url('discussions/free-of-use').'" class="link-primary fs-16"> Learn more.</a>' ),
+			'faq_content'	=> '<p>Yes it is absolutely free to usefree. We at Coinsolb wants to help out those who are needing improvements on their basic math skills.' ),
 		'5'	=> array (
 			'faq_title' 	=> 'Does it help my children improve math skills?',
 			'faq_content'	=> '<p>Absolutely! Coinsolb developed this application as alternative way to let your kids learn math. And we choose basic math as it is one of the most effictive way to learn math.</p>' ),
@@ -38,7 +38,7 @@
 				  <div class="card rounded-20 bg-secondary-color text-white no-border p-3">
 				    <div class="card-header rounded-top-20 no-border bg-transparent" id="headingOne">
 				      <h2 class="fs-16 mb-0">
-				        <a class="text-white text-right toggle-custom-button" data-toggle="collapse" data-target="#collapse<?php echo $question; ?>" aria-expanded="true" aria-controls="collapse<?php echo $question; ?>">
+				        <a class="fs-16 text-right toggle-custom-button faq-link" data-toggle="collapse" data-target="#collapse<?php echo $question; ?>" aria-expanded="true" aria-controls="collapse<?php echo $question; ?>">
 				      	<?php echo $value['faq_title']; ?>
 				         <span class="text-yellow-highlights mt-1 float-right"><i class="fas fa-plus"></i> </span>
 				        </a>

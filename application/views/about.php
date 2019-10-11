@@ -74,17 +74,17 @@ $this->load->view('templates/page-title-header' , $data);
 		<hr class="features-divider"/>
 		<div class="row">
 
-			<div class="col col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
+			<div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
 				<p class="fs-70 text-highlights p-0 m-0"><i class="fas fa-quote-left"></i></p>
-				<p class="font-italic text-white fs-20 ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-				<p class="font-weight-bold text-white mt-4 fs-20">Tiffany Valdez</p>
+				<p class="font-italic text-white fs-20 ">This app is really recommended for anyone who want's to improve their Math skills and stay motivated in their studies.</p>
+				<h6 class="text-white mt-4 fs-20">Jerry Castillo</h6>
 			</div>
 
 
-			<div class="col col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
+			<div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
 				<p class="fs-70 text-highlights p-0 m-0"><i class="fas fa-quote-left"></i></p>
-				<p class="font-italic text-white fs-20 ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-				<p class="font-weight-bold text-white mt-4 fs-20">Mark James</p>
+				<p class="font-italic text-white fs-20 ">I like their point system and rewards, it keeps me motivated to use Coinsolb always since I can use it on mobile also.</p>
+				<h6 class="text-white mt-4 fs-20">Juan Mabini</h6>
 			</div>
 
 		</div>

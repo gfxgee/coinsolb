@@ -497,6 +497,12 @@ a {
 
 
 
+/* faq */
+.faq-link:hover {
+	color: #F7B32D !important;
+}
+
+
 
 
 @font-face {

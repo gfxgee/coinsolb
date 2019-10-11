@@ -54,14 +54,14 @@
 				<div class="card bg-secondary-color text-white rounded-20 no-border p-2">
 					<div class="card-body">
 						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-plus"></i> <i class="fas fa-minus"></i></span> Normal Mode (Addition & Subtraction)</h5>
-						<p class="card-text">80 seconds of Playing time and will refresh after 1 hour. You will earn 1 point for every correct answer. <a class="link-primary" href="<?php echo ($this->ion_auth->logged_in())? base_url('play') : base_url('login'); ?>">Play Now!</a></p>
+						<p class="card-text">80 seconds of Playing time and will refresh after 1 hour. You will earn 1 point for every correct answer. <a class="link-primary" href="<?php echo ($this->ion_auth->logged_in())? base_url('play?type=normal') : base_url('login'); ?>">Play Now!</a></p>
 					</div>
 				</div>
 
 				<div class="card bg-secondary-color text-white rounded-20 no-border p-2 mt-4">
 					<div class="card-body">
 						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-divide"></i> <i class="fas fa-times"></i></span> Hard Mode (Multiplication & Division)</h5>
-						<p class="card-text">60 seconds of Playing time and will refresh after 1 hour. You will earn 2 points for every correct answer. <a class="link-primary" href="<?php echo ($this->ion_auth->logged_in())? base_url('play') : base_url('login'); ?>">Play Now!</a></p>
+						<p class="card-text">60 seconds of Playing time and will refresh after 1 hour. You will earn 2 points for every correct answer. <a class="link-primary" href="<?php echo ($this->ion_auth->logged_in())? base_url('play?type=hard') : base_url('login'); ?>">Play Now!</a></p>
 					</div>
 				</div>
 
@@ -120,20 +120,19 @@
 			</div>
 		</div>
 		<hr class="features-divider"/>
-		<div class="row col-12 col-lg-9 col-md-9 col-sm-12 m-auto">
+		<div class="row m-auto">
 
-			
 			<div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
 				<p class="fs-70 text-highlights p-0 m-0"><i class="fas fa-quote-left"></i></p>
 				<p class="font-italic text-white fs-20 ">This app is really recommended for anyone who want's to improve their Math skills and stay motivated in their studies.</p>
-				<h6 class="text-white mt-4 fs-20">Jerry Castillo</h6>
+				<h6 class="mt-4 fs-20 text-highlights">Jerry Castillo</h6>
 			</div>
 
 
 			<div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-30 pb-60">
 				<p class="fs-70 text-highlights p-0 m-0"><i class="fas fa-quote-left"></i></p>
 				<p class="font-italic text-white fs-20 ">I like their point system and rewards, it keeps me motivated to use Coinsolb always since I can use it on mobile also.</p>
-				<h6 class="text-white mt-4 fs-20">Juan Mabini</h6>
+				<h6 class="mt-4 fs-20 text-highlights">Juan Mabini</h6>
 			</div>
 
 		</div>
