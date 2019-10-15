@@ -17,7 +17,7 @@
 			'faq_content'	=> '<p>Yes it is absolutely free to usefree. We at Coinsolb wants to help out those who are needing improvements on their basic math skills.' ),
 		'5'	=> array (
 			'faq_title' 	=> 'Does it help my children improve math skills?',
-			'faq_content'	=> '<p>Absolutely! Coinsolb developed this application as alternative way to let your kids learn math. And we choose basic math as it is one of the most effictive way to learn math.</p>' ),
+			'faq_content'	=> '<p>Absolutely! Coinsolb developed this application as alternative way to let your kids learn math. And we choose basic math as it is one of the most effective way to learn math.</p><a href="'.base_url('discussions/does-it-help-my-children-improve-math-skills').'" class="fs-16 link-primary">Learn More.</a>' ),
 		'6'	=> array (
 			'faq_title' 	=> 'Do I need to practice?',
 			'faq_content'	=> '<p>If you are already a great mathematician then you will find this as easy and earn great points from the game but if you are having difficulties then you can <a href="'.base_url('practice').'" class="fs-16 link-primary">practice</a> the game and improve to earn higher points.</p>' ),

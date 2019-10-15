@@ -68,7 +68,7 @@
 				<div class="card bg-secondary-color text-white rounded-20 no-border p-2 mt-4">
 					<div class="card-body">
 						<h5 class="card-title"><span class="text-highlights mr-2"><i class="fas fa-users"></i></span> Referral Commision and Bonus</h5>
-						<p class="card-text"> You’ll be given referral points everytime the user successfully sign up with your referral code and play once in our game. <a class="link-primary" href="<?php echo base_url('referrals'); ?>">Invite now!</a></p>
+						<p class="card-text"> You’ll be given referral points everytime the user successfully sign up with your referral code and play 5 times in our game. <a class="link-primary" href="<?php echo base_url('referrals'); ?>">Invite now!</a></p>
 					</div>
 				</div>
 

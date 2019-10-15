@@ -38,7 +38,7 @@
 									<p class="referral_link fs-22 link-primary"><?php echo base_url('/register/').$user_referral_code; ?></p>
 
 									<button class="btn banner-button rounded-100 copy-link" onclick="copyToClipboard('.referral_link')"  data-toggle="tooltip" data-placement="top"><i class="far fa-clipboard"></i> Copy Link</button>
-									<p class="mt-3 text-white fs-14">User this referral code to redeem extra points.</p>		
+									<p class="mt-3 text-white fs-14">Use this referral code to redeem extra points.</p>		
 								</div>
 							</div>
 								

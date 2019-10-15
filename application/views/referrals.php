@@ -18,7 +18,7 @@
 					<div class="tab-pane fade show active" id="pills-referrals" role="tabpanel" aria-labelledby="pills-referrals-tab">
 						<div class="col-12 col-lg-12 p-0 text-left">
 							<p>Here are the people that used your referral code and at the same time check the status of your referral code.</p>						
-							<p>To know more about referrals please follow this article: <a href="<?php echo base_url('discussions/how-does-referral-works'); ?>" class="link-primary fs-16">How referral works Referral.</a>
+							<p>To know more about referrals please follow this article: <a href="<?php echo base_url('discussions/how-does-referral-works'); ?>" class="link-primary fs-16">How referral works.</a>
 							<div class="row p-3">
 								<div class="col-12 col-lg-3 p-0 pt-2">
 									<h6 class="text-custom-muted">Total Referrals</h6>
