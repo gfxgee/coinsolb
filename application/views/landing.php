@@ -139,6 +139,7 @@
 	</div>
 </section>
 
+<?php $this->load->view('templates/discussions'); ?>
 
 <?php if( !$this->ion_auth->logged_in()) { $this->load->view('templates/users-count'); }?>
 

@@ -77,7 +77,7 @@ class Coin_solve extends CI_Controller  {
 			);
 
 			
-			if ($page == 'post') {
+			if ($page == 'post' || $page == 'landing') {
 				$data['recent_posts'] = $this->coin_solve_model->get_recent_posts();
 			}
 
@@ -98,7 +98,7 @@ class Coin_solve extends CI_Controller  {
 				'posts'					=> $posts,
 			);
 
-			if ($page == 'post') {
+			if ($page == 'post' || $page == 'landing') {
 				$data['recent_posts'] = $this->coin_solve_model->get_recent_posts();
 			}
 
