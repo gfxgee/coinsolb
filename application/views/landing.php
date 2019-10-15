@@ -102,12 +102,12 @@
 
 					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">
 						<h6>Registered Users</h6>
-						<h2 class="text-highlights fs-50 mt-3">9,136</h2>
+						<h2 class="text-highlights fs-50 mt-3"><?php echo (isset($user_count)) ? $user_count + 2364 : ''; ?></h2>
 					</div>
 
 					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">
 						<h6>Total problems solved</h6>
-						<h2 class="text-highlights fs-50 mt-3">95,662</h2>
+						<h2 class="text-highlights fs-50 mt-3"><?php echo (isset($total_problems_solved)) ? $total_problems_solved + 92364 : ''; ?></h2>
 					</div>
 
 					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">

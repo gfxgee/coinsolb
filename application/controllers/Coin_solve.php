@@ -52,6 +52,10 @@ class Coin_solve extends CI_Controller  {
 
 			$user = $this->ion_auth->user($this->ion_auth->get_user_id())->row();
 
+			$total_users = $this->coin_solve_model->get_total_user_count();
+
+			$total_problems_solved = $this->coin_solve_model->get_all_games_count();
+
 			if( $user_referral_code ) $total_referrals = $this->coin_solve_model->count_user_referrals( $user_referral_code);
 
 			else $total_referrals = 0;
@@ -74,6 +78,8 @@ class Coin_solve extends CI_Controller  {
 				'replay_time_left'				=> $replay_time,
 				'posts'							=> $posts,
 				'messages'						=> $msg,
+				'user_count'					=> $total_users,
+				'total_problems_solved'			=> $total_problems_solved,
 			);
 
 			
@@ -90,12 +96,17 @@ class Coin_solve extends CI_Controller  {
 
 			$total_users = $this->coin_solve_model->get_total_user_count();
 
+			$total_problems_solved = $this->coin_solve_model->get_all_games_count();
+
+
 			$data = array(
 				'page'					=> $page,
 				'page_title'			=> $page_title,
 				'user_count'			=> $total_users,
 				'meta_description'		=> $meta_description,
 				'posts'					=> $posts,
+				'total_problems_solved'			=> $total_problems_solved,
+				
 			);
 
 			if ($page == 'post' || $page == 'landing') {

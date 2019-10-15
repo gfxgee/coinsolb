@@ -28,6 +28,15 @@ class Coin_solve_model extends CI_Model {
 
 	}
 
+	public function get_all_games_count() {
+		
+		$query = $this
+                ->db
+                ->get('game_details');
+    
+        return $query->num_rows();  
+	}
+
 	public function check_user_referral_code ( $referral_code ) {
 
 		$query = $this->db->select("COUNT(*) as num")->get_where('referrals' , array ( 'code' => $referral_code ));
