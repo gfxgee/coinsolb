@@ -505,6 +505,18 @@ a {
 
 
 
+
+/* discussions */
+.discussions-post-link:hover {
+	text-decoration: none !important;
+	color: #F7B32D !important;
+}
+
+
+
+
+
+
 @font-face {
   font-family: Larsseit;
   src: url(fonts/Larsseit.ttf);
@@ -514,6 +526,11 @@ a {
   font-family: Larsseit ExtraBold;
   src: url(fonts/Larsseit-ExtraBold.ttf);
 }
+
+
+
+
+
 
 
 
