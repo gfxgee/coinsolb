@@ -8,7 +8,7 @@
 			'faq_content'	=> '<p>You not be recieving points upon sign up but in the other hand it is completely free to use our application and improve your math skills</p>' ),
 		'2'	=> array (
 			'faq_title' 	=> 'How does referral works?',
-			'faq_content'	=> '<p>Upon signing up your account on Coinsolb the system will automatically generates a code (which will serve as your referral code) that you can use to share the our application to other and earn addition extra points.</p> <a href="'.base_url('discussions/how-to-use-coinsolb').'" class="link-primary fs-16"> Continue here.</a>' ),
+			'faq_content'	=> '<p>Upon signing up your account on Coinsolb the system will automatically generates a code (which will serve as your referral code) that you can use to share the our application to other and earn addition extra points.</p> <a href="'.base_url('discussions/how-does-referral-works').'" class="link-primary fs-16"> Continue here.</a>' ),
 		'3'	=> array (
 			'faq_title' 	=> 'Where can I find my referral link?',
 			'faq_content'	=> '<p>You can find you referral code in the dashboard and navigate to the account tab or referrals tab upon <a class="link-primary fs-16" href="'.base_url('login').'">logging in</a>.</p>' ),
