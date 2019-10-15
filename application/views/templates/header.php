@@ -54,7 +54,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="<?php echo base_url(); ?>assets/fontawesome/css/solid.css" rel="stylesheet">
   <!-- <script src="https://kit.fontawesome.com/61cd694d48.js" crossorigin="anonymous"></script> -->
 
-
 </head>
 
 <body id="<?php if(isset($page)) echo $page.'_page'; ?>">
@@ -79,6 +78,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <li class="nav-item <?php echo ( $page == 'discussions' || $page == 'post' ) ? 'active' : ''; ?>">
             <a class="nav-link js-scroll-trigger" href="<?php echo base_url('discussions'); ?>">Discussion</a>
+          </li>
+          
+          <li class="nav-item <?php echo ( $page == 'practice') ? 'active' : ''; ?>">
+            <a class="nav-link js-scroll-trigger" href="<?php echo base_url('practice'); ?>">Practice</a>
           </li>
 
           <li class="nav-item <?php echo ( $page == 'faq') ? 'active' : ''; ?>">

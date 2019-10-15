@@ -186,31 +186,41 @@ class Coin_solve_model extends CI_Model {
 
 	} 
 
+	public function check_pending_withdrawal ( $user_id ) {
+
+		return $this->db->select("COUNT(*) as num")->get_where('withdrawals' , array ( 'user_id' => $user_id , 'withdrawal_status' => 'Pending' ))->row()->num;
+
+	}
+
 	public function add_withdrawal ( $user_id , $data ) {
 
-		date_default_timezone_set("Asia/Manila");
+		if ( !$this->check_pending_withdrawal( $user_id )) {
 
-		$current_date = new DateTime("now");
+			date_default_timezone_set("Asia/Manila");
 
-		$current_date = date('Y-m-d H:i:s' , $current_date->getTimestamp());
+			$current_date = new DateTime("now");
 
-		$amount = $data['withdrawal-amount']*10000;
+			$current_date = date('Y-m-d H:i:s' , $current_date->getTimestamp());
 
-		$data = json_encode($data);
+			$amount = $data['withdrawal-amount']*10000;
 
-		$query = "insert into withdrawals values('', '$amount' , '$current_date' , '$user_id' , '$data' , 'Pending')";
-		
-		$result = $this->db->query($query);
+			$data = json_encode($data);
 
-		if ( $result ) return true;
+			$query = "insert into withdrawals values('', '$amount' , '$current_date' , '$user_id' , '$data' , 'Pending')";
+			
+			$result = $this->db->query($query);
 
-		return false;
+			if ( $result ) return true;
+
+			return false;
+		}
+		else return false;
 
 	}
 
 	public function get_user_total_withdrawals( $user_id ){
 
-		return $this->db->select_sum('points_withdrawed')->where('user_id' , $user_id)->get('withdrawals')->row()->points_withdrawed;
+		return $this->db->select_sum('points_withdrawed')->get_where('withdrawals' , array ( 'user_id' => $user_id , 'withdrawal_status' => 'Accepted'))->row()->points_withdrawed;
 	}
 
 	public function get_user_withdrawals( $user_id ) {

@@ -21,6 +21,25 @@
 
 							<div class="row">
 								<div class="col-12 col-lg-12 col-md-12 col-sm-12 ">
+
+									<?php if ( isset($messages)) { 
+											if ( $messages == true ) { ?>
+												<div class="alert alert-success bg-success rounded-100 border-white text-white alert-dismissible fade show" role="alert">
+												  <strong>Success!</strong> Your request has now been processed. Please wait until further notice.
+												  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+												    <span aria-hidden="true text-success">&times;</span>
+												  </button>
+												</div>
+									<?php 	} else if ( $messages == false ){ ?>
+											<div class="alert alert-danger bg-danger rounded-100 border-white text-white alert-dismissible fade show" role="alert">
+												  <strong>Sorry!</strong> Your request was denied. Please ensure that you meet the requirements and try again or you may have pending withdrawal request.
+												  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+												    <span aria-hidden="true text-danger">&times;</span>
+												  </button>
+												</div>
+									<?php	} 
+									} ?>
+
 									<div class="text-white mb-3">
 									  <div class="">
 									    <h3 class="card-title text-highlights">Balance: $<span><?php echo $current_earnings_left; ?></span></h3>
@@ -141,8 +160,8 @@
 			</div>
 		</div>
 
-
 	</div>
 </section>
 
 <?php $this->load->view('templates/faq'); ?>
+

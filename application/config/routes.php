@@ -66,6 +66,7 @@ $route['contact'] 					= 'coin_solve/contact';
 $route['faq'] 						= 'coin_solve/faq';
 $route['privacy'] 					= 'coin_solve/privacy';
 $route['cookies'] 					= 'coin_solve/cookies';
+$route['practice'] 					= 'coin_solve/practice';
 $route['terms-conditions'] 			= 'coin_solve/terms_conditions';
 $route['choose'] 					= 'coin_solve/choose';
 $route['discussions'] 				= 'coin_solve/discussions';

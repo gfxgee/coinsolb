@@ -52,19 +52,24 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="<?php echo base_url(); ?>assets/bootstrap/js/jquery-3.4.1.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
   
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/data-tables/datatables.min.js"></script>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/game_library/cookie.js"></script>
   
   <!-- Load custom javascripts -->
   <script src="<?php echo base_url(); ?>assets/custom.js"></script>
 
 
+  <!-- Load practice game -->
+  <?php if (isset($page) && ($page == 'practice') ) { ?>
+  <script src="<?php echo base_url(); ?>assets/game_library/practice.js"></script>
+  <?php } ?>
+  
   <!-- Load game -->
   <?php if (isset($page) && ($page == 'play' || $page == 'choose') ) { ?>
+
   <script src="<?php echo base_url(); ?>assets/game_library/app.js"></script>
 
   <script type="text/javascript">
@@ -119,6 +124,8 @@
   </script>
 
   <?php } ?>
+
+
 
 
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

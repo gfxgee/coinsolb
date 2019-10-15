@@ -36,7 +36,7 @@ class Coin_solve extends CI_Controller  {
 	}
 
 
-	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description , $posts = []) 
+	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description , $posts = [] , $message = []) 
 	{
 		if (  $this->ion_auth->logged_in() ) {
 
@@ -56,6 +56,9 @@ class Coin_solve extends CI_Controller  {
 
 			else $total_referrals = 0;
 
+			if (isset($message['message'])) $msg = $message['message'];
+			else $msg = NULL;
+
 			$data = array(
 				'page'							=> $page,
 				'meta_description'				=> $meta_description,
@@ -70,6 +73,7 @@ class Coin_solve extends CI_Controller  {
 				'user_info'						=> $user,
 				'replay_time_left'				=> $replay_time,
 				'posts'							=> $posts,
+				'messages'						=> $msg,
 			);
 
 			
@@ -116,6 +120,8 @@ class Coin_solve extends CI_Controller  {
 		{	
 			
 			if(isset($_COOKIE['score'])) {
+
+				echo $_COOKIE['score'];
 
 				$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id );
 
@@ -437,7 +443,7 @@ class Coin_solve extends CI_Controller  {
 
 				if ( $res->withdrawal_status == 'Pending' ) $status = '<span class="text-danger">' . $res->withdrawal_status . '</span>';
 
-				else if ($res->withdrawal_status == 'Activated' ) $status = '<span class="text-success">' . $res->withdrawal_status . '</span>';
+				else if ($res->withdrawal_status == 'Accepted' ) $status = '<span class="text-success">' . $res->withdrawal_status . '</span>';
 
 				$withdrawal_details = json_decode($res->withdrawal_details);
 
@@ -516,11 +522,28 @@ class Coin_solve extends CI_Controller  {
 			
 			if ( $this->input->post('select-payment')) {
 
-				$result = $this->coin_solve_model->add_withdrawal($this->ion_auth->get_user_id() ,  $this->input->post());
+				if ( $this->input->post('withdrawal-amount') >= 2 ) {
+
+					$result = $this->coin_solve_model->add_withdrawal($this->ion_auth->get_user_id() ,  $this->input->post());
+
+				}
+
+				else $result = false;
+
+				if ( $result ) {
+
+					$data['message'] = true;
+
+				}
+				else {
+					$data['message'] = false;
+				}
+
+				$this->render_page('withdraw' , 'Withdraw '.$this->meta_title_separator().' CoinSolb' , 0 , $meta_description , '' ,  $data );
 
 			}
 
-			else $this->render_page('withdraw' , 'Withdraw '.$this->meta_title_separator().' CoinSolb' , 0 , $meta_description);
+			else $this->render_page('withdraw' , 'Withdraw '.$this->meta_title_separator().' CoinSolb' , 0 , $meta_description );
 
 		}
 		else {
@@ -632,14 +655,22 @@ class Coin_solve extends CI_Controller  {
 
 		$meta_description = "Your Privacy is imperative to us. It is Coinsolb's strategy to regard your security with respect to any data we may gather from you over our site and different locales we possess and work.";
 
-		$this->render_page('privacy' , 'Privacy Policy'.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
+		$this->render_page('privacy' , 'Privacy Policy '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 	}
 
 	public function cookies (){
 
 		$meta_description = "All information you need on what cookies are and why coinsolb needs to user cookies. Coinsolb also want you to know what are cookies function on this application.";
 
-		$this->render_page('cookies' , 'Privacy Policy'.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
+		$this->render_page('cookies' , 'Cookies Policy '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
+	}
+
+
+	public function practice (){
+
+		$meta_description = "Practice before playing to be prepared and earn more on CoinSolb. Answer without worrying about the time without limit for practice.";
+
+		$this->render_page('practice' , 'Practice '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description);
 	}
 
 	public function discussions ($slug = "") {
