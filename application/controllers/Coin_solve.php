@@ -57,64 +57,6 @@ class Coin_solve extends CI_Controller  {
 
 	}
 
-	// public function get_top_users(){
-
-	// 	$columns = array( 
- //                            0 =>'name',
- //                            1 =>'email',
- //                            2 =>'total_score',
- //                            3 =>'action',
- //                        );
-
-	// 	$limit = $this->input->post('length');
- //        $start = $this->input->post('start');
- //        $order = $columns[2];
- //        $dir = $this->input->post('order')[0]['dir'];
-  
- //        $totalData = $this->coin_solve_model_admin->allscores_count();
-            
- //        $totalFiltered = $totalData; 
-            
- //        if(empty($this->input->post('search')['value']))
- //        {            
- //            $scores = $this->coin_solve_model_admin->allscores($limit,$start,$order,$dir);
- //        }
- //        else {
- //            $search = $this->input->post('search')['value']; 
-
- //            $scores =  $this->coin_solve_model_admin->score_search($limit,$start,$search,$order,$dir);
-
- //            $totalFiltered = $this->coin_solve_model_admin->score_search_count($search);
- //        }
-
- //        // var_dump($scores);
-
- //        $data = array();
- //        if(!empty($scores))
- //        {
- //            foreach ($scores as $score)
- //            {
-
- //                $nestedData['name'] = $score->first_name . ' ' . $score->last_name;
- //                $nestedData['email'] = $score->email;
- //                $nestedData['score'] = $score->total_score;
- //                $nestedData['action'] = 'Suspend';
-                
- //                $data[] = $nestedData;
-
- //            }
- //        }
-          
- //        $json_data = array(
- //                    "draw"            => intval($this->input->post('draw')),  
- //                    "recordsTotal"    => intval($totalData),  
- //                    "recordsFiltered" => intval($totalFiltered), 
- //                    "data"            => $data   
- //                    );
-            
- //        echo json_encode($json_data); 
-	// }
-
 	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description , $posts = [] , $message = []) 
 	{
 		if (  $this->ion_auth->logged_in() ) {
@@ -237,6 +179,12 @@ class Coin_solve extends CI_Controller  {
 			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
 				
 				$this->render_page('play' , 'CoinSolb - Play' , 3600 , $meta_description);
+
+				if(isset($_COOKIE['score'])) {
+
+					$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id ) ;
+
+				}
 
 			} else {
 
