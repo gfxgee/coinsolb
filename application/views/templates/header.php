@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-6564689092888316",
+            google_ad_client: "ca-pub-9239016295634478",
             enable_page_level_ads: true
        });
   </script>
