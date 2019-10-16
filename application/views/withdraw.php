@@ -43,19 +43,23 @@
 									<div class="text-white mb-3">
 									  <div class="">
 									    <h3 class="card-title text-highlights">Balance: $<span><?php echo $current_earnings_left; ?></span></h3>
-									    <p class="card-text fs-14">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*50; ?>. </p>
-									    <p class="card-text fs-14">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
-										<p class="card-text fs-14">Minimum amount withdrawn on <span class="text-highlights">Palawan and Steam wallet</span>: $5 = ₱250.00.</p>
+									    <p class="card-text">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*50; ?>. </p>
+									    <p class="card-text">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
+										<p class="card-text">Minimum amount withdrawn on <span class="text-highlights">Palawan and Steam wallet</span>: $5 = ₱250.00.</p>
 									    
 									<form id="withdraw_form" method="post" action="<?php echo base_url('/withdraw');?>">
-										<div class="form-group mt-4 col-12 col-lg-4 col-md-4">
+										<div class="p-0 form-group mt-4 col-12 col-lg-6 col-md-6">
 											<label for="select-payment">Available payment type</label>
-											<select class="form-control" name="select-payment" id="select-payment" <?php echo ($current_earnings_left >= $minimun_withdrawal ) ? '' : 'disabled'; ?>>
+											<select class="form-control main-input" name="select-payment" id="select-payment" <?php echo ($current_earnings_left >= $minimun_withdrawal ) ? '' : 'disabled'; ?>>
 												<option value="gcash">Gcash</option>
 												<option value="e-load">E-Load</option>
 												<option value="steam-wallet">Steam Wallet</option>
+												<option value="mobile-legend">Mobile Legend</option>
 												<option value="palawan">Palawan</option>
+												<option value="paypal">PayPal</option>
+												<option value="bitcoin">BitCoin</option>
 											</select>
+											<label for="select-payment" class="fs-12 text-danger">This option will enable after you meet the requirements</label>
 										</div>
 
 									  </div>
@@ -119,7 +123,30 @@
 											</div>
 										</div>
 
-				
+										<div class="account" id="account-details-paypal" style="display: none;">
+											
+											<div class="form-group">
+												<label for="email">Email Address</label>
+												<input type="text" name="email" class="form-control main-input" id="email" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Email Address">
+											</div>
+										</div>
+
+										<div class="account" id="account-details-bitcoin" style="display: none;">
+											
+											<div class="form-group">
+												<label for="wallet-address">Bitcoin Wallet Address</label>
+												<input type="text" name="wallet-address" class="form-control main-input" id="wallet-address" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Bitcoin Wallet Address">
+											</div>
+										</div>
+
+										<div class="account" id="account-details-mobile-legend" style="display: none;">
+											
+											<div class="form-group">
+												<label for="ml-user-id">Mobile Legend UserID</label>
+												<input type="text" name="ml-user-id" class="form-control main-input" id="ml-user-id" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Mobile Legend UserID">
+											</div>
+										</div>
+
 										<div class="form-group">
 											<label for="withdrawal-amount">Amount</label>
 											<input type="text" name="withdrawal-amount" class="form-control main-input" id="withdrawal-amount" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Enter amount to withdraw:">

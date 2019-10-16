@@ -185,6 +185,11 @@ function gameStart() {
 			spamFlag = 0;
 			gameOver();
 			clearInterval ( gameStartTimer );
+
+			$.get( "play", function( data ) {
+				Cookies.remove('score', { path: '/' }); 
+			});
+			
 		}
 
 		if ( !isPause ) { time--; offset++; }
@@ -198,9 +203,6 @@ function gameStart() {
 $( document ).ready(function(){
 
 	'use strict';
-
-
-	Cookies.remove('score', { path: '/' });
 
 	// generates initial random equation
 	var systemGeneratedAnswer;

@@ -88,7 +88,7 @@
 							</div>
 						</div>
 						
-						<small class="mt-5text-white result-message">While waiting you can practice <a class="link-primary" href="<?php echo base_url('play'); ?>">here</a>.</small>
+						<small class="mt-5text-white result-message">While waiting you can practice <a class="link-primary" href="<?php echo base_url('practice'); ?>">here</a>.</small>
 					</div>
 					<div class="col-lg-5 p-2 px-4 text-center">
 						<h6 class="text-highlights fs-14 mb-2 mt-5"><i class="far fa-clock"></i> Time left until next game.</h6>

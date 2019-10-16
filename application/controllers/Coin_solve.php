@@ -105,7 +105,7 @@ class Coin_solve extends CI_Controller  {
 				'user_count'			=> $total_users,
 				'meta_description'		=> $meta_description,
 				'posts'					=> $posts,
-				'total_problems_solved'			=> $total_problems_solved,
+				'total_problems_solved'	=> $total_problems_solved,
 				
 			);
 
@@ -132,9 +132,7 @@ class Coin_solve extends CI_Controller  {
 			
 			if(isset($_COOKIE['score'])) {
 
-				echo $_COOKIE['score'];
-
-				$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id );
+				$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id ) ;
 
 			}
 
@@ -530,10 +528,12 @@ class Coin_solve extends CI_Controller  {
 		$meta_description = 'Convert your points to physical earnings. Coinsolb lets you choose variety of ways to do it.';
 
 		if ( $this->ion_auth->logged_in() ) {
+
+			$total_points_earned = $this->coin_solve_model->get_user_total_score($user_id);
 			
 			if ( $this->input->post('select-payment')) {
 
-				if ( $this->input->post('withdrawal-amount') >= 2 ) {
+				if ( $this->input->post('withdrawal-amount') >= 2 && $this->input->post('withdrawal-amount') <= $total_points_earned/10000 ) {
 
 					$result = $this->coin_solve_model->add_withdrawal($this->ion_auth->get_user_id() ,  $this->input->post());
 
