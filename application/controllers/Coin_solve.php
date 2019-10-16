@@ -43,8 +43,10 @@ class Coin_solve extends CI_Controller  {
 				'page'					=> 'admin',
 				'page_title'			=> 'Administrator',
 				'user_count'			=> $this->coin_solve_model_admin->get_all_user_count(),
+				'withdrawal_count'		=> $this->coin_solve_model_admin->get_all_withdrawal_count(),
+				'games_played_count_today'	=> $this->coin_solve_model_admin->get_all_games_played_count_today(),
 				'meta_description'		=> 'Administrator',
-				
+				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(), 
 			);
 
 			$this->load->view('templates/header' , $data);
