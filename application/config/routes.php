@@ -54,6 +54,7 @@ $route['404_override'] 				= '';
 $route['translate_uri_dashes'] 		= FALSE;
 
 $route['play'] 						= 'coin_solve/play';
+$route['administrator'] 			= 'coin_solve/administrator';
 $route['dashboard'] 				= 'coin_solve/dashboard';
 $route['account'] 					= 'coin_solve/account';
 $route['withdraw'] 					= 'coin_solve/withdraw';

@@ -32,6 +32,9 @@
 		<?php if ($replay_time_left >= 3600 ) { ?>
 	
 		<div class="row bg-secondary-color text-white" id="game-container">
+			<div class="col-sm-10 mb-4 m-auto">
+				<?php $this->load->view('templates/ad_header'); ?>
+			</div>			
 			<div class="col-lg-8 m-auto p-5 text-center">
 				<h2 id="game-type">Select Game Type</h2>
 				<h6 id="game-operators"></h6>
@@ -72,6 +75,9 @@
 
 				<p class="text-white mt-5">You can change game modes <a class="link-primary" href="<?php echo base_url('choose'); ?>">here</a>.</p>
 			</div>
+			<div class="col-sm-10 mb-4 m-auto">
+				<?php $this->load->view('templates/ad_left'); ?>
+			</div>			
 		</div>
 
 		<?php } else {?>
