@@ -15,7 +15,7 @@
 
 				<div class="tab-content mt-5 pb-60" id="pills-tabContent">
 
-					<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">						<div class="col-sm-12">
+					<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">						<div class="col-sm-12 p-5">
 							<?php $this->load->view('templates/ad_header'); ?>
 						</div>
 						<div class="col-12 col-lg-12 p-0 text-left">
@@ -46,7 +46,7 @@
 								
 							<a href="" class="btn mt-3 text-custom-secondary px-3 py-1 rounded-100 banner-button" data-toggle="modal" data-target="#exampleModal">Edit Informations</a>							
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-12 p-5">
 							<?php $this->load->view('templates/ad_left'); ?>
 						</div>
 					</div>

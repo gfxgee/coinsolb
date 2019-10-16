@@ -30,7 +30,7 @@
 		
 	
 		<div class="row bg-secondary-color" id="select-game">
-			<div class="col-sm-10 mb-4 m-auto">
+			<div class="col-sm-10 mb-4 m-auto p-5">
 				<?php $this->load->view('templates/ad_header'); ?>
 			</div>
 			<div class="col-lg-10 m-auto p-5 text-center text-white">
@@ -66,7 +66,7 @@
 				</div>
 				<p class="text-muted fs-14 font-italic">Bonus: Will instantly receive extra <strong>$2</strong> after <strong>30,000 points</strong></p>
 			</div>
-			<div class="col-sm-10 mb-4 m-auto">
+			<div class="col-sm-10 mb-4 m-auto p-5">
 				<?php $this->load->view('templates/ad_left'); ?>
 			</div>
 		</div>
