@@ -40,12 +40,12 @@ class Coin_solve extends CI_Controller  {
 		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
 
 			$data = array(
-				'page'					=> 'admin',
-				'page_title'			=> 'Administrator',
-				'user_count'			=> $this->coin_solve_model_admin->get_all_user_count(),
-				'withdrawal_count'		=> $this->coin_solve_model_admin->get_all_withdrawal_count(),
+				'page'						=> 'admin',
+				'page_title'				=> 'Administrator',
+				'user_count'				=> $this->coin_solve_model_admin->get_all_user_count(),
+				'withdrawal_count'			=> $this->coin_solve_model_admin->get_all_withdrawal_count(),
 				'games_played_count_today'	=> $this->coin_solve_model_admin->get_all_games_played_count_today(),
-				'meta_description'		=> 'Administrator',
+				'meta_description'			=> 'Administrator',
 				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(), 
 			);
 
@@ -56,6 +56,64 @@ class Coin_solve extends CI_Controller  {
 		}
 
 	}
+
+	// public function get_top_users(){
+
+	// 	$columns = array( 
+ //                            0 =>'name',
+ //                            1 =>'email',
+ //                            2 =>'total_score',
+ //                            3 =>'action',
+ //                        );
+
+	// 	$limit = $this->input->post('length');
+ //        $start = $this->input->post('start');
+ //        $order = $columns[2];
+ //        $dir = $this->input->post('order')[0]['dir'];
+  
+ //        $totalData = $this->coin_solve_model_admin->allscores_count();
+            
+ //        $totalFiltered = $totalData; 
+            
+ //        if(empty($this->input->post('search')['value']))
+ //        {            
+ //            $scores = $this->coin_solve_model_admin->allscores($limit,$start,$order,$dir);
+ //        }
+ //        else {
+ //            $search = $this->input->post('search')['value']; 
+
+ //            $scores =  $this->coin_solve_model_admin->score_search($limit,$start,$search,$order,$dir);
+
+ //            $totalFiltered = $this->coin_solve_model_admin->score_search_count($search);
+ //        }
+
+ //        // var_dump($scores);
+
+ //        $data = array();
+ //        if(!empty($scores))
+ //        {
+ //            foreach ($scores as $score)
+ //            {
+
+ //                $nestedData['name'] = $score->first_name . ' ' . $score->last_name;
+ //                $nestedData['email'] = $score->email;
+ //                $nestedData['score'] = $score->total_score;
+ //                $nestedData['action'] = 'Suspend';
+                
+ //                $data[] = $nestedData;
+
+ //            }
+ //        }
+          
+ //        $json_data = array(
+ //                    "draw"            => intval($this->input->post('draw')),  
+ //                    "recordsTotal"    => intval($totalData),  
+ //                    "recordsFiltered" => intval($totalFiltered), 
+ //                    "data"            => $data   
+ //                    );
+            
+ //        echo json_encode($json_data); 
+	// }
 
 	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description , $posts = [] , $message = []) 
 	{
@@ -150,12 +208,6 @@ class Coin_solve extends CI_Controller  {
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
-			
-			if(isset($_COOKIE['score'])) {
-
-				$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id ) ;
-
-			}
 
 			$total_score_count = $this->coin_solve_model->get_user_scores_count($user_id , 'App Game');
 
@@ -197,6 +249,15 @@ class Coin_solve extends CI_Controller  {
 				$last_game = strtotime($this->coin_solve_model->get_latest_game_result( $user_id )->timestamp);
 
 				$offset = $current_time - $last_game;
+
+				if ( $offset >= 3600 ) {
+
+					if(isset($_COOKIE['score'])) {
+
+						$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id ) ;
+
+					}
+				}
 
 				if ($this->ion_auth->is_admin()) $offset = 5000;
 
@@ -726,5 +787,28 @@ class Coin_solve extends CI_Controller  {
 			$this->render_page('discussions' , 'Discussions '.$this->meta_title_separator().' Coinsolb' , 0 , $meta_description , $posts );
 		}
 	}
+
+	 public  function getLists(){
+        $data = $row = array();
+        
+        // Fetch member's records
+        $memData = $this->scores->getRows($_POST);
+        
+        $i = $_POST['start'];
+        foreach($memData as $member){
+            $i++;
+            $data[] = array($member->first_name, $member->last_name, $member->email, $member->total_score, $member->user_id);
+        }
+        
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->scores->countAll(),
+            "recordsFiltered" => $this->scores->countFiltered($_POST),
+            "data" => $data,
+        );
+        
+        // Output to JSON format
+        echo json_encode($output);
+    }
 }
 

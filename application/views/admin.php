@@ -52,5 +52,23 @@
 			</div>
 		</div>
 
+		<table id="memListTable" class="display" style="width:100%">
+		    <thead>
+		        <tr>
+		            <th>First name</th>
+		            <th>Last name</th>
+		            <th>Email</th>
+		            <th>Total Score</th>
+		            <th>User Id</th>
+		        </tr>
+		    </thead>
+		    <tfoot>
+		        <tr>
+		        </tr>
+		    </tfoot>
+		</table>
+		
 	</div>
 </section>
+
+

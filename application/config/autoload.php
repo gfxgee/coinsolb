@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array( 'coin_solve_model' , 'coin_solve_model_admin');
+$autoload['model'] = array( 'coin_solve_model' , 'coin_solve_model_admin' , 'scores');

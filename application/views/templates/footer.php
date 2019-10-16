@@ -126,7 +126,48 @@
   <?php } ?>
 
 
+<!-- <script>
+    $(document).ready(function () {
+        $('#all_user_score').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax":{
+         "url": "<?php echo base_url('coin_solve/get_top_users') ?>",
+         "dataType": "json",
+         "type": "POST", },
+      "columns": [
+              { "data": "name" },
+              { "data": "email" },
+              { "data": "score" },
+              { "data": "action" },
+           ]   
 
+      });
+    });
+</script> -->
+
+<script>
+$(document).ready(function(){
+    $('#memListTable').DataTable({
+        // Processing indicator
+        "processing": true,
+        // DataTables server-side processing mode
+        "serverSide": true,
+        // Initial no order.
+        "order": [],
+        // Load data from an Ajax source
+        "ajax": {
+            "url": "<?php echo base_url('coin_solve/getLists'); ?>",
+            "type": "POST"
+        },
+        //Set column definition initialisation properties
+        "columnDefs": [{ 
+            "targets": [0],
+            "orderable": false
+        }]
+    });
+});
+</script>
 
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
