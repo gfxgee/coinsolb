@@ -5,6 +5,9 @@
 			<div class="col-sm-10 mb-4 m-auto p-5">
 				<?php $this->load->view('templates/ad_left'); ?>
 			</div>
+			<div class="col-sm-2 p-3">
+				<?php $this->load->view('templates/ad_right'); ?>
+			</div>
 			<div class="col-lg-8 m-auto p-5 text-center">
 				<h2 id="game-type">Practice Game</h2>
 				<h6 id="game-operators">Answer without worrying about the time without limit for practice.</h6>
@@ -45,8 +48,8 @@
 
 				<p class="text-warning">Note: This game(s) will not be recorded.</p>
 			</div>
-			<div class="col-sm-10 mb-4 m-auto p-5">
-				<?php $this->load->view('templates/ad_right'); ?>
+			<div class="col-sm-2 p-3">
+				<?php $this->load->view('templates/ad_jpet_right'); ?>
 			</div>
 		</div>
 
