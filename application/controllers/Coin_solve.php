@@ -559,7 +559,7 @@ class Coin_solve extends CI_Controller  {
 
 		if ( $this->ion_auth->logged_in() ) {
 
-			$total_points_earned = $this->coin_solve_model->get_user_total_score($user_id);
+			$total_points_earned = $this->coin_solve_model->get_user_total_score($this->ion_auth->get_user_id());
 			
 			if ( $this->input->post('select-payment')) {
 
@@ -745,7 +745,9 @@ class Coin_solve extends CI_Controller  {
         $i = $_POST['start'];
         foreach($memData as $member){
             $i++;
-            $action = '<a href="#">Ban</a>';
+            if ( $member->active ) {
+            	$action = '<a href="'.base_url('auth/deactivate/').$member->user_id.'">Deactivate Account</a>';
+            }
             $data[] = array($member->first_name, $member->last_name, $member->email, $member->total_score, $member->user_id , $action);
         }
         

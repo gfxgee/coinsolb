@@ -18,36 +18,43 @@
 					<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">						<div class="col-sm-12 p-5">
 							<?php $this->load->view('templates/ad_header'); ?>
 						</div>
-						<div class="col-12 col-lg-12 p-0 text-left">
-							<div class="row p-0 px-3"> 
-								<div class="col-6 col-lg-4 p-0 m-0 text-left ">
-									<h6 class="mb-2 text-custom-muted">Full Name</h6>
-									<h3 class="mt-2"><?php echo $user_info->first_name . ' ' . $user_info->last_name; ?></span></h3>
+						<div class="row">
+							<div class="col-sm-2 p-3">
+								<?php $this->load->view('templates/ad_left'); ?>
+							</div>
+							<div class="col-12 col-lg-8 p-0 text-left">
+								<div class="row p-0 px-3"> 
+									<div class="col-6 col-lg-4 p-0 m-0 text-left ">
+										<h6 class="mb-2 text-custom-muted">Full Name</h6>
+										<h3 class="mt-2"><?php echo $user_info->first_name . ' ' . $user_info->last_name; ?></span></h3>
+									</div>
+									<div class="col-6 col-lg-8 p-0 m-0 text-left">
+										<h6 class="mb-2 text-custom-muted">Email Address</h6>
+										<h3 class="mt-2"><?php echo $user_info->email; ?></h3>
+									</div>
 								</div>
-								<div class="col-6 col-lg-8 p-0">
-									<h6 class="mb-2 text-custom-muted">Referral Code</h6>
-									<h3 class="mt-2"><?php echo $user_referral_code; ?></h3>
+
+								<div class="row p-0 px-3"> 
+
+									<div class="col-6 col-lg-4 p-0 mt-4">
+										<h6 class="mb-2 text-custom-muted">Referral Code</h6>
+										<h3 class="mt-2"><?php echo $user_referral_code; ?></h3>
+									</div>
+									<div class="col-12 col-lg-8 p-0 mt-4">
+										<h6 class="text-custom-muted">Your Referral Link</h6>										
+										<p class="referral_link fs-22 link-primary"><?php echo base_url('/register/').$user_referral_code; ?></p>
+
+										<button class="btn banner-button rounded-100 copy-link" onclick="copyToClipboard('.referral_link')"  data-toggle="tooltip" data-placement="top"><i class="far fa-clipboard"></i> Copy Link</button>
+										<p class="mt-3 text-white fs-14">Use this referral code to redeem extra points.</p>		
+									</div>
 								</div>
+									
+								<a href="" class="btn mt-3 text-custom-secondary px-3 py-1 rounded-100 banner-button" data-toggle="modal" data-target="#exampleModal">Edit Informations</a>							
 							</div>
 
-							<div class="row p-0 px-3"> 
-								<div class="col-6 col-lg-4 p-0 m-0 text-left mt-4">
-									<h6 class="mb-2 text-custom-muted">Email Address</h6>
-									<h3 class="mt-2"><?php echo $user_info->email; ?></h3>
-								</div>
-								<div class="col-12 col-lg-8 p-0 mt-4">
-									<h6 class="text-custom-muted">Your Referral Link</h6>										
-									<p class="referral_link fs-22 link-primary"><?php echo base_url('/register/').$user_referral_code; ?></p>
-
-									<button class="btn banner-button rounded-100 copy-link" onclick="copyToClipboard('.referral_link')"  data-toggle="tooltip" data-placement="top"><i class="far fa-clipboard"></i> Copy Link</button>
-									<p class="mt-3 text-white fs-14">Use this referral code to redeem extra points.</p>		
-								</div>
+							<div class="col-sm-2 p-3">
+								<?php $this->load->view('templates/ad_jpet_right'); ?>
 							</div>
-								
-							<a href="" class="btn mt-3 text-custom-secondary px-3 py-1 rounded-100 banner-button" data-toggle="modal" data-target="#exampleModal">Edit Informations</a>							
-						</div>
-						<div class="col-sm-12 p-5">
-							<?php $this->load->view('templates/ad_left'); ?>
 						</div>
 					</div>
 
