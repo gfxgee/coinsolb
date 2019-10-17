@@ -30,44 +30,49 @@
 		
 	
 		<div class="row bg-secondary-color" id="select-game">
-			<div class="col-sm-10 mb-4 m-auto p-5">
-				<?php $this->load->view('templates/ad_header'); ?>
-			</div>
-			<div class="col-lg-10 m-auto p-5 text-center text-white">
-				<h2 class="mt-5">Choose the mode you want to play:</h2>
-					
-				<div class="row text-center">
-					<div class="col-12 col-lg-6 col-md-6 p-3 text-center">
-						<div class="p-5 text-center text-white">
-							<p class="fs-70 font-weight-bold text-highlights"><i class="fas fa-plus"></i> <i class="fas fa-minus"></i></p>
-							<h3>Normal</h3>
-							<button class="mt-4 mb-3 btn btn-lg rounded-100 px-5 banner-button font-weight-bold" id="play-normal">Play Now</button>
-							<p class="m-0 mt-4"><i class="fas fa-check text-highlights mr-2"></i>Addition and Subtraction</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>80 seconds playing time</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>Will refresh every 1 hour</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>1 point for every correct answer</p>
-						</div>
-					</div>
-
-
-					<div class="col-12 col-lg-6 col-md-6 p-3 text-center">
-						<div class="p-5 text-center">
-							<p class="fs-70 font-weight-bold text-highlights"><i class="fas fa-divide"></i> <i class="fas fa-times"></i></p>
-							<h3>Hard</h3>
-							<button class="mt-4 mb-3 btn btn-lg rounded-100 px-5 banner-button font-weight-bold" id="play-hard">Play Now</button>
-							<p class="m-0 mt-4"><i class="fas fa-check text-highlights mr-2"></i>Multiplication and Division</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>60 seconds playing time</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>Will refresh every 1 hour</p>
-							<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>2 points for every correct answer</p>
-							
-						</div>
-					</div>
-					
-				</div>
-				<p class="text-muted fs-14 font-italic">Bonus: Will instantly receive extra <strong>$2</strong> after <strong>30,000 points</strong></p>
-			</div>
-			<div class="col-sm-10 mb-4 m-auto p-5">
+			<div class="col-sm-12 p-3">
 				<?php $this->load->view('templates/ad_left'); ?>
+			</div>
+			<div class="row pt-3">
+				<div class="col-sm-2 p-3">
+					<?php $this->load->view('templates/ad_right'); ?>
+				</div>				
+				<div class="col-lg-8 m-auto p-5 text-center text-white">
+					<h2 class="mt-5">Choose the mode you want to play:</h2>
+						
+					<div class="row text-center">
+						<div class="col-12 col-lg-6 col-md-6 p-3 text-center">
+							<div class="p-5 text-center text-white">
+								<p class="fs-70 font-weight-bold text-highlights"><i class="fas fa-plus"></i> <i class="fas fa-minus"></i></p>
+								<h3>Normal</h3>
+								<button class="mt-4 mb-3 btn btn-lg rounded-100 px-5 banner-button font-weight-bold" id="play-normal">Play Now</button>
+								<p class="m-0 mt-4"><i class="fas fa-check text-highlights mr-2"></i>Addition and Subtraction</p>
+								<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>80 seconds playing time</p>
+								<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>Will refresh every 1 hour</p>
+								<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>1 point for every correct answer</p>
+							</div>
+						</div>
+
+
+						<div class="col-12 col-lg-6 col-md-6 p-3 text-center">
+							<div class="p-5 text-center">
+								<p class="fs-70 font-weight-bold text-highlights"><i class="fas fa-divide"></i> <i class="fas fa-times"></i></p>
+								<h3>Hard</h3>
+								<button class="mt-4 mb-3 btn btn-lg rounded-100 px-5 banner-button font-weight-bold" id="play-hard">Play Now</button>
+								<p class="m-0 mt-4"><i class="fas fa-check text-highlights mr-2"></i>Multiplication and Division</p>
+								<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>60 seconds playing time</p>
+								<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>Will refresh every 1 hour</p>
+								<p class="m-0"><i class="fas fa-check text-highlights mr-2"></i>2 points for every correct answer</p>
+								
+							</div>
+						</div>
+						
+					</div>
+					<p class="text-muted fs-14 font-italic">Bonus: Will instantly receive extra <strong>$2</strong> after <strong>30,000 points</strong></p>
+				</div>
+				<div class="col-sm-2 p-3">
+					<?php $this->load->view('templates/ad_jpet_right'); ?>
+				</div>
 			</div>
 		</div>
 
