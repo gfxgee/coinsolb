@@ -20,7 +20,7 @@
 						<div class="col-lg-12 p-0">
 
 							<div class="row">
-								<div class="col-12 col-lg-12 col-md-12 col-sm-12 ">
+								<div class="col-12 col-lg-6 col-md-6 col-sm-12 ">
 
 									<?php if ( isset($messages)) { 
 											if ( $messages == true ) { ?>
@@ -42,36 +42,58 @@
 
 									<div class="text-white mb-3">
 									  <div class="">
-									    <h3 class="card-title text-highlights">Balance: $<span><?php echo $current_earnings_left; ?></span></h3>
-									    <p class="card-text">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*50; ?>. </p>
-									    <p class="card-text">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load, PayPal, Bitcoin and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
-										<p class="card-text">Minimum amount withdrawn on <span class="text-highlights">Palawan and Steam wallet</span>: $5 = ₱250.00.</p>
-									    
-									<form id="withdraw_form" method="post" action="<?php echo base_url('/withdraw');?>">
-										<div class="p-0 form-group mt-4 col-12 col-lg-6 col-md-6">
-											<label for="select-payment">Available payment type</label>
-											<select class="form-control main-input" name="select-payment" id="select-payment" <?php echo ($current_earnings_left >= $minimun_withdrawal ) ? '' : 'disabled'; ?>>
-												<option value="gcash">Gcash</option>
-												<option value="e-load">E-Load</option>
-												<option value="steam-wallet">Steam Wallet</option>
-												<option value="mobile-legend">Mobile Legend</option>
-												<option value="palawan">Palawan</option>
-												<option value="paypal">PayPal</option>
-												<option value="bitcoin">BitCoin</option>
-											</select>
-											<label for="select-payment" class="fs-12 text-danger">This option will enable after you meet the requirements</label>
+									    <h3 class="card-title text-highlights pb-4">Balance: $<span><?php echo $current_earnings_left; ?></span></h3>
+									    <p class="card-text">Your current balance converted to pesos: <?php echo $current_earnings_left*50; ?></p>
+									   	
+									   	<h5 class="pt-2">Minimum Withdrawals</h5>
+									   	<div class="row">
+										   	<div class="col-sm-6 text-left pt-2">
+										   		<h2>$2</h2>
+												
+												<p class="mb-2"><i class="fas fa-check text-highlights mr-2"></i>Paypal</p>
+												<p class="mb-2"><i class="fas fa-check text-highlights mr-2"></i>Gcash</p>
+												<p class="mb-2"><i class="fas fa-check text-highlights mr-2"></i>BitCoin</p>
+												<p class="mb-2"><i class="fas fa-check text-highlights mr-2"></i>Razer Gold</p>
+
+										   	</div>	
+										   	<div class="col-sm-6 text-left">
+										   		<h2>$5</h2>
+												
+												<p class="mb-2"><i class="fas fa-check text-highlights mr-2"></i>Palawan</p>
+												<p class="mb-2"><i class="fas fa-check text-highlights mr-2"></i>Steam Wallet</p>
+										   	</div>	
 										</div>
+										
+									   	<h5 class="pt-5">Working Days</h5>
+
+										<p>The payments are made within 5 - 15 business days (Mon-Fri) right after the administrator checks your account.</p>
+
+										<p>There are no withdrawal fees upon requesting for a withdrawal. Everything you earn will be yours. No strings attached!</p>
 
 									  </div>
 									</div>
 								</div>
 
-								<div class="col-12 col-lg-7 col-md-7 col-sm-12 mt-5">
-									<h4>Please enter the details</h4>
+								<div class="col-12 col-lg-6 col-md-6 col-sm-12 mt-5">
 
-			  						<div class="dropdown-divider my-3"></div>
+									<form id="withdraw_form" method="post" action="<?php echo base_url('/withdraw');?>">
+									<div class="p-0 form-group pt-3">
+										<h5 for="select-payment">Available payment type</h5>
+										<select class="mt-3 form-control main-input border-white" name="select-payment" id="select-payment" placeholder="Type of Payment" <?php echo ($current_earnings_left >= $minimun_withdrawal ) ? '' : 'disabled'; ?>>
+											<option value="gcash">Gcash</option>
+											<option value="e-load">E-Load</option>
+											<option value="steam-wallet">Steam Wallet</option>
+											<option value="mobile-legend">Mobile Legend</option>
+											<option value="palawan">Palawan</option>
+											<option value="paypal">PayPal</option>
+											<option value="bitcoin">BitCoin</option>
+										</select>
+										<label for="select-payment" class="mt-3 fs-12 text-danger" <?php echo ($current_earnings_left >= $minimun_withdrawal ) ? 'style="display:none;"' : 'style="display:block;"'; ?>>This option will enable after you meet the requirements</label>
+									</div>
 
-			  							<div class="account" id="account-details-gcash">
+									<h5 class="mt-5">Please enter the details</h5>
+
+			  							<div class="account mt-3" id="account-details-gcash">
 											<div class="form-group">
 												<label for="account-name">Account Name</label>
 												<input type="text" name="account-name" class="form-control main-input" id="account-name" <?php echo ($current_earnings_left >= $minimun_withdrawal) ? '' : 'disabled'; ?> placeholder="Account Holder Name">
