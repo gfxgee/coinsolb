@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <meta property="og:title" content="<?php if(isset($page_title)) echo $page_title; ?>" />
   <meta property="og:description" content="<?php if(isset($meta_description)) echo $meta_description; ?>" />
-  <!-- <meta property="og:image"              content="<?php echo base_url(); ?>assets/images/banner.jpg" />  -->
+  <meta property="og:image" content="<?php echo base_url(); ?>assets/images/meta-image.jpg" />
 
   <meta name="directory" content="public">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
