@@ -79,7 +79,8 @@
 									<form id="withdraw_form" method="post" action="<?php echo base_url('/withdraw');?>">
 									<div class="p-0 form-group pt-3">
 										<h5 for="select-payment">Available payment type</h5>
-										<select class="mt-3 form-control main-input border-white" name="select-payment" id="select-payment" <?php echo ($current_earnings_left >= $minimun_withdrawal ) ? '' : 'disabled'; ?>>
+										<select class="mt-3 form-control main-input border-white p-3" name="select-payment" id="select-payment" <?php echo ($current_earnings_left >= $minimun_withdrawal ) ? '' : 'disabled'; ?>>
+											<option selected>Select Payment</option>
 											<option value="gcash">Gcash</option>
 											<option value="e-load">E-Load</option>
 											<option value="steam-wallet">Steam Wallet</option>
