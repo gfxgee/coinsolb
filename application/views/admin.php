@@ -60,6 +60,7 @@
 		            <th>Email</th>
 		            <th>Total Score</th>
 		            <th>User Id</th>
+		            <th>Actions</th>
 		        </tr>
 		    </thead>
 		    <tfoot>
@@ -72,3 +73,25 @@
 </section>
 
 
+<script>
+$(document).ready(function(){
+    $('#memListTable').DataTable({
+        // Processing indicator
+        "processing": true,
+        // DataTables server-side processing mode
+        "serverSide": true,
+        // Initial no order.
+        "order": [],
+        // Load data from an Ajax source
+        "ajax": {
+            "url": "<?php echo base_url('coin_solve/getLists'); ?>",
+            "type": "POST"
+        },
+        //Set column definition initialisation properties
+        "columnDefs": [{ 
+            "targets": [0],
+            "orderable": false
+        }]
+    });
+});
+</script>

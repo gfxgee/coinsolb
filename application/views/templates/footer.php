@@ -51,7 +51,6 @@
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="<?php echo base_url(); ?>assets/bootstrap/js/jquery-3.4.1.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
   
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/data-tables/datatables.min.js"></script>
@@ -125,49 +124,6 @@
 
   <?php } ?>
 
-
-<!-- <script>
-    $(document).ready(function () {
-        $('#all_user_score').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "ajax":{
-         "url": "<?php echo base_url('coin_solve/get_top_users') ?>",
-         "dataType": "json",
-         "type": "POST", },
-      "columns": [
-              { "data": "name" },
-              { "data": "email" },
-              { "data": "score" },
-              { "data": "action" },
-           ]   
-
-      });
-    });
-</script> -->
-
-<script>
-$(document).ready(function(){
-    $('#memListTable').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('coin_solve/getLists'); ?>",
-            "type": "POST"
-        },
-        //Set column definition initialisation properties
-        "columnDefs": [{ 
-            "targets": [0],
-            "orderable": false
-        }]
-    });
-});
-</script>
 
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 

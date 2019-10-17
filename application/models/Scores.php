@@ -7,7 +7,7 @@ class Scores extends CI_Model {
 
 	function __construct() {
         // Set table name
-        $this->table = 'admin_all_user';
+        $this->table = 'all_user';
         // Set orderable column fields
         $this->column_order = array('first_name','last_name','email', 'total_score' , 'user_id');
         // Set searchable column fields

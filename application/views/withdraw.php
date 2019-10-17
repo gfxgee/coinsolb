@@ -44,7 +44,7 @@
 									  <div class="">
 									    <h3 class="card-title text-highlights">Balance: $<span><?php echo $current_earnings_left; ?></span></h3>
 									    <p class="card-text">Your current balance <span class="text-highlights">$<?php echo $current_earnings_left; ?></span> converted to Pesos: <?php echo $current_earnings_left*50; ?>. </p>
-									    <p class="card-text">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
+									    <p class="card-text">Minimum amount withdrawn on <span class="text-highlights">GCash, E-Load, PayPal, Bitcoin and Razer Gold (for Mobile Legends, PUBG, Rules of survival</span> and many more...) is $2 = ₱100. </p>
 										<p class="card-text">Minimum amount withdrawn on <span class="text-highlights">Palawan and Steam wallet</span>: $5 = ₱250.00.</p>
 									    
 									<form id="withdraw_form" method="post" action="<?php echo base_url('/withdraw');?>">

@@ -62,6 +62,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="<?php echo base_url(); ?>assets/fontawesome/css/solid.css" rel="stylesheet">
   <!-- <script src="https://kit.fontawesome.com/61cd694d48.js" crossorigin="anonymous"></script> -->
 
+  
+  <script src="<?php echo base_url(); ?>assets/bootstrap/js/jquery-3.4.1.min.js"></script>
+
 </head>
 
 <body id="<?php if(isset($page)) echo $page.'_page'; ?>">

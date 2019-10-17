@@ -736,7 +736,7 @@ class Coin_solve extends CI_Controller  {
 		}
 	}
 
-	 public  function getLists(){
+	 public function getLists(){
         $data = $row = array();
         
         // Fetch member's records
@@ -745,7 +745,8 @@ class Coin_solve extends CI_Controller  {
         $i = $_POST['start'];
         foreach($memData as $member){
             $i++;
-            $data[] = array($member->first_name, $member->last_name, $member->email, $member->total_score, $member->user_id);
+            $action = '<a href="#">Ban</a>';
+            $data[] = array($member->first_name, $member->last_name, $member->email, $member->total_score, $member->user_id , $action);
         }
         
         $output = array(
