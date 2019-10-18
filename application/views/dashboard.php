@@ -16,7 +16,7 @@
 				<div class="tab-content pb-60" id="pills-tabContent">
 
 					<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">						<div class="col-sm-12 p-3">
-							<?php $this->load->view('templates/ad_left'); ?>
+							<?php $this->load->view('templates/ad_header'); ?>
 						</div>
 						<div class="row pt-3">
 							<div class="col-sm-2 p-3">
