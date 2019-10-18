@@ -805,7 +805,7 @@ class Coin_solve extends CI_Controller  {
 
 	            	
 
-	            	$action = '<a href="#" class="btn btn-warning rounded-100">Approve</a>';
+	            	$action = '<a href="#" class="btn btn-danger rounded-100">Approve</a>';
 	            }
 	            else {
 
@@ -813,9 +813,21 @@ class Coin_solve extends CI_Controller  {
 	         
 	            }
 
+	            $withdrawal_details = json_decode($member->withdrawal_details);
+
+	            $details = '';
+
+	           foreach ($withdrawal_details as $key => $value) {
+					
+					$details .= $key.': '.$value . '</br>'; 
+
+				}
+
+	            $withdrawal_date = date("d M. Y  h:i a", strtotime($member->timestamp));
+
 	            $date_created = date("d M. Y  h:i a", $member->created_on);
 
-	            $data[] = array($member->first_name, $member->last_name, $member->email, $date_created ,  $member->timestamp , $member->withdrawal_details, $member->user_id , $action);
+	            $data[] = array($member->first_name, $member->last_name, $member->email, $date_created ,  $withdrawal_date , $details, $member->user_id , $action);
 	        }
 
 	        if ( isset($_POST['draw']) ) $draw = $_POST['draw'];
