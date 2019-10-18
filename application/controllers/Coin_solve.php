@@ -55,6 +55,10 @@ class Coin_solve extends CI_Controller  {
 
 		}
 
+		else {
+			redirect('/' , 'refresh');
+		}
+
 	}
 
 	public function render_page ( $page , $page_title , $replay_time = 0 , $meta_description , $posts = [] , $message = []) 
@@ -163,7 +167,7 @@ class Coin_solve extends CI_Controller  {
 
 						$user_id_of_referral = $this->coin_solve_model->get_user_id_from_referral_code ($result->referral_code);
 
-						$total_referring_points_count = $this->coin_solve_model->get_user_scores_count($user_id , 'Referral Points');
+						$total_referring_points_count = $this->coin_solve_model->get_user_scores_count($user_id_of_referral , 'Referral Points');
 
 						if ( $total_referring_points_count <= 10 ) $this->save_points_details( 300 , 'Referral Points' , $user_id_of_referral->user_id );
 
@@ -737,29 +741,51 @@ class Coin_solve extends CI_Controller  {
 	}
 
 	 public function getLists(){
-        $data = $row = array();
-        
-        // Fetch member's records
-        $memData = $this->scores->getRows($_POST);
-        
-        $i = $_POST['start'];
-        foreach($memData as $member){
-            $i++;
-            if ( $member->active ) {
-            	$action = '<a href="'.base_url('auth/deactivate/').$member->user_id.'">Deactivate Account</a>';
-            }
-            $data[] = array($member->first_name, $member->last_name, $member->email, $member->total_score, $member->user_id , $action);
-        }
-        
-        $output = array(
-            "draw" => $_POST['draw'],
-            "recordsTotal" => $this->scores->countAll(),
-            "recordsFiltered" => $this->scores->countFiltered($_POST),
-            "data" => $data,
-        );
-        
-        // Output to JSON format
-        echo json_encode($output);
-    }
+
+		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
+
+	        $data = $row = array();
+	        
+	        // Fetch member's records
+	        $memData = $this->scores->getRows($_POST);
+	        
+	        if ( isset($_POST['start'])) $i = $_POST['start'];
+
+	        foreach($memData as $member){
+
+	            if ( $member->active == 1 ) {
+
+	            	$link = base_url('auth/deactivate/').$member->user_id;
+
+	            	$action = '<a href="'.$link.'" class="btn btn-danger rounded-100">Deactivate</a>';
+	            }
+	            else {
+	            	$link = base_url('auth/activate/').$member->user_id;
+
+	            	$action = '<a href="'.$link.'" class="btn btn-success rounded-100">Activate</a>';
+	         
+	            }
+	            $data[] = array($member->first_name, $member->last_name, $member->email, $member->total_score, $member->user_id , $action);
+	        }
+
+	        if ( isset($_POST['draw']) ) $draw = $_POST['draw'];
+
+	        else $draw = '';
+
+	        $output = array(
+	            "draw" => $draw,
+	            "recordsTotal" => $this->scores->countAll(),
+	            "recordsFiltered" => $this->scores->countFiltered($_POST),
+	            "data" => $data,
+	        );
+	        
+	        // Output to JSON format
+	        echo json_encode($output);
+	    }
+	    
+		else {
+			redirect ('/' , 'refresh');
+		}
+	}
 }
 

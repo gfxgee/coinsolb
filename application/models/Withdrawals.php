@@ -3,11 +3,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-class Scores extends CI_Model { 
+class Withdrawals extends CI_Model { 
 
 	function __construct() {
         // Set table name
-        $this->table = 'all_user';
+        $this->table = 'all_detailed_withdrawals';
         // Set orderable column fields
         $this->column_order = array('first_name','last_name','email', 'total_score' , 'user_id');
         // Set searchable column fields
@@ -15,7 +15,6 @@ class Scores extends CI_Model {
         // Set default order
         $this->order = array('total_score' => 'asc');
     }
-
     
     /*
      * Fetch members data from the database

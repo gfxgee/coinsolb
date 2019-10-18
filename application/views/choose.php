@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="col-sm-2 p-3">
-				<?php $this->load->view('templates/ad_right'); ?>
+				<?php $this->load->view('templates/ad_left'); ?>
 			</div>
 			<div class="col-lg-8 m-auto text-center text-white">
 				<h2 class="mt-5">Choose the mode you want to play:</h2>

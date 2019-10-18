@@ -514,6 +514,13 @@ a {
 
 
 
+/* admin */
+.page-item.active a{
+	background-color: #F5B22D !important;
+	color: white !important;
+}
+
+
 
 
 
