@@ -167,7 +167,7 @@ class Coin_solve extends CI_Controller  {
 
 						$user_id_of_referral = $this->coin_solve_model->get_user_id_from_referral_code ($result->referral_code);
 
-						$total_referring_points_count = $this->coin_solve_model->get_user_scores_count($user_id_of_referral , 'Referral Points');
+						$total_referring_points_count = $this->coin_solve_model->get_user_scores_count($user_id_of_referral->user_id , 'Referral Points');
 
 						if ( $total_referring_points_count <= 10 ) $this->save_points_details( 300 , 'Referral Points' , $user_id_of_referral->user_id );
 
@@ -740,7 +740,7 @@ class Coin_solve extends CI_Controller  {
 		}
 	}
 
-	 public function getLists(){
+	public function getLists(){
 
 		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
 
@@ -782,7 +782,57 @@ class Coin_solve extends CI_Controller  {
 	        // Output to JSON format
 	        echo json_encode($output);
 	    }
-	    
+
+		else {
+			redirect ('/' , 'refresh');
+		}
+	}
+
+	public function getWithdrawalLists(){
+
+		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
+
+	        $data = $row = array();
+	        
+	        // Fetch member's records
+	        $memData = $this->withdrawals->getRows($_POST);
+	        
+	        if ( isset($_POST['start'])) $i = $_POST['start'];
+
+	        foreach($memData as $member){
+
+	            if ( $member->withdrawal_status == 'Pending' ) {
+
+	            	
+
+	            	$action = '<a href="#" class="btn btn-warning rounded-100">Approve</a>';
+	            }
+	            else {
+
+	            	$action = '<p class="text-success rounded-100">Approved</p>';
+	         
+	            }
+
+	            $date_created = date("d M. Y  h:i a", $member->created_on);
+
+	            $data[] = array($member->first_name, $member->last_name, $member->email, $date_created ,  $member->timestamp , $member->withdrawal_details, $member->user_id , $action);
+	        }
+
+	        if ( isset($_POST['draw']) ) $draw = $_POST['draw'];
+
+	        else $draw = '';
+
+	        $output = array(
+	            "draw" => $draw,
+	            "recordsTotal" => $this->withdrawals->countAll(),
+	            "recordsFiltered" => $this->withdrawals->countFiltered($_POST),
+	            "data" => $data,
+	        );
+	        
+	        // Output to JSON format
+	        echo json_encode($output);
+	    }
+
 		else {
 			redirect ('/' , 'refresh');
 		}

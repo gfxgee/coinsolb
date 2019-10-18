@@ -52,11 +52,14 @@
 			</div>
 		</div>
 	
-		<div class="dropdown-divider my-4"></div>
 		
 	
 		<div class="row">
 			<div class="col-sm-12 pb-5">
+
+
+				<div class="dropdown-divider my-5"></div>
+
 				<h3 class="text-highlights">User Data</h3>
 
 				<table id="memListTable" class="table table-borderless data-table-tables text-white display" style="width:100%">
@@ -75,6 +78,30 @@
 				        </tr>
 				    </tfoot>
 				</table>
+				
+				<div class="dropdown-divider my-5"></div>
+
+				<h3 class="text-highlights">Withdrawals</h3>
+
+				<table id="withdrawalTable" class="table table-borderless data-table-tables text-white display" style="width:100%">
+				    <thead>
+				        <tr>
+				            <th>First name</th>
+				            <th>Last name</th>
+				            <th>Email</th>
+				            <th>Created On</th>
+				            <th>Withdrawal Date</th>
+				            <th>Details</th>
+				            <th>User Id</th>
+				            <th>Actions</th>
+				        </tr>
+				    </thead>
+				    <tfoot>
+				        <tr>
+				        </tr>
+				    </tfoot>
+				</table>
+
 			</div>
 		</div>
 	</div>
@@ -93,6 +120,25 @@ $(document).ready(function(){
         // Load data from an Ajax source
         "ajax": {
             "url": "<?php echo base_url('coin_solve/getLists'); ?>",
+            "type": "POST"
+        },
+        //Set column definition initialisation properties
+        "columnDefs": [{ 
+            "targets": [0 , 1 , 2 , 5],
+            "orderable": false
+        }]
+    });
+
+    $('#withdrawalTable').DataTable({
+        // Processing indicator
+        "processing": true,
+        // DataTables server-side processing mode
+        "serverSide": true,
+        // Initial no order.
+        "order": [],
+        // Load data from an Ajax source
+        "ajax": {
+            "url": "<?php echo base_url('coin_solve/getWithdrawalLists'); ?>",
             "type": "POST"
         },
         //Set column definition initialisation properties

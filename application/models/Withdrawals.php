@@ -9,11 +9,11 @@ class Withdrawals extends CI_Model {
         // Set table name
         $this->table = 'all_detailed_withdrawals';
         // Set orderable column fields
-        $this->column_order = array('first_name','last_name','email', 'total_score' , 'user_id');
+        $this->column_order = array('first_name','last_name','email', 'Withdrawal_details' , 'timestamp' , 'user_id' , 'Withdrawal_status' , 'created_on' , 'points_withdrawed');
         // Set searchable column fields
-        $this->column_search = array('first_name','last_name','email', 'total_score' , 'user_id');
+        $this->column_search = array('first_name','last_name','email', 'Withdrawal_details' , 'timestamp' , 'user_id' , 'Withdrawal_status' , 'created_on' , 'points_withdrawed');
         // Set default order
-        $this->order = array('total_score' => 'asc');
+        $this->order = array('Withdrawal_status' => 'asc');
     }
     
     /*
