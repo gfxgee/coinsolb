@@ -92,6 +92,7 @@
 				            <th>Created On</th>
 				            <th>Withdrawal Date</th>
 				            <th>Details</th>
+				            <th>Amount</th>
 				            <th>User Id</th>
 				            <th>Actions</th>
 				        </tr>

@@ -86,4 +86,21 @@ class Withdrawals extends CI_Model {
         }
     }
 
+
+    public function approve_withdraw ( $id ) {
+
+        $data = array('withdrawal_status' => 'Accepted');
+
+        return $this->db->update('Withdrawals' , $data , array('id' => $id));
+
+    }
+
+    public function decline_withdraw ( $id ) {
+
+        $data = array('withdrawal_status' => 'Declined');
+
+        return $this->db->update('Withdrawals' , $data , array('id' => $id));
+
+    }
+
 }

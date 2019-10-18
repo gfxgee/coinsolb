@@ -569,6 +569,8 @@ class Coin_solve extends CI_Controller  {
 
 				if ( $this->input->post('withdrawal-amount') >= 2 && $this->input->post('withdrawal-amount') <= $total_points_earned/10000 ) {
 
+					var_dump($this->input->post());
+
 					$result = $this->coin_solve_model->add_withdrawal($this->ion_auth->get_user_id() ,  $this->input->post());
 
 				}
@@ -803,13 +805,18 @@ class Coin_solve extends CI_Controller  {
 
 	            if ( $member->withdrawal_status == 'Pending' ) {
 
-	            	
-
-	            	$action = '<a href="#" class="btn btn-danger rounded-100">Approve</a>';
+	            	$action = '<a href="'.base_url('approve-withdraw/').$member->id.'" class="btn btn-danger rounded-100 m-2">Approve</a><a href="'.base_url('decline-withdraw/').$member->id.'" class="m-2 btn btn-primary rounded-100">Decline</a>';
 	            }
 	            else {
 
-	            	$action = '<p class="text-success rounded-100">Approved</p>';
+	            	if ( $member->withdrawal_status == 'Accepted' ) {
+
+	            		$action = '<p class="text-success rounded-100">'.$member->withdrawal_status.'</p>';
+	            	}
+
+	            	else {
+	            		$action = '<p class="text-danger rounded-100">'.$member->withdrawal_status.'</p>';
+	            	}
 	         
 	            }
 
@@ -819,7 +826,9 @@ class Coin_solve extends CI_Controller  {
 
 	           foreach ($withdrawal_details as $key => $value) {
 					
-					$details .= $key.': '.$value . '</br>'; 
+					if ( $value != '' ) $details .= '<span class="fs-14">'.$key.':</span> <br><span class="text-uppercase text-highlights">'.$value . '</span></br>'; 
+
+					if ( $key == 'withdrawal-amount' ) $amount = '<span class="text-highlights">$'.$value.'</span>';
 
 				}
 
@@ -827,7 +836,7 @@ class Coin_solve extends CI_Controller  {
 
 	            $date_created = date("d M. Y  h:i a", $member->created_on);
 
-	            $data[] = array($member->first_name, $member->last_name, $member->email, $date_created ,  $withdrawal_date , $details, $member->user_id , $action);
+	            $data[] = array($member->first_name, $member->last_name, $member->email, $date_created ,  $withdrawal_date , $details, $amount , $member->user_id , $action);
 	        }
 
 	        if ( isset($_POST['draw']) ) $draw = $_POST['draw'];
@@ -848,6 +857,45 @@ class Coin_solve extends CI_Controller  {
 		else {
 			redirect ('/' , 'refresh');
 		}
+	}
+
+	public function approve_withdrawal ( $id ) {
+
+		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
+
+			$result = $this->withdrawals->approve_withdraw( $id );
+
+			if ( $result ) {
+
+				redirect('administrator' , 'refresh');
+
+			}
+			else {
+
+				echo 'Approval failed <a href="'.base_url('administrator').'">go back here</a>.';
+			}
+
+		}
+
+	}
+	public function decline_withdrawal ( $id ) {
+
+		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
+
+			$result = $this->withdrawals->decline_withdraw( $id );
+
+			if ( $result ) {
+
+				redirect('administrator' , 'refresh');
+
+			}
+			else {
+
+				echo 'Approval failed <a href="'.base_url('administrator').'">go back here</a>.';
+			}
+
+		}
+
 	}
 }
 
