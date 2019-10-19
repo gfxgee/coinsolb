@@ -1024,6 +1024,12 @@ class Coin_solve extends CI_Controller  {
 	        if ( isset($_POST['start'])) $i = $_POST['start'];
 
 	        foreach($memData as $member){
+
+	        	if ( $member->referral_status == 'pending' ) $member->referral_status = '<span class="text-danger">'.$member->referral_status.'</span>';
+
+	        	else if ( $member->referral_status == 'Activated' ) { $member->referral_status = '<span class="text-success">'.$member->referral_status.'</span>';
+
+	        	}
 	            
 	            if ( $member->referral_status != '' ) $data[] = array($member->first_name.$member->last_name, $member->email, $member->referral_status );
 	        }

@@ -35,7 +35,7 @@ class Referrals extends CI_Model {
      */
     public function countAll(){
         $this->db->from($this->table);
-        $this->db->where('id' , $this->ion_auth->get_user_id());
+        $this->db->where('user_id' , $this->ion_auth->get_user_id());
         return $this->db->count_all_results();
     }
     
@@ -56,7 +56,7 @@ class Referrals extends CI_Model {
     private function _get_datatables_query($postData){
          
         $this->db->from($this->table);
-        $this->db->where('id' , $this->ion_auth->get_user_id());
+        $this->db->where('user_id' , $this->ion_auth->get_user_id());
  
         $i = 0;
         // loop searchable columns 
