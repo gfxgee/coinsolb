@@ -43,14 +43,13 @@ class Coin_solve_model_admin extends CI_Model {
 
 	public function get_total_users_earned () {
 
-		$this->db->select_sum('score' , 'total_earnings_from_users');
-		$this->db->where('score >=' , 20000);
+		$this->db->select_sum('score');
 
 		$query = $this
                 ->db
                 ->get('game_details');
     
-        return $query->row()->total_earnings_from_users; 
+        return $query->row()->score; 
 
 	}
 
