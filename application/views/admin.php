@@ -23,7 +23,7 @@
 			</div>
 
 			<div class="col-lg-6 col-md-4 col-sm-6 p-0 m-0 d-none d-lg-block d-md-block text-right" >
-				<h2 class="fs-50 text-highlights m-0">$<span><?php echo $get_total_users_earned/10000; ?></span></h2>
+				<h2 class="fs-50 text-highlights m-0">$<span class="get_total_users_earned"><?php echo $get_total_users_earned/10000; ?></span></h2>
 				<p class="text-white m-0">Total Earned from Users</p>
 			</div>
 
@@ -151,6 +151,7 @@ $(document).ready(function(){
 		$.get('coin_solve/administrator_realtime' , function(data){
 	    	$('.admin-games-count').text(data.games_played_count_today);
 	    	$('.admin-user-count').text(data.user_count);
+	    	$('.get_total_users_earned').text(data.get_total_users_earned/10000);
 	    } , 'json');
 	} , 1000);
 
