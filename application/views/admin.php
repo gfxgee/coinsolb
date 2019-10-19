@@ -1,9 +1,9 @@
 <section id="administrator" class="bg-main-color">
 	<div class="container">
 		
-		<h1 class="text-white pt-5">Administrator</h1>
+		<h1 class="text-white pt-4">Administrator</h1>
 
-		<div class="row py-5">
+		<div class="row py-4">
 			
 			
 			<div class="col-sm-2 text-white">
@@ -29,7 +29,7 @@
 
 		</div>
 	
-		<div class="row bg-secondary-color p-3">
+		<div class="row bg-secondary-color p-3 mb-5">
 			<div class="col-sm-12 pb-5">
 				
 				<ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
@@ -45,9 +45,9 @@
 				</ul>
 
 
-				<div class="tab-content text-white" id="myTabContent">
+				<div class="tab-content text-white mt-4" id="myTabContent">
 				  <div class="tab-pane fade show active" id="users" role="tabpanel" aria-labelledby="user-tab">
-					<table id="memListTable" class="table table-borderless data-table-tables text-white display" style="width:100%">
+					<table id="memListTable" class=" table table-borderless data-table-tables text-white display" style="width:100%">
 					    <thead>
 					        <tr>
 					            <th>First name</th>
@@ -66,7 +66,7 @@
 
 				  </div>
 				  <div class="tab-pane fade" id="withdrawal" role="tabpanel" aria-labelledby="withdrawal-tab">
-					<table id="withdrawalTable" class="table table-borderless data-table-tables text-white display" style="width:100%">
+					<table id="withdrawalTable" class=" table table-borderless data-table-tables text-white display" style="width:100%">
 					    <thead>
 					        <tr>
 					            <th>First name</th>
