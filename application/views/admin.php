@@ -18,7 +18,7 @@
 			</div>
 
 			<div class="col-sm-2 text-white">
-				<p class="card-title m-0">Total Games Played</p>
+				<p class="card-title m-0">Total Games Played Today</p>
 				<h2 class="fs-50 card-text admin-games-count"><?php echo $games_played_count_today; ?></h2>		
 			</div>
 
