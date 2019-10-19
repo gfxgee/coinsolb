@@ -9,11 +9,11 @@ class Referrals extends CI_Model {
         // Set table name
         $this->table = 'all_referrals';
         // Set orderable column fields
-        $this->column_order = array('first_name', 'last_name' , 'email' , 'referral_status');
+        $this->column_order = array('first_name', 'last_name' , 'email' , 'referral_status' , 'created_on');
         // Set searchable column fields
-        $this->column_search = array('first_name', 'last_name' , 'email' , 'referral_status');
+        $this->column_search = array('first_name', 'last_name' , 'email' , 'referral_status' , 'created_on');
         // Set default order
-        $this->order = array('referral_status' => 'desc');
+        $this->order = array('created_on' => 'asc');
     }
 
     

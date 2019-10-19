@@ -41,6 +41,7 @@
 							        <tr>
 							            <th>Name</th>
 							            <th>Email</th>
+							            <th>Date</th>
 							            <th>Status</th>
 							        </tr>
 							    </thead>
@@ -77,7 +78,7 @@ $(document).ready(function(){
         },
         //Set column definition initialisation properties
         "columnDefs": [{ 
-            "targets": [0 , 1 , 2],
+            "targets": [],
             "orderable": false
         }]
     });

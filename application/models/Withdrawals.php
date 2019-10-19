@@ -91,7 +91,7 @@ class Withdrawals extends CI_Model {
 
         $data = array('withdrawal_status' => 'Accepted');
 
-        return $this->db->update('Withdrawals' , $data , array('id' => $id));
+        return $this->db->update('withdrawals' , $data , array('id' => $id));
 
     }
 
@@ -99,7 +99,7 @@ class Withdrawals extends CI_Model {
 
         $data = array('withdrawal_status' => 'Declined');
 
-        return $this->db->update('Withdrawals' , $data , array('id' => $id));
+        return $this->db->update('withdrawals' , $data , array('id' => $id));
 
     }
 

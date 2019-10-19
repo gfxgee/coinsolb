@@ -73,7 +73,7 @@ $(document).ready(function(){
         },
         //Set column definition initialisation properties
         "columnDefs": [{ 
-            "targets": [0 , 1 , 2],
+            "targets": [],
             "orderable": false
         }]
     });

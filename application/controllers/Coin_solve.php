@@ -1030,8 +1030,10 @@ class Coin_solve extends CI_Controller  {
 	        	else if ( $member->referral_status == 'Activated' ) { $member->referral_status = '<span class="text-success">'.$member->referral_status.'</span>';
 
 	        	}
+
+	        	$date_added = date("d M. Y  h:i a", $member->created_on);
 	            
-	            if ( $member->referral_status != '' ) $data[] = array($member->first_name.$member->last_name, $member->email, $member->referral_status );
+	            if ( $member->referral_status != '' ) $data[] = array($member->first_name.$member->last_name, $member->email, $date_added ,  $member->referral_status );
 	        }
 
 	        if ( isset($_POST['draw']) ) $draw = $_POST['draw'];
