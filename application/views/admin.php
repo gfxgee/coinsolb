@@ -8,7 +8,7 @@
 			
 			<div class="col-sm-2 text-white">
 				<p class="card-title m-0">Users</p>
-				<h2 class="fs-50 card-text"><?php echo $user_count; ?></h2>		
+				<h2 class="fs-50 card-text admin-user-count"><?php echo $user_count; ?></h2>		
 			</div>
 
 
@@ -19,7 +19,7 @@
 
 			<div class="col-sm-2 text-white">
 				<p class="card-title m-0">Total Games Played</p>
-				<h2 class="fs-50 card-text"><?php echo $games_played_count_today; ?></h2>		
+				<h2 class="fs-50 card-text admin-games-count"><?php echo $games_played_count_today; ?></h2>		
 			</div>
 
 			<div class="col-lg-6 col-md-4 col-sm-6 p-0 m-0 d-none d-lg-block d-md-block text-right" >
@@ -147,8 +147,13 @@ $(document).ready(function(){
         }]
     });
 
-    $.get('<?php echo base_url('coin_solve/administrator_realtime') ?>' , function(data){
-    	console.log(data.user_count);
-    } , 'json');
+    setInterval(function(){
+		$.get('coin_solve/administrator_realtime' , function(data){
+	    	$('.admin-games-count').text(data.games_played_count_today);
+	    	$('.admin-user-count').text(data.user_count);
+	    } , 'json');
+	} , 1000);
+
+
 });
 </script>
