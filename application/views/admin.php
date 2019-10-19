@@ -18,7 +18,7 @@
 			<div class="col-lg-4">
 			    <div class="card">
 					<div class="card-body">
-						<h5 class="card-title">Withdrawals</h5>
+						<h5 class="card-title">Pending Withdrawals</h5>
 						<p class="card-text fs-50"><?php echo $withdrawal_count; ?></p>
 						<a href="#" class="btn btn-primary">See all withdrawals</a>
 					</div>
@@ -111,6 +111,14 @@
 
 <script>
 $(document).ready(function(){
+
+	var updaterealtime = setInterval(function(){
+
+		
+
+	} , 5000);
+
+
     $('#memListTable').DataTable({
         // Processing indicator
         "processing": true,

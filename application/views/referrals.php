@@ -35,7 +35,21 @@
 							<div class="dropdown-divider my-4"></div>
 							<h5 class="m-0 mt-2 text-highlights">Referral Status</h5>
 							<div class=" my-4"></div>
-							<table id="referrals-table" class="table table-borderless" style="width:100%"></table>
+							
+							<table id="referral-table" class="table table-borderless data-table-tables text-white display" style="width:100%">
+							    <thead>
+							        <tr>
+							            <th>Name</th>
+							            <th>Email</th>
+							            <th>Status</th>
+							        </tr>
+							    </thead>
+							    <tfoot>
+							        <tr>
+							        </tr>
+							    </tfoot>
+							</table>
+
 						</div>
 					</div>
 				
@@ -45,5 +59,29 @@
 
 	</div>
 </section>
+
+<script>
+$(document).ready(function(){
+
+    $('#referral-table').DataTable({
+        // Processing indicator
+        "processing": true,
+        // DataTables server-side processing mode
+        "serverSide": true,
+        // Initial no order.
+        "order": [],
+        // Load data from an Ajax source
+        "ajax": {
+            "url": "<?php echo base_url('coin_solve/getReferralLists'); ?>",
+            "type": "POST"
+        },
+        //Set column definition initialisation properties
+        "columnDefs": [{ 
+            "targets": [0 , 1 , 2],
+            "orderable": false
+        }]
+    });
+});
+</script>
 
 <?php $this->load->view('templates/faq'); ?>

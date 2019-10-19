@@ -897,5 +897,156 @@ class Coin_solve extends CI_Controller  {
 		}
 
 	}
+
+
+	public function getPointsLists(){
+
+		if ( $this->ion_auth->logged_in() ) {
+
+			$this->load->model('points');
+
+	        $data = $row = array();
+	        
+	        // Fetch member's records
+	        $memData = $this->points->getRows($_POST);
+	        
+	        if ( isset($_POST['start'])) $i = $_POST['start'];
+
+	        foreach($memData as $member){
+
+
+	           $member->timestamp = date("d M. Y  h:i a", strtotime($member->timestamp));
+
+	            
+	            $data[] = array($member->timestamp, $member->score, $member->points_origin );
+	        }
+
+	        if ( isset($_POST['draw']) ) $draw = $_POST['draw'];
+
+	        else $draw = '';
+
+	        $output = array(
+	            "draw" => $draw,
+	            "recordsTotal" => $this->points->countAll(),
+	            "recordsFiltered" => $this->points->countFiltered($_POST),
+	            "data" => $data,
+	        );
+	        
+	        // Output to JSON format
+	        echo json_encode($output);
+	    }
+
+		else {
+			redirect ('/' , 'refresh');
+		}
+	}
+
+
+	public function getPlayerWithdrawalsLists(){
+
+		if ( $this->ion_auth->logged_in()) {
+
+			$this->load->model('player_withdrawals');
+
+	        $data = $row = array();
+	        
+	        // Fetch member's records
+	        $memData = $this->player_withdrawals->getRows($_POST);
+	        
+	        if ( isset($_POST['start'])) $i = $_POST['start'];
+
+	        foreach($memData as $member){
+
+	            
+            	if ( $member->withdrawal_status == 'Accepted' ) {
+
+            		$action = '<p class="text-success rounded-100">'.$member->withdrawal_status.'</p>';
+            	}
+
+            	else if ( $member->withdrawal_status == 'Pending' ) {
+
+            		$action = '<p class="text-warning rounded-100">'.$member->withdrawal_status.'</p>';
+            	}
+
+            	else {
+            		$action = '<p class="text-danger rounded-100">'.$member->withdrawal_status.'</p>';
+            	}
+	        
+
+	            $withdrawal_details = json_decode($member->withdrawal_details);
+
+	            $details = '';
+
+	           foreach ($withdrawal_details as $key => $value) {
+
+	           		if ( $key == 'select-payment') $type_of_payment = $value; 
+					
+					if ( $key == 'withdrawal-amount' ) $amount = '<span class="text-highlights">$'.$value.'</span>';
+
+				}
+
+	            $withdrawal_date = date("d M. Y  h:i a", strtotime($member->timestamp));
+
+	            $data[] = array( $withdrawal_date , $type_of_payment, $amount , $action);
+	        }
+
+	        if ( isset($_POST['draw']) ) $draw = $_POST['draw'];
+
+	        else $draw = '';
+
+	        $output = array(
+	            "draw" => $draw,
+	            "recordsTotal" => $this->player_withdrawals->countAll(),
+	            "recordsFiltered" => $this->player_withdrawals->countFiltered($_POST),
+	            "data" => $data,
+	        );
+	        
+	        // Output to JSON format
+	        echo json_encode($output);
+	    }
+
+		else {
+			redirect ('/' , 'refresh');
+		}
+	}
+
+	public function getReferralLists(){
+
+		if ( $this->ion_auth->logged_in() ) {
+
+			$this->load->model('referrals');
+
+	        $data = $row = array();
+	        
+	        // Fetch member's records
+	        $memData = $this->referrals->getRows($_POST);
+	        
+	        if ( isset($_POST['start'])) $i = $_POST['start'];
+
+	        foreach($memData as $member){
+	            
+	            if ( $member->referral_status != '' ) $data[] = array($member->first_name.$member->last_name, $member->email, $member->referral_status );
+	        }
+
+	        if ( isset($_POST['draw']) ) $draw = $_POST['draw'];
+
+	        else $draw = '';
+
+	        $output = array(
+	            "draw" => $draw,
+	            "recordsTotal" => $this->referrals->countAll(),
+	            "recordsFiltered" => $this->referrals->countFiltered($_POST),
+	            "data" => $data,
+	        );
+	        
+	        // Output to JSON format
+	        echo json_encode($output);
+	    }
+
+		else {
+			redirect ('/' , 'refresh');
+		}
+	}
+
 }
 
