@@ -35,6 +35,30 @@ class Coin_solve extends CI_Controller  {
 		$this->render_page('landing' , 'Coinsolb' , 0 , $meta_description );
 	}
 
+	public function administrator_realtime () {
+
+		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
+
+			$data = array(
+				'page'						=> 'admin',
+				'page_title'				=> 'Administrator',
+				'user_count'				=> $this->coin_solve_model_admin->get_all_user_count(),
+				'withdrawal_count'			=> $this->coin_solve_model_admin->get_all_withdrawal_count(),
+				'games_played_count_today'	=> $this->coin_solve_model_admin->get_all_games_played_count_today(),
+				'meta_description'			=> 'Administrator',
+				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(), 
+			);
+
+			echo json_encode($data);
+
+		}
+
+		else {
+			redirect('/' , 'refresh');
+		}
+
+	}
+
 	public function administrator () {
 
 		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {

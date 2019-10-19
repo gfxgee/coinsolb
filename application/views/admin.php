@@ -146,5 +146,9 @@ $(document).ready(function(){
             "orderable": false
         }]
     });
+
+    $.get('<?php echo base_url('coin_solve/administrator_realtime') ?>' , function(data){
+    	console.log(data.user_count);
+    } , 'json');
 });
 </script>
