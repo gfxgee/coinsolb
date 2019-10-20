@@ -240,15 +240,6 @@ $( document ).ready(function(){
 
 	$('.play-button').click(function(){
 
-
-	    if($("#wrapfabtest").height() > 0) {
-
-	    } else {
-
-	        $('#exampleModal').modal('show');
-	        
-	    }
-
 			gameMode = location.href.split('=')[1];
 
 			if ( gameMode == 'normal' ) { 
@@ -303,6 +294,16 @@ $( document ).ready(function(){
 
 			// span counter
 			spamFlag++;
+
+				
+		    if($("#wrapfabtest").height() > 0) {
+		    	
+
+		    } else {
+
+		        $('#exampleModal').modal('show');
+		        
+		    }
 
 			// secures to get the user answer
 			userAnswer = parseInt($(this).val());
