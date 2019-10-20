@@ -243,6 +243,12 @@ $( document ).ready(function(){
 
 	    if($("#wrapfabtest").height() > 0) {
 
+	    } else {
+
+	        $('#exampleModal').modal('show');
+	        
+	    }
+
 			gameMode = location.href.split('=')[1];
 
 			if ( gameMode == 'normal' ) { 
@@ -280,11 +286,7 @@ $( document ).ready(function(){
 				});
 			}
 
-		} else {
 
-	        $('#exampleModal').modal('show')
-	        
-	    }
 	});
 
 	$('.replay-button').click( function (){
