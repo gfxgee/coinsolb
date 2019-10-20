@@ -71,6 +71,7 @@ class Coin_solve extends CI_Controller  {
 				'games_played_count_today'	=> $this->coin_solve_model_admin->get_all_games_played_count_today(),
 				'meta_description'			=> 'Administrator',
 				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(), 
+				'all_time_game_played'		=> $this->coin_solve_model_admin->all_time_game_played(), 
 			);
 
 			$this->load->view('templates/header' , $data);
@@ -172,12 +173,11 @@ class Coin_solve extends CI_Controller  {
 	public function play () 
 	{	
 
-		$user_id = $this->ion_auth->get_user_id();
-
 		$meta_description = 'Play to earn points while enhancing you math skills with Coinsolb and get some awesomes rewards from the points you earned.';
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
+			$user_id = $this->ion_auth->get_user_id();
 
 			$total_score_count = $this->coin_solve_model->get_user_scores_count($user_id , 'App Game');
 
@@ -203,6 +203,16 @@ class Coin_solve extends CI_Controller  {
 
 			}
 
+			$total_points_earned = $this->coin_solve_model->get_user_total_score($user_id);
+
+			$milestone_ligible = $this->coin_solve_model->check_milestone_ligibility($user_id);
+
+			if ( $total_points_earned >= 30000 && $milestone_ligible == true ) {
+
+				$this->save_points_details( 20000 , 'Milestone Points' , $user_id );
+
+			}
+
 
 			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
 				
@@ -210,7 +220,7 @@ class Coin_solve extends CI_Controller  {
 
 				if(isset($_COOKIE['score'])) {
 
-					$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id ) ;
+					$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id );
 
 				}
 
@@ -835,7 +845,17 @@ class Coin_solve extends CI_Controller  {
 
 	            	if ( $member->withdrawal_status == 'Accepted' ) {
 
-	            		$action = '<p class="text-success rounded-100">'.$member->withdrawal_status.'</p>';
+	            		if ( $member->withdrawal_referrence_code == '') {
+
+		            		$action = '<p class="text-success rounded-100">'.$member->withdrawal_status.'</p>';
+		            		$action .= '<form id="withdrawal_form_'.$member->id.'" method="post" action="'.base_url('coin_solve/add_withdrawal_referrence_code/').$member->id.'"><input name="referrence_code" class="p-2 col-sm-9 px-3 add-referrence-code" placeholder="Enter Referrence Code" /><button type="submit" class="rounded-100 btn bg-transparent text-white border-white"><i class="far fa-paper-plane"></i></button>';
+	            		}
+
+	            		else {
+
+		            		$action = '<p class="text-success rounded-100">'.$member->withdrawal_status.'</p>';
+	            			$action .= '<p class="fs-14"> Referrence Code: <br><span class="fs-22 text-highlights">'.$member->withdrawal_referrence_code.'</p></span>';
+	            		}
 	            	}
 
 	            	else {
@@ -860,7 +880,12 @@ class Coin_solve extends CI_Controller  {
 
 	            $date_created = date("d M. Y  h:i a", $member->created_on);
 
-	            $data[] = array($member->first_name, $member->last_name, $member->email, $date_created ,  $withdrawal_date , $details, $amount , $member->user_id , $action);
+	            $user_details = 'Name: <span class="text-highlights">'.$member->first_name.' '.$member->last_name.'</span><br>';
+	            $user_details .= 'Email: <span class="text-highlights">'.$member->email.'</span><br>';
+	            $user_details .= 'Sign Up Date: <span class="text-highlights">'.$date_created.'</span>';
+
+
+	            $data[] = array( $user_details ,  $withdrawal_date , $details, $amount , $action);
 	        }
 
 	        if ( isset($_POST['draw']) ) $draw = $_POST['draw'];
@@ -1077,6 +1102,30 @@ class Coin_solve extends CI_Controller  {
 
 		else {
 			redirect ('/' , 'refresh');
+		}
+	}
+
+	public function add_withdrawal_referrence_code ( $id ) {
+
+		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
+
+			if ( $this->withdrawals->add_referrence_code( $id ) ) {
+
+				echo '<p>Successfully added referrece code. <a href="'.base_url('administrator').'#withdrawal">Return to admin page</a></p>';
+
+			}
+
+			else {
+
+				echo '<p>Unable to add referrece code. <a href="'.base_url('administrator').'#withdrawal">Return to admin page</a></p>';
+
+			}
+		}
+
+		else {
+			
+			echo '<p>Unable to add referrece code. <a href="'.base_url('administrator').'#withdrawal">Return to admin page</a></p>';
+			
 		}
 	}
 

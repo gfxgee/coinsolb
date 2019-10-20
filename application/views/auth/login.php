@@ -28,7 +28,7 @@
           <p class="text-white">
             <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
             <?php echo lang('login_remember_label', 'remember');?> 
-              <a href="forgot_password" class="link-primary float-right"><?php echo lang('login_forgot_password');?></a>
+              <!-- <a href="forgot_password" class="link-primary float-right"><?php echo lang('login_forgot_password');?></a> -->
           </p>
           <div class="row">
             <div class="col col-lg-3">

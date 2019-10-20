@@ -42,7 +42,7 @@ class Coin_solve_model_admin extends CI_Model {
 	}
 
 	public function get_total_users_earned () {
-
+		
 		$this->db->select_sum('score');
 
 		$query = $this
@@ -51,6 +51,15 @@ class Coin_solve_model_admin extends CI_Model {
     
         return $query->row()->score; 
 
+	}
+
+	public function all_time_game_played() {
+
+		$query = $this
+                ->db
+                ->get('game_details');
+    
+        return $query->num_rows(); 
 	}
 
 }

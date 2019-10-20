@@ -9,9 +9,9 @@ class Withdrawals extends CI_Model {
         // Set table name
         $this->table = 'all_detailed_withdrawals';
         // Set orderable column fields
-        $this->column_order = array('first_name','last_name','email', 'Withdrawal_details' , 'timestamp' , 'user_id' , 'Withdrawal_status' , 'created_on' , 'points_withdrawed');
+        $this->column_order = array('first_name','last_name','email', 'Withdrawal_details' , 'timestamp' , 'user_id' , 'Withdrawal_status' , 'created_on' , 'points_withdrawed' , 'withdrawal_referrence_code');
         // Set searchable column fields
-        $this->column_search = array('first_name','last_name','email', 'Withdrawal_details' , 'timestamp' , 'user_id' , 'Withdrawal_status' , 'created_on' , 'points_withdrawed');
+        $this->column_search = array('first_name','last_name','email', 'Withdrawal_details' , 'timestamp' , 'user_id' , 'Withdrawal_status' , 'created_on' , 'points_withdrawed' , 'withdrawal_referrence_code');
         // Set default order
         $this->order = array('Withdrawal_status' => 'asc');
     }
@@ -100,6 +100,19 @@ class Withdrawals extends CI_Model {
         $data = array('withdrawal_status' => 'Declined');
 
         return $this->db->update('withdrawals' , $data , array('id' => $id));
+
+    }
+
+    public function add_referrence_code( $id ) {
+
+        if ( $this->input->post('referrence_code') != '' ) {
+
+            $data = array('withdrawal_referrence_code' => $this->input->post('referrence_code'));
+
+            return $this->db->update('withdrawals' , $data , array('id' => $id));
+        }
+
+        else return false;
 
     }
 

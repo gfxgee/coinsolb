@@ -274,6 +274,21 @@ class Coin_solve_model extends CI_Model {
 
 	}
 
+	public function check_milestone_ligibility( $user_id ) {
+
+		$count = $this->db->get_where('game_details' , array('user_id' => $user_id , 'points_origin' => 'Milestone Points'))->num_rows();
+
+		if ( $count == 0 ) {
+
+			return true;
+		}
+
+		else {
+			return false;
+		}
+
+	} 
+
 }
 
 

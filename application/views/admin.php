@@ -19,7 +19,7 @@
 
 			<div class="col-sm-2 text-white">
 				<p class="card-title m-0">Games Played Today</p>
-				<h2 class="fs-50 card-text admin-games-count"><?php echo $games_played_count_today; ?></h2>		
+				<h2 class="fs-50 card-text admin-games-count mb-0"><?php echo $games_played_count_today; ?></h2>
 			</div>
 
 			<div class="col-lg-6 col-md-4 col-sm-6 p-0 m-0 d-none d-lg-block d-md-block text-right" >
@@ -69,14 +69,10 @@
 					<table id="withdrawalTable" class=" table table-borderless data-table-tables text-white display" style="width:100%">
 					    <thead>
 					        <tr>
-					            <th>First name</th>
-					            <th>Last name</th>
-					            <th>Email</th>
-					            <th>Created On</th>
+					            <th>User Details</th>
 					            <th>Withdrawal Date</th>
 					            <th>Details</th>
 					            <th>Amount</th>
-					            <th>User Id</th>
 					            <th>Actions</th>
 					        </tr>
 					    </thead>
@@ -100,14 +96,8 @@
 
 
 <script>
+
 $(document).ready(function(){
-
-	var updaterealtime = setInterval(function(){
-
-
-
-	} , 5000);
-
 
     $('#memListTable').DataTable({
         // Processing indicator
@@ -142,7 +132,7 @@ $(document).ready(function(){
         },
         //Set column definition initialisation properties
         "columnDefs": [{ 
-            "targets": [0 , 1 , 2 , 5],
+            "targets": [1],
             "orderable": false
         }]
     });
@@ -152,6 +142,7 @@ $(document).ready(function(){
 	    	$('.admin-games-count').text(data.games_played_count_today);
 	    	$('.admin-user-count').text(data.user_count);
 	    	$('.get_total_users_earned').text(data.get_total_users_earned/10000);
+	    	$('.all_time_game_played').text(data.all_time_game_played);
 	    } , 'json');
 	} , 1000);
 
