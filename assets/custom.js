@@ -54,6 +54,17 @@ $(document).ready(function() {
             $('.copy-link').tooltip('dispose').tooltip({title: 'Copy Link'}).tooltip('hide');
         }, 1000);
     });
+
+
+    if($("#wrapfabtest").height() > 0) {
+        $('.ad-block-detect').hide();
+        
+    } else {
+        $('.ad-block-detect').show();
+        
+    }
+
+          
 });
           
 

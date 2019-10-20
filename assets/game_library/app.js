@@ -240,42 +240,51 @@ $( document ).ready(function(){
 
 	$('.play-button').click(function(){
 
-		gameMode = location.href.split('=')[1];
 
-		if ( gameMode == 'normal' ) { 
-			points = 1;
+	    if($("#wrapfabtest").height() > 0) {
 
-		} else if ( gameMode == 'hard') {
-			points = 2;
-		}
-		else {
-			alert('Please select a game mode');
-			location.href ='choose';
-		}
+			gameMode = location.href.split('=')[1];
 
-		systemGeneratedAnswer = generateEquation();
+			if ( gameMode == 'normal' ) { 
+				points = 1;
 
-		if ( gameMode != '' ) {
+			} else if ( gameMode == 'hard') {
+				points = 2;
+			}
+			else {
+				alert('Please select a game mode');
+				location.href ='choose';
+			}
 
-			$('#userAnswer').removeAttr('readonly');
+			systemGeneratedAnswer = generateEquation();
 
-			$('.play-button-container').fadeOut('fast' , function (){
+			if ( gameMode != '' ) {
 
-				// reset score every new game
-				score = 0.0000;
-				spamFlag = 0;
-				
-				start = 1;
+				$('#userAnswer').removeAttr('readonly');
 
-				// initialize game time
+				$('.play-button-container').fadeOut('fast' , function (){
 
-				$('.pause-button-container').fadeIn();
-				$('#userAnswer').removeAttr('placeholder');
+					// reset score every new game
+					score = 0.0000;
+					spamFlag = 0;
+					
+					start = 1;
 
-				gameStart( true );
+					// initialize game time
 
-			});
-		}
+					$('.pause-button-container').fadeIn();
+					$('#userAnswer').removeAttr('placeholder');
+
+					gameStart( true );
+
+				});
+			}
+
+		} else {
+
+	        $('#exampleModal').modal('show')
+	        
+	    }
 	});
 
 	$('.replay-button').click( function (){

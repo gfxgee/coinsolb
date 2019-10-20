@@ -1,3 +1,16 @@
+<div id="wrapfabtest">
+    <div class="adBanner">
+    </div>
+</div>
+
+<style>
+	.adBanner {
+	    background-color: transparent;
+	    height: 1px;
+	    width: 1px;
+	}
+</style>
+
 <section class="bg-main-color">
 	<div class="container pb-5">
 		<div class="row">
@@ -39,6 +52,11 @@
 				<?php $this->load->view('templates/ad_left'); ?>
 			</div>			
 			<div class="col-lg-8 m-auto p-5 text-center">
+
+				<div class="ad-block-detect alert alert-danger bg-danger border-danger text-white rounded-lg" role="alert" style="display: none;">
+				  <p class="m-0"><span class="font-weight-bold">Ad Block Detected:</span> Please support us by turning off your adblocker.</p> 
+				</div>
+
 				<h2 id="game-type">Select Game Type</h2>
 				<h6 id="game-operators"></h6>
 				<div class="row p-3 pt-4">
@@ -83,6 +101,7 @@
 			</div>			
 		</div>
 
+
 		<?php } else {?>
 
 		<div class="row bg-secondary-color text-white" id="select-game">
@@ -113,6 +132,22 @@
 
 	</div>
 </section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-tertiary-color text-white text-center  px-3 py-5">
+      <div class="modal-body border-0">
+      	<img src="<?php echo base_url(); ?>/assets/images/stop.png" alt="" width="20%" class="mb-4">
+        <h5 class="mb-4">It looks like you’re using an adblocker</h5>
+        <p>We depend on ads to keep our application free for you.</p>
+		<p>Please consider disabling your ad blocker so we can continue to serve you. After disabling reload your the page.</p>
+        <button type="button" class="btn banner-button rounded-100 mt-3 px-5" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
  
 
 <?php $this->load->view('templates/faq'); ?>
