@@ -29,7 +29,7 @@
 				<p class="text-white m-0">Total Earned from Users</p>
                 <div class="dropdown-divider"></div>
 				<p class="text-white m-0">Total Amount Payable</p>
-				<h4 class="text-highlights"><?php echo $get_total_payable; ?></h4>
+				<h4 class="text-highlights">$<span class="get_total_payable"><?php echo $get_total_payable/10000; ?></span></h4>
 			</div>
 
 		</div>
@@ -148,6 +148,8 @@ $(document).ready(function(){
 	    	$('.admin-user-count').text(data.user_count);
 	    	$('.get_total_users_earned').text(data.get_total_users_earned/10000);
 	    	$('.all_time_game_played').text(data.all_time_game_played);
+	    	$('.get_total_payable').text(data.get_total_payable/10000);
+	    	
 	    } , 'json');
 	} , 1000);
 
