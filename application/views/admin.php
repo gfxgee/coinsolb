@@ -143,7 +143,7 @@ $(document).ready(function(){
     });
 
     setInterval(function(){
-		$.get('coin_solve/administrator_realtime' , function(data){
+		$.get('coin_solve/administrator/realtime' , function(data){
 	    	$('.admin-games-count').text(data.games_played_count_today);
 	    	$('.admin-user-count').text(data.user_count);
 	    	$('.get_total_users_earned').text(data.get_total_users_earned/10000);

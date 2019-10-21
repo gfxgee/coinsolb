@@ -35,33 +35,7 @@ class Coin_solve extends CI_Controller  {
 		$this->render_page('landing' , 'Coinsolb' , 0 , $meta_description );
 	}
 
-	public function administrator_realtime () {
-
-		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
-
-			$data = array(
-				'page'						=> 'admin',
-				'page_title'				=> 'Administrator',
-				'user_count'				=> $this->coin_solve_model_admin->get_all_user_count(),
-				'withdrawal_count'			=> $this->coin_solve_model_admin->get_all_withdrawal_count(),
-				'games_played_count_today'	=> $this->coin_solve_model_admin->get_all_games_played_count_today(),
-				'games_played_count'		=> $this->coin_solve_model_admin->get_all_games_played_count(),
-				'meta_description'			=> 'Administrator',
-				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(),
-				'get_total_payable'			=> $this->coin_solve_model_admin->get_total_payable(), 
-			);
-
-			echo json_encode($data);
-
-		}
-
-		else {
-			redirect('/' , 'refresh');
-		}
-
-	}
-
-	public function administrator () {
+	public function administrator ( $from = '' ) {
 
 		if ( $this->ion_auth->logged_in() && $this->ion_auth->is_admin() ) {
 
@@ -76,11 +50,16 @@ class Coin_solve extends CI_Controller  {
 				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(), 
 				'all_time_game_played'		=> $this->coin_solve_model_admin->all_time_game_played(), 
 				'get_total_payable'			=> $this->coin_solve_model_admin->get_total_payable(),
+				'get_total_payable'			=> $this->coin_solve_model_admin->get_total_payable()-$this->coin_solve_model_admin->get_total_withdrawed_amount(),
 			);
 
-			$this->load->view('templates/header' , $data);
-			$this->load->view('admin' , $data);
-			$this->load->view('templates/footer');
+			if ( $from == '' ) {
+				$this->load->view('templates/header' , $data);
+				$this->load->view('admin' , $data);
+				$this->load->view('templates/footer');
+			}
+
+			if ( $from == 'realtime' ) echo json_encode($data);
 
 		}
 
@@ -602,10 +581,11 @@ class Coin_solve extends CI_Controller  {
 		if ( $this->ion_auth->logged_in() ) {
 
 			$total_points_earned = $this->coin_solve_model->get_user_total_score($this->ion_auth->get_user_id());
+			$total_user_withdrawal_amount = $this->coin_solve_model->get_user_total_withdrawals( $this->ion_auth->get_user_id());
 			
 			if ( $this->input->post('select-payment')) {
 
-				if ( $this->input->post('withdrawal-amount') >= 2 && $this->input->post('withdrawal-amount') <= $total_points_earned/10000 ) {
+				if ( $this->input->post('withdrawal-amount') >= 2 && $this->input->post('withdrawal-amount') <= ($total_points_earned-$total_user_withdrawal_amount)/10000 ) {
 
 					var_dump($this->input->post());
 

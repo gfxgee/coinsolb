@@ -83,4 +83,15 @@ class Coin_solve_model_admin extends CI_Model {
         return $query->num_rows(); 
 	}
 
+	public function get_total_withdrawed_amount() {
+
+		$this->db->select_sum('points_withdrawed');
+
+		$query = $this
+                ->db
+                ->get_where('all_detailed_withdrawals' , array('withdrawal_status' => 'Accepted'));
+    
+        return $query->row()->points_withdrawed; 
+	}
+
 }
