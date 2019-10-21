@@ -45,8 +45,10 @@ class Coin_solve extends CI_Controller  {
 				'user_count'				=> $this->coin_solve_model_admin->get_all_user_count(),
 				'withdrawal_count'			=> $this->coin_solve_model_admin->get_all_withdrawal_count(),
 				'games_played_count_today'	=> $this->coin_solve_model_admin->get_all_games_played_count_today(),
+				'games_played_count'		=> $this->coin_solve_model_admin->get_all_games_played_count(),
 				'meta_description'			=> 'Administrator',
-				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(), 
+				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(),
+				'get_total_payable'			=> $this->coin_solve_model_admin->get_total_payable(), 
 			);
 
 			echo json_encode($data);
@@ -70,8 +72,10 @@ class Coin_solve extends CI_Controller  {
 				'withdrawal_count'			=> $this->coin_solve_model_admin->get_all_withdrawal_count(),
 				'games_played_count_today'	=> $this->coin_solve_model_admin->get_all_games_played_count_today(),
 				'meta_description'			=> 'Administrator',
+				'games_played_count'		=> $this->coin_solve_model_admin->get_all_games_played_count(),
 				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(), 
 				'all_time_game_played'		=> $this->coin_solve_model_admin->all_time_game_played(), 
+				'get_total_payable'			=> $this->coin_solve_model_admin->get_total_payable(),
 			);
 
 			$this->load->view('templates/header' , $data);

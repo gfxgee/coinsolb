@@ -20,11 +20,16 @@
 			<div class="col-sm-2 text-white">
 				<p class="card-title m-0">Games Played Today</p>
 				<h2 class="fs-50 card-text admin-games-count mb-0"><?php echo $games_played_count_today; ?></h2>
+				<div class="dropdown-divider"></div>
+				<p class="m-0">Total Games Played <span class="text-highlights fs-22 font-weight-bold"><?php echo $games_played_count; ?></span></p>
 			</div>
 
 			<div class="col-lg-6 col-md-4 col-sm-6 p-0 m-0 d-none d-lg-block d-md-block text-right" >
 				<h2 class="fs-50 text-highlights m-0">$<span class="get_total_users_earned"><?php echo $get_total_users_earned/10000; ?></span></h2>
 				<p class="text-white m-0">Total Earned from Users</p>
+                <div class="dropdown-divider"></div>
+				<p class="text-white m-0">Total Amount Payable</p>
+				<h4 class="text-highlights"><?php echo $get_total_payable; ?></h4>
 			</div>
 
 		</div>
