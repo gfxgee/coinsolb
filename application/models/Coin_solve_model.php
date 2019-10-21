@@ -215,7 +215,7 @@ class Coin_solve_model extends CI_Model {
 
 			$data = json_encode($data);
 
-			$query = "insert into withdrawals values('', '$amount' , '$current_date' , '$user_id' , '$data' , 'Pending')";
+			$query = "insert into withdrawals values('', '$amount' , '$current_date' , '$user_id' , '$data' , 'Pending' , '')";
 			
 			$result = $this->db->query($query);
 
