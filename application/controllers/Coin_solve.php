@@ -49,7 +49,6 @@ class Coin_solve extends CI_Controller  {
 				'games_played_count'		=> $this->coin_solve_model_admin->get_all_games_played_count(),
 				'get_total_users_earned'	=> $this->coin_solve_model_admin->get_total_users_earned(), 
 				'all_time_game_played'		=> $this->coin_solve_model_admin->all_time_game_played(), 
-				'get_total_payable'			=> $this->coin_solve_model_admin->get_total_payable(),
 				'get_total_payable'			=> $this->coin_solve_model_admin->get_total_payable()-$this->coin_solve_model_admin->get_total_withdrawed_amount(),
 			);
 
@@ -113,6 +112,7 @@ class Coin_solve extends CI_Controller  {
 				'messages'						=> $msg,
 				'user_count'					=> $total_users,
 				'total_problems_solved'			=> $total_problems_solved,
+				'get_total_payable'				=> $this->coin_solve_model_admin->get_total_payable()-$this->coin_solve_model_admin->get_total_withdrawed_amount(),
 			);
 
 			
@@ -139,6 +139,7 @@ class Coin_solve extends CI_Controller  {
 				'meta_description'		=> $meta_description,
 				'posts'					=> $posts,
 				'total_problems_solved'	=> $total_problems_solved,
+				'get_total_payable'		=> $this->coin_solve_model_admin->get_total_payable()-$this->coin_solve_model_admin->get_total_withdrawed_amount(),
 				
 			);
 
