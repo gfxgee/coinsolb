@@ -13,7 +13,7 @@ class Scores extends CI_Model {
         // Set searchable column fields
         $this->column_search = array('first_name','last_name','email', 'total_score' , 'user_id');
         // Set default order
-        $this->order = array('total_score' => 'asc');
+        $this->order = array('total_score' => 'desc');
     }
 
     

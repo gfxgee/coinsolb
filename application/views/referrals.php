@@ -73,7 +73,7 @@ $(document).ready(function(){
         "order": [],
         // Load data from an Ajax source
         "ajax": {
-            "url": "<?php echo base_url('coin_solve/getReferralLists'); ?>",
+            "url": "<?php echo base_url('coin_solve/getReferralLists/').$this->ion_auth->get_user_id(); ?>",
             "type": "POST"
         },
         //Set column definition initialisation properties

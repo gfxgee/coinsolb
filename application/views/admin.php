@@ -6,25 +6,26 @@
 		<div class="row py-4">
 			
 			
-			<div class="col-sm-2 text-white">
+			<div class="pb-3 col-lg-2 col-sm-6 col-6 text-white">
 				<p class="card-title m-0">Users</p>
 				<h2 class="fs-50 card-text admin-user-count"><?php echo $user_count; ?></h2>		
 			</div>
 
 
-			<div class="col-sm-2 text-white">
+			<div class="pb-3 col-lg-2 col-sm-6 col-6 text-white">
 				<p class="card-title m-0">Withdrawals</p>
 				<h2 class="fs-50 card-text"><?php echo $withdrawal_count; ?></h2>		
 			</div>
 
-			<div class="col-sm-2 text-white">
+			<div class="col-lg-3 col-sm-6 col-6 text-white">
 				<p class="card-title m-0">Games Played Today</p>
 				<h2 class="fs-50 card-text admin-games-count mb-0"><?php echo $games_played_count_today; ?></h2>
 				<div class="dropdown-divider"></div>
-				<p class="m-0">Total Games Played <span class="text-highlights fs-22 font-weight-bold"><?php echo $games_played_count; ?></span></p>
+				<p class="m-0">Total Games Played</p>
+				<h4 class="text-highlights games_played_count"><?php echo $games_played_count; ?></h4>
 			</div>
 
-			<div class="col-lg-6 col-md-4 col-sm-6 p-0 m-0 d-none d-lg-block d-md-block text-right" >
+			<div class="col-lg-5 col-md-6 col-sm-6 p-0 m-0 text-right" >
 				<h2 class="fs-50 text-highlights m-0">$<span class="get_total_users_earned"><?php echo $get_total_users_earned/10000; ?></span></h2>
 				<p class="text-white m-0">Total Earned from Users</p>
                 <div class="dropdown-divider"></div>
@@ -55,8 +56,7 @@
 					<table id="memListTable" class=" table table-borderless data-table-tables text-white display" style="width:100%">
 					    <thead>
 					        <tr>
-					            <th>First name</th>
-					            <th>Last name</th>
+					            <th>Name</th>
 					            <th>Email</th>
 					            <th>Total Score</th>
 					            <th>User Id</th>
@@ -118,7 +118,7 @@ $(document).ready(function(){
         },
         //Set column definition initialisation properties
         "columnDefs": [{ 
-            "targets": [0 , 1 , 2 , 5],
+            "targets": [],
             "orderable": false
         }]
     });
@@ -148,6 +148,7 @@ $(document).ready(function(){
 	    	$('.admin-user-count').text(data.user_count);
 	    	$('.get_total_users_earned').text(data.get_total_users_earned/10000);
 	    	$('.all_time_game_played').text(data.all_time_game_played);
+	    	$('.games_played_count').text(data.games_played_count);
 	    	$('.get_total_payable').text(data.get_total_payable/10000);
 	    	
 	    } , 'json');

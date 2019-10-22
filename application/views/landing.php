@@ -112,7 +112,7 @@
 
 					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">
 						<h6>Total Paid ($)</h6>
-						<h2 class="text-highlights fs-50 mt-3">136</h2>
+						<h2 class="text-highlights fs-50 mt-3">218</h2>
 					</div>
 
 				</div>

@@ -9,9 +9,9 @@ class Player_withdrawals extends CI_Model {
         // Set table name
         $this->table = 'withdrawals';
         // Set orderable column fields
-        $this->column_order = array('timestamp','withdrawal_details', 'points_withdrawed' , 'withdrawal_status' );
+        $this->column_order = array('timestamp','withdrawal_details', 'points_withdrawed' , 'withdrawal_status' , 'withdrawal_referrence_code' );
         // Set searchable column fields
-        $this->column_search = array('timestamp','withdrawal_details' , 'points_withdrawed', 'withdrawal_status');
+        $this->column_search = array('timestamp','withdrawal_details' , 'points_withdrawed', 'withdrawal_status' ,  'withdrawal_referrence_code' );
         // Set default order
         $this->order = array('timestamp' => 'desc');
     }
@@ -21,8 +21,8 @@ class Player_withdrawals extends CI_Model {
      * Fetch members data from the database
      * @param $_POST filter data based on the posted parameters
      */
-    public function getRows($postData){
-        $this->_get_datatables_query($postData);
+    public function getRows($postData, $id ){
+        $this->_get_datatables_query($postData, $id );
         if(isset($postData['length']) && $postData['length'] != -1){
             $this->db->limit($postData['length'], $postData['start']);
         }
@@ -33,9 +33,9 @@ class Player_withdrawals extends CI_Model {
     /*
      * Count all records
      */
-    public function countAll(){
+    public function countAll( $id ){
         $this->db->from($this->table);
-        $this->db->where('user_id' , $this->ion_auth->get_user_id());
+        $this->db->where('user_id', $id );
         return $this->db->count_all_results();
     }
     
@@ -43,8 +43,8 @@ class Player_withdrawals extends CI_Model {
      * Count records based on the filter params
      * @param $_POST filter data based on the posted parameters
      */
-    public function countFiltered($postData){
-        $this->_get_datatables_query($postData);
+    public function countFiltered($postData, $id ){
+        $this->_get_datatables_query($postData, $id );
         $query = $this->db->get();
         return $query->num_rows();
     }
@@ -53,10 +53,10 @@ class Player_withdrawals extends CI_Model {
      * Perform the SQL queries needed for an server-side processing requested
      * @param $_POST filter data based on the posted parameters
      */
-    private function _get_datatables_query($postData){
+    private function _get_datatables_query($postData, $id ){
          
         $this->db->from($this->table);
-        $this->db->where('user_id' , $this->ion_auth->get_user_id());
+        $this->db->where('user_id', $id );
  
         $i = 0;
         // loop searchable columns 

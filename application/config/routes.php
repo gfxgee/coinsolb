@@ -70,6 +70,7 @@ $route['cookies'] 					= 'coin_solve/cookies';
 $route['practice'] 					= 'coin_solve/practice';
 $route['terms-conditions'] 			= 'coin_solve/terms_conditions';
 $route['choose'] 					= 'coin_solve/choose';
+$route['user-details/(:num)'] 		= 'coin_solve/user_details_for_admin/$1';
 $route['discussions'] 				= 'coin_solve/discussions';
 $route['discussions/(:any)'] 		= 'coin_solve/discussions/$1';
 $route['approve-withdraw/(:num)'] 	= 'coin_solve/approve_withdrawal/$1';
