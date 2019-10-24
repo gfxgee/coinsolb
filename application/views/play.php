@@ -49,7 +49,7 @@
 				<?php  $this->load->view('templates/ad_sterra_code'); ?>
 			</div>
 			<div class="col-sm-2 p-3">
-				<?php // $this->load->view('templates/ad_left'); ?>
+				<?php  $this->load->view('templates/ad_sterra_code_side'); ?>
 			</div>			
 			<div class="col-lg-8 m-auto p-5 text-center">
 
@@ -97,7 +97,7 @@
 				<p class="text-white mt-5">You can change game modes <a class="link-primary" href="<?php echo base_url('choose'); ?>">here</a>.</p>
 			</div>
 			<div class="col-sm-2 p-3">
-				<?php // $this->load->view('templates/ad_jpet_right'); ?>
+				<?php $this->load->view('templates/ad_sterra_code_side'); ?>
 			</div>			
 		</div>
 
