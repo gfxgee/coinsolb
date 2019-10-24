@@ -7,7 +7,9 @@ $this->load->view('templates/page-title-header' , $data);
 
 <section id="faq-section" class="bg-main-color">
 	<div class="container">
-			
+		<div class="col-sm-12 mb-4 m-auto p-5">
+				<?php // $this->load->view('templates/ad_header'); ?>
+			</div>			
 		<div class="row my-5">
 			
 			<?php foreach ($posts as $post) { ?>
