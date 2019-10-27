@@ -46,16 +46,17 @@
 	
 		<div class="row bg-secondary-color text-white" id="game-container">
 			<div class="col-sm-12 mb-4 m-auto p-5">
-				<?php  //$this->load->view('templates/ad_sterra_code'); ?>
+				<?php //  $this->load->view('templates/ad_sterra_code'); ?>
 			</div>
 			<div class="col-sm-2 p-3">
-				<?php  //$this->load->view('templates/ad_sterra_code_side'); ?>
+				<?php  $this->load->view('templates/ad_sterra_code_side'); ?>
 			</div>			
 			<div class="col-lg-8 m-auto p-5 text-center">
 
 				<div class="ad-block-detect alert alert-danger bg-danger border-danger text-white rounded-lg" role="alert" style="display: none;">
 				  <p class="m-0"><span class="font-weight-bold">Ad Block Detected:</span> Please support us by turning off your adblocker.</p> 
 				</div>
+				<input type="hidden" name="IL_IN_ARTICLE">
 
 				<h2 id="game-type">Select Game Type</h2>
 				<h6 id="game-operators"></h6>
@@ -97,7 +98,7 @@
 				<p class="text-white mt-5">You can change game modes <a class="link-primary" href="<?php echo base_url('choose'); ?>">here</a>.</p>
 			</div>
 			<div class="col-sm-2 p-3">
-				<?php //$this->load->view('templates/ad_sterra_code_side'); ?>
+				<?php $this->load->view('templates/ad_sterra_code_side'); ?>
 			</div>			
 		</div>
 

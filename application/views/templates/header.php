@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
   <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/300ppi/favicon.png" sizes="32x32">
 
-  
+  <script data-ad-client="ca-pub-4230180363006566" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>  
 
   <title><?php if(isset($page_title)) echo $page_title; ?></title>
 

@@ -31,11 +31,11 @@
 	
 		<div class="row bg-secondary-color" id="select-game">
 			<div class="col-sm-12 mb-4 m-auto p-5">
-				<?php //$this->load->view('templates/ad_sterra_code'); ?>
+				<?php // $this->load->view('templates/ad_sterra_code'); ?>
 			</div>
 
 			<div class="col-sm-2 p-3">
-				<?php //$this->load->view('templates/ad_sterra_code_side'); ?>
+				<?php $this->load->view('templates/ad_sterra_code_side'); ?>
 			</div>
 			<div class="col-lg-8 m-auto text-center text-white">
 				<h2 class="mt-5">Choose the mode you want to play:</h2>
@@ -72,7 +72,7 @@
 			</div>
 
 			<div class="col-sm-2 p-3">
-				<?php //$this->load->view('templates/ad_sterra_code_side'); ?>
+				<?php $this->load->view('templates/ad_sterra_code_side'); ?>
 			</div>
 		</div>
 
