@@ -59,6 +59,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body id="<?php if(isset($page)) echo $page.'_page'; ?>">
+  <section id="promotional" class="bg-black">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 py-3">
+          <h5 class="text-custom-orange">Halloween Special Promo</h5>
+          <p class="fs-14 m-0 text-white">First 10 referral is 300 points each and the succeeding will be <span class="text-custom-orange font-weight-bold">30 points</span> each! <br> And interval tiime will reduced to <span class="text-custom-orange font-weight-bold">30 minutes</span>.</p>
+        </div>
+        <div class="col-sm-5 py-3 text-right text-white">
+          <h3 class="pt-4">Ends on November 3, 2019</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-main-color" id="main-nav">

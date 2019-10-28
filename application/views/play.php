@@ -42,7 +42,7 @@
 		</div>
 		
 		
-		<?php if ($replay_time_left >= 3600 ) { ?>
+		<?php if ($replay_time_left >= 1800 ) { ?>
 	
 		<div class="row bg-secondary-color text-white" id="game-container">
 			<div class="col-sm-12 mb-4 m-auto p-5">

@@ -165,7 +165,7 @@ class Coin_solve extends CI_Controller  {
 
 			$total_score_count = $this->coin_solve_model->get_user_scores_count($user_id , 'App Game');
 
-			if ( $total_score_count >= 5 ) {
+			if ( $total_score_count >= 4 ) {
 
 				$pending_referrals = $this->coin_solve_model->get_pending_referrals($user_id);
 
@@ -179,7 +179,7 @@ class Coin_solve extends CI_Controller  {
 
 						if ( $total_referring_points_count <= 10 ) $this->save_points_details( 300 , 'Referral Points' , $user_id_of_referral->user_id );
 
-						else { $this->save_points_details( 20 , 'Referral Points' , $user_id_of_referral->user_id ); }
+						else { $this->save_points_details( 30 , 'Referral Points' , $user_id_of_referral->user_id ); }
 
 					}
 
@@ -200,7 +200,7 @@ class Coin_solve extends CI_Controller  {
 
 			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
 				
-				$this->render_page('play' , 'CoinSolb - Play' , 3600 , $meta_description);
+				$this->render_page('play' , 'CoinSolb - Play' , 1800 , $meta_description);
 
 				if(isset($_COOKIE['score'])) {
 
@@ -220,7 +220,7 @@ class Coin_solve extends CI_Controller  {
 
 				$offset = $current_time - $last_game;
 
-				if ( $offset >= 3600 ) {
+				if ( $offset >= 1800 ) {
 
 					if(isset($_COOKIE['score'])) {
 
@@ -402,7 +402,7 @@ class Coin_solve extends CI_Controller  {
 
 			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
 				
-				$offset = 3600;
+				$offset = 1800;
 
 			} else {
 
@@ -417,7 +417,7 @@ class Coin_solve extends CI_Controller  {
 				$offset = $current_time - $last_game;
 			}
 
-			if ( $score == 0 && $points_origin == '' && $user_id == 0 && $offset >= 3600 ) {
+			if ( $score == 0 && $points_origin == '' && $user_id == 0 && $offset >= 1800 ) {
 				
 				$score = $this->input->post('score');
 				$points_origin = $this->input->post('points_origin');

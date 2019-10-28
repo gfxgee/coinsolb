@@ -148,6 +148,10 @@ a {
 .bg-tertiary-color {
 	background-color: #0D2F46;
 }
+.bg-black {
+	background-color: #000000;
+}
+
 
 
 
@@ -209,6 +213,12 @@ a {
 }
 .fs-16 {
 	font-size: 16px;
+}
+.fs-9 {
+	font-size: 9px;
+}
+.fs-12 {
+	font-size: 12px;
 }
 
 
@@ -520,6 +530,13 @@ a {
 	color: white !important;
 }
 
+
+#promotional {
+    background-image: url(images/halloween.png);
+    background-size: 20% 300%;
+    background-repeat: no-repeat;
+    background-position: 100% -70px;
+}
 
 
 

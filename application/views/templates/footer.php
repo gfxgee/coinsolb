@@ -73,7 +73,7 @@
 
   <script type="text/javascript">
     $(document).ready(function(){ 
-      var time_left = <?php echo (isset($replay_time_left)) ? 3600 - $replay_time_left : 0; ?>;
+      var time_left = <?php echo (isset($replay_time_left)) ? 1800 - $replay_time_left : 0; ?>;
       var minutes, seconds;
       var time_run = setInterval ( function () { 
         minutes = Math.floor( time_left / 60 );
@@ -129,13 +129,13 @@
 
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-<?php if ( $page == 'play' && $page == 'practice' && $page == 'dashboard' && $page == 'choose') { ?>
+
 <script type="text/javascript">
 var infolinks_pid = 3215480;
 var infolinks_wsid = 0;
 </script>
 <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
-<?php } ?>
+
 </body>
 
 </html>
