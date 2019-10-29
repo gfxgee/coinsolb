@@ -1,5 +1,5 @@
 
-
+<?php if (!$this->ion_auth->is_admin() ) { ?>
 <div class="modal fade" id="promomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content p-5 text-white  text-center bg-transparent no-border">
@@ -21,7 +21,7 @@
     </div>
   </div>
 </div>
-
+<?php } ?>
   <!-- Footer -->
   <footer class="bg-footer-color pt-60 pb-30">
     <div class="container">
