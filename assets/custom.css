@@ -538,7 +538,12 @@ a {
     background-position: 100% -70px;
 }
 
-
+#promomodal {
+	background-image: url(images/promo-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
 
 
 @font-face {

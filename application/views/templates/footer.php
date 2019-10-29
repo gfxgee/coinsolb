@@ -1,5 +1,27 @@
 
 
+<div class="modal fade" id="promomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-5 text-white  text-center bg-transparent no-border">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-12 py-3">
+            <h3 class="text-custom-orange text-center mb-5" id="exampleModalLabel">Halloween Special Promo</h3>
+            <p class="fs-20 m-0 text-white">First 10 referral is 300 points each and the succeeding will be 30 points each! And interval time will reduced to 30 minutes.</p>
+          </div>
+          <div class="col-sm-12 py-3 text-white">
+            <h3>Ends on November 3, 2019</h3>
+          </div>
+          <div class="col-sm-12 py-3">
+            <button data-dismiss="modal" class="btn rounded-100 banner-button px-5 bg-yellow-color no-border">Okay</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
   <!-- Footer -->
   <footer class="bg-footer-color pt-60 pb-30">
     <div class="container">
@@ -73,6 +95,7 @@
 
   <script type="text/javascript">
     $(document).ready(function(){ 
+
       var time_left = <?php echo (isset($replay_time_left)) ? 1800 - $replay_time_left : 0; ?>;
       var minutes, seconds;
       var time_run = setInterval ( function () { 

@@ -14,6 +14,9 @@
 
 $(document).ready(function() {
 
+
+    $('#promomodal').modal('show');
+
     $('#select-payment').change(function(){
 
         $('.account').fadeOut('slow');
