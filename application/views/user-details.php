@@ -3,7 +3,7 @@
 		
 		<h1 class="text-white pt-4"><a href="<?php echo base_url('administrator'); ?>" class="link-primary">Back to Dashboard</a></h1>
 
-		<div class="row py-4 ">
+<!-- 		<div class="row py-4 ">
 			
 				
 			<div class="pb-3 col-lg-2 col-sm-6 col-6 text-white">
@@ -33,7 +33,7 @@
 				<h4 class="text-highlights">$<span class="get_total_payable"></span></h4>
 			</div>
 
-		</div>
+		</div> -->
 	
 		<div class="row bg-secondary-color p-3 mb-5">
 			<div class="col-sm-12 pb-5 pt-4">
@@ -195,17 +195,17 @@ $(document).ready(function(){
         }]
     });
 
-    setInterval(function(){
-		$.get('<?php echo base_url(); ?>/coin_solve/administrator/realtime' , function(data){
-	    	$('.admin-games-count').text(data.games_played_count_today);
-	    	$('.admin-user-count').text(data.user_count);
-	    	$('.get_total_users_earned').text(data.get_total_users_earned/10000);
-	    	$('.all_time_game_played').text(data.all_time_game_played);
-	    	$('.games_played_count').text(data.games_played_count);
-	    	$('.get_total_payable').text(data.get_total_payable/10000);
+ //    setInterval(function(){
+	// 	$.get('<?php echo base_url(); ?>/coin_solve/administrator/realtime' , function(data){
+	//     	$('.admin-games-count').text(data.games_played_count_today);
+	//     	$('.admin-user-count').text(data.user_count);
+	//     	$('.get_total_users_earned').text(data.get_total_users_earned/10000);
+	//     	$('.all_time_game_played').text(data.all_time_game_played);
+	//     	$('.games_played_count').text(data.games_played_count);
+	//     	$('.get_total_payable').text(data.get_total_payable/10000);
 	    	
-	    } , 'json');
-	} , 1000);
+	//     } , 'json');
+	// } , 1000);
 
 
 });
