@@ -1,4 +1,5 @@
 
+
 <?php if (!$this->ion_auth->is_admin() ) { ?>
 <div class="modal fade" id="promomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -147,7 +148,8 @@
 
   <?php } ?>
 
-  
+
+
   
 
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

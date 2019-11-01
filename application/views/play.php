@@ -45,9 +45,6 @@
 		<?php if ($replay_time_left >= 1800 ) { ?>
 	
 		<div class="row bg-secondary-color text-white" id="game-container">
-			<div class="col-sm-12 mb-4 m-auto p-5">
-				<?php $this->load->view('templates/ad_sterra_code'); ?>
-			</div>
 			<div class="col-sm-2 p-3">
 				<?php  $this->load->view('templates/ad_sterra_code'); ?>
 			</div>			
