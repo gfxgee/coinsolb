@@ -46,10 +46,10 @@
 	
 		<div class="row bg-secondary-color text-white" id="game-container">
 			<div class="col-sm-12 mb-4 m-auto p-5">
-				<?php // $this->load->view('templates/ad_header'); ?>
+				<?php $this->load->view('templates/ad_header'); ?>
 			</div>
 			<div class="col-sm-2 p-3">
-				<?php  // $this->load->view('templates/ad_sterra_code_side'); ?>
+				<?php  $this->load->view('templates/ad_sterra_code'); ?>
 			</div>			
 			<div class="col-lg-8 m-auto p-5 text-center">
 
@@ -98,7 +98,7 @@
 				<p class="text-white mt-5">You can change game modes <a class="link-primary" href="<?php echo base_url('choose'); ?>">here</a>.</p>
 			</div>
 			<div class="col-sm-2 p-3">
-				<?php // $this->load->view('templates/ad_sterra_code_side'); ?>
+				<?php $this->load->view('templates/ad_sterra_code_side'); ?>
 			</div>			
 		</div>
 
