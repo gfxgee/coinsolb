@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
   <script src="<?php echo base_url(); ?>assets/bootstrap/js/jquery-3.4.1.min.js"></script>
 
-  <!-- <script data-ad-client="ca-pub-9239016295634478" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+  <script data-ad-client="ca-pub-9239016295634478" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </head>
 
