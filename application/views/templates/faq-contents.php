@@ -56,11 +56,11 @@
 				</div>
 			</div>
 
+<?php } ?>
+			
+
 			<div class="col-sm-12 mb-4 m-auto p-5">
 		        <?php $this->load->view('templates/ad_sterra_code'); ?>
 		      </div>
-
-<?php } ?>
-
 
 		</div>
