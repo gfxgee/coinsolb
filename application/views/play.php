@@ -46,7 +46,7 @@
 	
 		<div class="row bg-secondary-color text-white" id="game-container">
 			<div class="col-sm-2 p-3">
-				<?php  $this->load->view('templates/ad_sterra_code'); ?>
+				<?php  $this->load->view('templates/ad_sterra_code_side'); ?>
 			</div>			
 			<div class="col-lg-8 m-auto p-5 text-center">
 
