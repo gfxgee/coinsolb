@@ -179,7 +179,7 @@ class Coin_solve extends CI_Controller  {
 
 						if ( $total_referring_points_count <= 10 ) $this->save_points_details( 300 , 'Referral Points' , $user_id_of_referral->user_id );
 
-						else { $this->save_points_details( 30 , 'Referral Points' , $user_id_of_referral->user_id ); }
+						else { $this->save_points_details( 20 , 'Referral Points' , $user_id_of_referral->user_id ); }
 
 					}
 
