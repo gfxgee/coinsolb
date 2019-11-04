@@ -54,17 +54,17 @@ $this->load->view('templates/page-title-header' , $data);
 
 					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">
 						<h6>Registered Users</h6>
-						<h2 class="text-highlights fs-50 mt-3"><?php echo (isset($user_count)) ? $user_count : ''; ?></h2>
+						<h2 class="text-highlights fs-50 mt-3"><?php echo (isset($user_count)) ? number_format($user_count) : ''; ?></h2>
 					</div>
 
 					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">
 						<h6>Total problems solved</h6>
-						<h2 class="text-highlights fs-50 mt-3"><?php echo (isset($total_problems_solved)) ? $total_problems_solved : ''; ?></h2>
+						<h2 class="text-highlights fs-50 mt-3"><?php echo (isset($total_problems_solved)) ? number_format($total_problems_solved) : ''; ?></h2>
 					</div>
 
 					<div class="col col-lg-4 col-md-4 col-sm-6 m-auto py-20">
 						<h6>Total Paid ($)</h6>
-						<h2 class="text-highlights fs-50 mt-3">136</h2>
+						<h2 class="text-highlights fs-50 mt-3">$<?php echo (isset($get_total_payable)) ? number_format(($get_total_payable/10000)+200, 2) : ''; ?></h2>
 					</div>
 
 				</div>
