@@ -51,8 +51,8 @@
 
         <div class="col-12 col-lg-3 pb-5">
           <h6 class="font-weight-bold text-footer-header mb-4">Follow Us</h6>
-          <a href="https://www.facebook.com/coinsolb" class="text-white footer-contacts"><i class="fab fa-facebook-square"></i>&nbsp;&nbsp; Coinsolb</a>
-          <div class="fb-like" data-href="https://www.facebook.com/coinsolb" data-width="" data-layout="box_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+          <a href="https://www.facebook.com/coinsolb" class="text-white footer-contacts row col-12 col-sm-12 pb-3"><i class="fab fa-facebook-square"></i>&nbsp;&nbsp; Coinsolb</a>
+          <div class="fb-like" data-href="https://www.facebook.com/coinsolb" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
         </div>
 
