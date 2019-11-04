@@ -97,7 +97,7 @@
   <script type="text/javascript">
     $(document).ready(function(){ 
 
-      var time_left = <?php echo (isset($replay_time_left)) ? 1800 - $replay_time_left : 0; ?>;
+      var time_left = <?php echo (isset($replay_time_left)) ? 3600 - $replay_time_left : 0; ?>;
       var minutes, seconds;
       var time_run = setInterval ( function () { 
         minutes = Math.floor( time_left / 60 );
