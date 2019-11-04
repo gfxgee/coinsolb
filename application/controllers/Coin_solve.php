@@ -162,6 +162,8 @@ class Coin_solve extends CI_Controller  {
 		if ( $this->ion_auth->logged_in() ) 
 		{	
 			$user_id = $this->ion_auth->get_user_id();
+			
+			$total_user_withdrawal_amount = $this->coin_solve_model->get_user_total_withdrawals( $user_id );
 
 			$total_score_count = $this->coin_solve_model->get_user_scores_count($user_id , 'App Game');
 
@@ -191,7 +193,7 @@ class Coin_solve extends CI_Controller  {
 
 			$milestone_ligible = $this->coin_solve_model->check_milestone_ligibility($user_id);
 
-			if ( $total_points_earned >= 30000 && $milestone_ligible == true ) {
+			if ( ($total_points_earned-$total_user_withdrawal_amount) >= 30000 && $milestone_ligible == true ) {
 
 				$this->save_points_details( 20000 , 'Milestone Points' , $user_id );
 
