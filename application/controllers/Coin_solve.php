@@ -200,7 +200,7 @@ class Coin_solve extends CI_Controller  {
 
 			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
 				
-				$this->render_page('play' , 'CoinSolb - Play' , 1800 , $meta_description);
+				$this->render_page('play' , 'CoinSolb - Play' , 3600 , $meta_description);
 
 				if(isset($_COOKIE['score'])) {
 
@@ -220,7 +220,7 @@ class Coin_solve extends CI_Controller  {
 
 				$offset = $current_time - $last_game;
 
-				if ( $offset >= 1800 ) {
+				if ( $offset >= 3600 ) {
 
 					if(isset($_COOKIE['score'])) {
 
@@ -402,7 +402,7 @@ class Coin_solve extends CI_Controller  {
 
 			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
 				
-				$offset = 1800;
+				$offset = 3600;
 
 			} else {
 
@@ -417,7 +417,7 @@ class Coin_solve extends CI_Controller  {
 				$offset = $current_time - $last_game;
 			}
 
-			if ( $score == 0 && $points_origin == '' && $user_id == 0 && $offset >= 1800 ) {
+			if ( $score == 0 && $points_origin == '' && $user_id == 0 && $offset >= 3600 ) {
 				
 				$score = $this->input->post('score');
 				$points_origin = $this->input->post('points_origin');
