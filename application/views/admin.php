@@ -137,7 +137,7 @@ $(document).ready(function(){
         },
         //Set column definition initialisation properties
         "columnDefs": [{ 
-            "targets": [1],
+            "targets": [],
             "orderable": false
         }]
     });
