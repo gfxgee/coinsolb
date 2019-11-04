@@ -52,7 +52,7 @@
         <div class="col-12 col-lg-3 pb-5">
           <h6 class="font-weight-bold text-footer-header mb-4">Follow Us</h6>
           <a href="https://www.facebook.com/coinsolb" class="text-white footer-contacts"><i class="fab fa-facebook-square"></i>&nbsp;&nbsp; Coinsolb</a>
-          <div class="fb-like text-white mt-4" data-href="https://www.facebook.com/coinsolb" data-width="200" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+          <div class="fb-like" data-href="https://www.facebook.com/coinsolb" data-width="" data-layout="box_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
         </div>
 
@@ -71,7 +71,7 @@
   </footer>
 
   <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
