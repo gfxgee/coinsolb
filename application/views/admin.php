@@ -152,7 +152,7 @@ $(document).ready(function(){
 	    	$('.get_total_payable').text(data.get_total_payable/10000);
 	    	
 	    } , 'json');
-	} , 1000);
+	} , 10000);
 
 
 });
