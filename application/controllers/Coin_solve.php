@@ -447,7 +447,7 @@ class Coin_solve extends CI_Controller  {
 
 				if ( $this->input->post('withdrawal-amount') >= 2 && $this->input->post('withdrawal-amount') <= ($total_points_earned-$total_user_withdrawal_amount)/10000 ) {
 
-					var_dump($this->input->post());
+					// var_dump($this->input->post());
 
 					$result = $this->coin_solve_model->add_withdrawal($this->ion_auth->get_user_id() ,  $this->input->post());
 
