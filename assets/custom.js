@@ -15,7 +15,7 @@
 $(document).ready(function() {
 
 
-    //$('#promomodal').modal('show');
+    $('#promomodal').modal('show');
 
     $('#select-payment').change(function(){
 
