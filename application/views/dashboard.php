@@ -18,7 +18,7 @@
 					<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">						
 						<div class="row pt-3">
 							<div class="col-sm-2 p-3">
-								<?php $this->load->view('templates/ad_sterra_code_side'); ?>
+								<?php // $this->load->view('templates/ad_sterra_code_side'); ?>
 							</div>
 							<div class="col-12 col-lg-8 p-0 text-left">
 								<div class="row p-0 px-3"> 
@@ -51,7 +51,7 @@
 							</div>
 
 							<div class="col-sm-2 p-3">
-								<?php $this->load->view('templates/ad_sterra_code_side'); ?>
+								<?php // $this->load->view('templates/ad_sterra_code_side'); ?>
 							</div>
 						</div>
 					</div>
