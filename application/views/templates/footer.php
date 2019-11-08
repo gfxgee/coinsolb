@@ -7,11 +7,19 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-sm-12 py-3">
-            <h3 class="text-custom-orange text-center mb-5" id="exampleModalLabel">Halloween Special Promo</h3>
-            <p class="fs-20 m-0 text-white">First 10 referral is 300 points each and the succeeding will be 30 points each! And interval time will reduced to 30 minutes.</p>
+            <h3 class="text-warning text-center mb-5" id="exampleModalLabel">Important Announcement</h3>
+            <p>Dear Solvers, there are unprecedented events that we never expected to occur in our application which also we don't want to and prevented to happen but the issue is inevitable.</p>
+
+            <p>We are apologizing to everyone as we are shutting down the operation of our website as soon as possible for the reason that all our investors and venture companies have turned their back to providing sustain on our beloved application as we heavily rely on them on the advertisement they provide to us.</p>
+
+            <p>The application is no longer profitable to everyone as the community is growing as much as we want to continue but we are concerned with the efforts you have exerted.</p>
+
+            <p>And for those Solvers who meet the requirement to be able to withdraw you have until Nov. 10, 2019, to process the payment but note that our terms may also apply (processing time will still be the same).</p>
+
+            <p>Thank you for your understanding.</p>
           </div>
           <div class="col-sm-12 py-3 text-white">
-            <h3>Ends on November 3, 2019</h3>
+            <h3>You have until November 10, 2019</h3>
           </div>
           <div class="col-sm-12 py-3">
             <button data-dismiss="modal" class="btn rounded-100 banner-button px-5 bg-yellow-color no-border">Okay</button>
