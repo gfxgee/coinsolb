@@ -53,7 +53,7 @@ $route['default_controller'] 		= 'coin_solve';
 $route['404_override'] 				= '';
 $route['translate_uri_dashes'] 		= FALSE;
 
-$route['play'] 						= 'coin_solve/play';
+$route['play'] 						= 'coin_solve/dashboard';
 $route['administrator'] 			= 'coin_solve/administrator';
 $route['dashboard'] 				= 'coin_solve/dashboard';
 $route['account'] 					= 'coin_solve/account';
