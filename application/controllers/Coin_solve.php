@@ -238,7 +238,7 @@ class Coin_solve extends CI_Controller  {
 					// var_dump($this->input->post());
 
 					// $result = $this->coin_solve_model->add_withdrawal($this->ion_auth->get_user_id() ,  $this->input->post());
-
+					$result = false;
 				}
 
 				else $result = false;
