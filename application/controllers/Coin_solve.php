@@ -215,7 +215,7 @@ class Coin_solve extends CI_Controller  {
 				// update the password if it was posted
 				if (strip_tags($this->input->post('password')))
 				{
-					$data['password'] = strip_tags($this->input->post('password'));
+					 // $data['password'] = strip_tags($this->input->post('password'));
 				}
 
 				// Only allow updating groups if user is admin
