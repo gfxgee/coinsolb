@@ -161,27 +161,27 @@ class Coin_solve extends CI_Controller  {
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
-			$user_id = $this->ion_auth->get_user_id();
+			//$user_id = $this->ion_auth->get_user_id();
 			
-			$total_user_withdrawal_amount = $this->coin_solve_model->get_user_total_withdrawals( $user_id );
+			//$total_user_withdrawal_amount = $this->coin_solve_model->get_user_total_withdrawals( $user_id );
 
-			$total_score_count = $this->coin_solve_model->get_user_scores_count($user_id , 'App Game');
+			//$total_score_count = $this->coin_solve_model->get_user_scores_count($user_id , 'App Game');
 
-			if ( $total_score_count >= 4 ) {
+			//if ( $total_score_count >= 4 ) {
 
-				$pending_referrals = $this->coin_solve_model->get_pending_referrals($user_id);
+				//$pending_referrals = $this->coin_solve_model->get_pending_referrals($user_id);
 
-				foreach ($pending_referrals->result() as $result) {
+				//foreach ($pending_referrals->result() as $result) {
 					
-					if ( $this->coin_solve_model->update_pending_referral( $user_id ) ) {
+					//if ( $this->coin_solve_model->update_pending_referral( $user_id ) ) {
 
-						$user_id_of_referral = $this->coin_solve_model->get_user_id_from_referral_code ($result->referral_code);
+						//$user_id_of_referral = $this->coin_solve_model->get_user_id_from_referral_code ($result->referral_code);
 
-						$total_referring_points_count = $this->coin_solve_model->get_user_scores_count($user_id_of_referral->user_id , 'Referral Points');
+						//$total_referring_points_count = $this->coin_solve_model->get_user_scores_count($user_id_of_referral->user_id , 'Referral Points');
 
-						if ( $total_referring_points_count <= 10 ) $this->save_points_details( 300 , 'Referral Points' , $user_id_of_referral->user_id );
+						//if ( $total_referring_points_count <= 10 ) $this->save_points_details( 300 , 'Referral Points' , $user_id_of_referral->user_id );
 
-						else { $this->save_points_details( 20 , 'Referral Points' , $user_id_of_referral->user_id ); }
+						//else { $this->save_points_details( 20 , 'Referral Points' , $user_id_of_referral->user_id ); }
 
 					}
 
@@ -189,51 +189,51 @@ class Coin_solve extends CI_Controller  {
 
 			}
 
-			$total_points_earned = $this->coin_solve_model->get_user_total_score($user_id);
+			//$total_points_earned = $this->coin_solve_model->get_user_total_score($user_id);
 
-			$milestone_ligible = $this->coin_solve_model->check_milestone_ligibility($user_id);
+			//$milestone_ligible = $this->coin_solve_model->check_milestone_ligibility($user_id);
 
-			if ( ($total_points_earned-$total_user_withdrawal_amount) >= 30000 && $milestone_ligible == true ) {
+			//if ( ($total_points_earned-$total_user_withdrawal_amount) >= 30000 && $milestone_ligible == true ) {
 
-				$this->save_points_details( 20000 , 'Milestone Points' , $user_id );
+				//$this->save_points_details( 20000 , 'Milestone Points' , $user_id );
 
-			}
+			//}
 
 
-			if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
+			//if ( $this->coin_solve_model->get_latest_game_result( $user_id ) == NULL ) {
 				
-				$this->render_page('play' , 'CoinSolb - Play' , 3600 , $meta_description);
+				//$this->render_page('play' , 'CoinSolb - Play' , 3600 , $meta_description);
 
-				if(isset($_COOKIE['score'])) {
+				//if(isset($_COOKIE['score'])) {
 
-					$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id );
+					//$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id );
 
-				}
+				//}
 
-			} else {
+			//} else {
 
-				date_default_timezone_set("Asia/Manila");
+				//date_default_timezone_set("Asia/Manila");
 
-				$current_date = new DateTime("now");
+				//$current_date = new DateTime("now");
 
-				$current_time = $current_date->getTimestamp();
+				//$current_time = $current_date->getTimestamp();
 
-				$last_game = strtotime($this->coin_solve_model->get_latest_game_result( $user_id )->timestamp);
+				//$last_game = strtotime($this->coin_solve_model->get_latest_game_result( $user_id )->timestamp);
 
-				$offset = $current_time - $last_game;
+				///$offset = $current_time - $last_game;
 
-				if ( $offset >= 3600 ) {
+				//if ( $offset >= 3600 ) {
 
-					if(isset($_COOKIE['score'])) {
+					//if(isset($_COOKIE['score'])) {
 
-						$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id ) ;
+						//$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id ) ;
 
-					}
-				}
+					//}
+				//}
 
-				if ($this->ion_auth->is_admin()) $offset = 5000;
+				//if ($this->ion_auth->is_admin()) $offset = 5000;
 
-				$this->render_page('play' , 'Play '.$this->meta_title_separator().' CoinSolb' , $offset , $meta_description );
+				$this->render_page('dashboard' , 'Play '.$this->meta_title_separator().' CoinSolb' , $offset , $meta_description );
 
 			}
 
