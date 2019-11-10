@@ -161,7 +161,7 @@ class Coin_solve extends CI_Controller  {
 
 		if ( $this->ion_auth->logged_in() ) 
 		{	
-			/* $user_id = $this->ion_auth->get_user_id();
+			$user_id = $this->ion_auth->get_user_id();
 			
 			$total_user_withdrawal_amount = $this->coin_solve_model->get_user_total_withdrawals( $user_id );
 
@@ -235,7 +235,7 @@ class Coin_solve extends CI_Controller  {
 
 				$this->render_page('dashboard' , 'Play '.$this->meta_title_separator().' CoinSolb' , $offset , $meta_description );
 
-			}*/
+			}
 			
 `			$this->render_page('dashboard' , 'Play '.$this->meta_title_separator().' CoinSolb' , $offset , $meta_description );
 		}
