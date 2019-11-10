@@ -157,6 +157,8 @@ class Coin_solve extends CI_Controller  {
 	public function play () 
 	{	
 
+                redirect('dashboard','refresh');
+
 		$meta_description = 'Play to earn points while enhancing you math skills with Coinsolb and get some awesomes rewards from the points you earned.';
 
 		if ( $this->ion_auth->logged_in() ) 
