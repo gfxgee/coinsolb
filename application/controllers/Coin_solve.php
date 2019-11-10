@@ -179,9 +179,9 @@ class Coin_solve extends CI_Controller  {
 
 						$total_referring_points_count = $this->coin_solve_model->get_user_scores_count($user_id_of_referral->user_id , 'Referral Points');
 
-						if ( $total_referring_points_count <= 10 ) $this->save_points_details( 300 , 'Referral Points' , $user_id_of_referral->user_id );
+						if ( $total_referring_points_count <= 10 ) //$this->save_points_details( 300 , 'Referral Points' , $user_id_of_referral->user_id );
 
-						else { $this->save_points_details( 20 , 'Referral Points' , $user_id_of_referral->user_id ); }
+						else { //$this->save_points_details( 20 , 'Referral Points' , $user_id_of_referral->user_id ); }
 
 					}
 
@@ -195,7 +195,7 @@ class Coin_solve extends CI_Controller  {
 
 			if ( ($total_points_earned-$total_user_withdrawal_amount) >= 30000 && $milestone_ligible == true ) {
 
-				this->save_points_details( 20000 , 'Milestone Points' , $user_id );
+				//$this->save_points_details( 20000 , 'Milestone Points' , $user_id );
 
 			}
 
@@ -206,7 +206,7 @@ class Coin_solve extends CI_Controller  {
 
 				if(isset($_COOKIE['score'])) {
 
-					$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id );
+					//$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id );
 
 				}
 
@@ -226,7 +226,7 @@ class Coin_solve extends CI_Controller  {
 
 					if(isset($_COOKIE['score'])) {
 
-						$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id ) ;
+						//$this->save_points_details( $_COOKIE['score'] , 'App Game' , $user_id ) ;
 
 					}
 				}
